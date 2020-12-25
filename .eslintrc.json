@@ -28,6 +28,7 @@
         "max-len": "warn",
         "no-plusplus": "off",
         "react/jsx-props-no-spreading": "warn",
-        "camelcase": "off"
+        "camelcase": "off",
+        "no-param-reassign": ["error", { "props": false }]
     }
 }
