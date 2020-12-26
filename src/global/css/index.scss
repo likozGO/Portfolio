@@ -1,0 +1,57 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+}
+.container {
+  padding: 0 15px;
+}
+
+@media (min-width: 575.98px){
+  .container {
+    max-width: 540px;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 767.98px){
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1199.98px){
+  .container {
+    max-width: 1140px;
+  }
+}
+
+::selection {
+  background: #7200a5f5;
+  color: #fff;
+}
+
+
+.scroll-bar {
+  display: flex;
+}

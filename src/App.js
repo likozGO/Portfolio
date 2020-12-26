@@ -1,11 +1,14 @@
 import React from 'react';
-import Profile from './domain/Profile/Profile';
+import MenuSettings from './domain/MenuSettings/MenuSettings';
+
+// import Profile from './domain/Profile/Profile';
 
 function App() {
   return (
-    <div className="App">
-      <Profile />
-    </div>
+    <>
+      {/* <Profile /> */}
+      <MenuSettings />
+    </>
   );
 }
 
