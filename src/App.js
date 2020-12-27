@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuSettings from './domain/MenuSettings/MenuSettings';
+import StageController from './domain/MenuSettings/StageController';
 
 // import Profile from './domain/Profile/Profile';
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <Profile /> */}
-      <MenuSettings />
+      <StageController />
     </>
   );
 }

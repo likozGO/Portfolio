@@ -9,10 +9,10 @@ import './Profile.scss';
 const Profile = () => {
   const { t } = useTranslation();
 
-  const nameI18n = t('biography.name');
-  const positionI18n = t('biography.position');
-  const aboutI18n = t('biography.about');
-  const socialI18n = t('biography.social', { returnObjects: true });
+  const nameI18n = t('biographyData.name');
+  const positionI18n = t('biographyData.position');
+  const aboutI18n = t('biographyData.about');
+  const socialI18n = t('biographyData.social', { returnObjects: true });
 
   return (
     <section className="profile-card">

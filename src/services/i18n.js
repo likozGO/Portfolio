@@ -1,16 +1,19 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import biography from '../domain/Profile/biography';
+import biographyData from '../domain/Profile/biographyData';
+import stagesData from '../domain/MenuSettings/stagesData';
 
 const resources = {
   en: {
     translation: {
-      biography: { ...biography.en },
+      biographyData: { ...biographyData.en },
+      stagesData: { ...stagesData.en },
     },
   },
   ru: {
     translation: {
-      biography: { ...biography.ru },
+      biographyData: { ...biographyData.ru },
+      stagesData: { ...stagesData.ru },
     },
   },
 };

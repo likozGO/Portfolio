@@ -5,7 +5,7 @@ import {
 
 import CvPDF from './CV.pdf';
 
-const biography = {
+const biographyData = {
   en: {
     name: 'Porshnev Denis',
     position: 'Frontend Developer',
@@ -62,4 +62,4 @@ const biography = {
   },
 };
 
-export default biography;
+export default biographyData;
