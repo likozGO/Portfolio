@@ -1,40 +1,37 @@
 import React from 'react';
-import './StageSettingsItem.scss';
+import './css/StageSettingsItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPreset, setPreset } from '../sliceStageController';
 import IconSuccess from '../../../components/IconSuccess/IconSuccess';
 
 const StageSettingsItem = ({
-  image, title, text, preset, changeLang, disableAnimation, currentStep,
+  image, title, text, preset, changeLang,
+  disableAnimation, currentStep,
 }) => {
   const dispatch = useDispatch();
   const selectedCard = useSelector(selectPreset);
-
-  const selectedTheme = selectedCard.theme === preset[1];
-  const selectedLang = selectedCard.lang === preset[1];
-  const selectedParicles = selectedCard.particles === preset[1];
-
+  const selectedTheme = preset && selectedCard.theme === preset[1];
+  const selectedLang = preset && selectedCard.lang === preset[1];
+  const selectedParticles = preset && selectedCard.particles === preset[1];
   const activeExpression = {
     first: selectedLang,
     second: selectedTheme,
-    third: selectedParicles,
+    third: selectedParticles,
   };
-
   const stepExpr = activeExpression[currentStep];
+
+  const clickOnCard = () => {
+    if (preset) dispatch(setPreset([preset[0], preset[1]]));
+    if (changeLang && preset) changeLang(preset[1]);
+  };
 
   return (
     <div
       role="button"
       tabIndex={0}
       className="card"
-      onKeyDown={() => {
-        dispatch(setPreset([preset[0], preset[1]]));
-        if (changeLang) changeLang(preset[1]);
-      }}
-      onClick={() => {
-        dispatch(setPreset([preset[0], preset[1]]));
-        if (changeLang) changeLang(preset[1]);
-      }}
+      onKeyDown={() => clickOnCard()}
+      onClick={() => clickOnCard()}
     >
       <IconSuccess active={stepExpr ? 'active' : false} />
       <div className="card__image-container" style={{ display: !image && 'none' }}>

@@ -5,6 +5,7 @@ import ProfileSocial from './ProfileSocial';
 import ProfileMain from './ProfileMain';
 import ProfileHeader from './ProfileHeader';
 import './Profile.scss';
+import ParticlesBg from '../ParticlesBg/ParticlesBg';
 
 const Profile = () => {
   const { t } = useTranslation();
@@ -15,16 +16,19 @@ const Profile = () => {
   const socialI18n = t('biographyData.social', { returnObjects: true });
 
   return (
-    <section className="profile-card">
-      <div className="container">
-        <ProfileHeader
-          name={nameI18n}
-          position={positionI18n}
-        />
-        <ProfileMain about={aboutI18n} />
-        <ProfileSocial social={socialI18n} />
-      </div>
-    </section>
+    <>
+      <ParticlesBg />
+      <section className="profile-card">
+        <div className="container">
+          <ProfileHeader
+            name={nameI18n}
+            position={positionI18n}
+          />
+          <ProfileMain about={aboutI18n} />
+          <ProfileSocial social={socialI18n} />
+        </div>
+      </section>
+    </>
   );
 };
 

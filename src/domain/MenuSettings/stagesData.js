@@ -4,6 +4,10 @@ const stagesData = {
     steps: {
       first: {
         headline: 'Choose language',
+        title: {
+          en: 'English',
+          ru: 'Russian',
+        },
       },
       second: {
         headline: 'Choose theme',
@@ -19,7 +23,13 @@ const stagesData = {
         },
       },
       third: {
-        headline: 'Choose background',
+        headline: 'Choose background for "main" site',
+        title: {
+          disabled: 'Disable particles',
+          stars: 'Stars',
+          snow: 'Snow',
+          parallax: 'Background run to cursor',
+        },
       },
       fourth: {
         headline: 'Your settings are displayed here, make sure everything is OK or go back and change the settings',
@@ -31,6 +41,10 @@ const stagesData = {
     steps: {
       first: {
         headline: 'Выберите язык',
+        title: {
+          en: 'Английский',
+          ru: 'Русский',
+        },
       },
       second: {
         headline: 'Выберите тему',
@@ -46,7 +60,13 @@ const stagesData = {
         },
       },
       third: {
-        headline: 'Выбрать задний фон',
+        headline: 'Выбрать задний фон для основного сайта',
+        title: {
+          disabled: 'Отключить',
+          stars: 'Звёзды',
+          snow: 'Снег',
+          parallax: 'Паралакс эффект',
+        },
       },
       fourth: {
         headline: 'Здесь отображенны ваши настройки, убедитесь что всё в порядке или вернитесь назад и смените настройки',

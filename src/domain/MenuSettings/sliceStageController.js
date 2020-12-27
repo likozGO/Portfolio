@@ -8,7 +8,12 @@ export const sliceStage = createSlice({
     preset: {
       lang: 'en',
       theme: 'default',
-      particles: 'default',
+      particles: 'disabled',
+    },
+    presetImages: {
+      lang: '',
+      theme: '',
+      particles: '',
     },
   },
   reducers: {
