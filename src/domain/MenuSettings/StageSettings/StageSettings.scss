@@ -22,18 +22,29 @@
   -webkit-animation: fadein 2s; /* Safari and Chrome */
   -o-animation: fadein 2s; /* Opera */
   .step {
+    padding-top: 55px;
+    margin: auto;
     display: flex;
+    padding-bottom: 80px;
   }
 }
 
 .awssld {
+  &__wrapper{
+    overflow: initial;
+  }
   &__content {
     --content-background-color: #7200a5;
+    overflow: initial;
   }
   &__bullets {
     --control-bullet-active-color: #fff;
     --control-bullet-color: #333;
-    bottom: 40px;
+    bottom: 0;
+    position: fixed;
+    background: #7200a5;
+    padding: 20px 0;
+    box-shadow: 0px 0px 30px 10px #333;
   }
 }
 
@@ -41,8 +52,8 @@
   user-select: none;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
-  top: 50px;
+  max-width: 280px;
+  top: 20px;
   left: 50px;
   position: absolute;
   counter-reset: rainbow;
@@ -59,7 +70,7 @@
   &__layer {
     --text-color: var(--color-foreground);
     counter-increment: rainbow;
-    font-size: 3rem;
+    font-size: 1rem;
     color: var(--text-color);
 
     text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),

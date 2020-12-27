@@ -28,7 +28,7 @@ export const sliceStage = createSlice({
 
 export const selectHello = (state) => state.stage.hello;
 export const selectSettings = (state) => state.stage.settings;
-export const selectPreset = (state) => state.stage.settings;
+export const selectPreset = (state) => state.stage.preset;
 
 export const { setHello, setSettings, setPreset } = sliceStage.actions;
 

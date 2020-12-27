@@ -11,10 +11,24 @@ import StageSettingsItem from './StageSettingsItem';
 import RuFlag from './images/russianFlag.svg';
 import EnFlag from './images/englishFlag.svg';
 
+import defaultPallete from './images/palette-default.jpg';
+import darkPallete from './images/palette-dark.jpg';
+import whitePallete from './images/palette-white.jpg';
+
 const StageSettings = () => {
   const { t, i18n } = useTranslation();
   const [step, setStep] = React.useState('first');
-  const stepsI18n = t(`stagesData.steps.${step}`);
+  const stepsI18n = t(`stagesData.steps.${step}.headline`);
+  const SecondStepTitleI18n = {
+    default: t(`stagesData.steps.${step}.title.default`),
+    white: t(`stagesData.steps.${step}.title.white`),
+    dark: t(`stagesData.steps.${step}.title.dark`),
+  };
+  const SecondStepTextI18n = {
+    default: t(`stagesData.steps.${step}.text.default`),
+    white: t(`stagesData.steps.${step}.text.white`),
+    dark: t(`stagesData.steps.${step}.text.dark`),
+  };
   const [animController, setAnimController] = React.useState(false);
   const selectHelloAnim = useSelector(selectHello);
   const steps = {
@@ -34,6 +48,7 @@ const StageSettings = () => {
           animation="foldOutAnimation"
           fillParent
           buttons={false}
+          infinite={false}
           cssModule={[CoreStyles, AnimationStyles]}
           onTransitionStart={() => setAnimController(true)}
           onTransitionEnd={(info) => {
@@ -44,12 +59,14 @@ const StageSettings = () => {
           <div className="step step-1">
             <div className="container">
               <StageSettingsItem
+                currentStep={step}
                 image={EnFlag}
                 title="English"
                 preset={['lang', 'en']}
                 changeLang={() => i18n.changeLanguage('en')}
               />
               <StageSettingsItem
+                currentStep={step}
                 image={RuFlag}
                 title="Русский"
                 preset={['lang', 'ru']}
@@ -59,7 +76,30 @@ const StageSettings = () => {
           </div>
           <div className="step step-2">
             <div className="container">
-              <StageSettingsItem text="2" />
+              <StageSettingsItem
+                currentStep={step}
+                preset={['theme', 'default']}
+                title={SecondStepTitleI18n.default}
+                text={SecondStepTextI18n.default}
+                disableAnimation
+                image={defaultPallete}
+              />
+              <StageSettingsItem
+                currentStep={step}
+                preset={['theme', 'dark']}
+                title={SecondStepTitleI18n.dark}
+                text={SecondStepTextI18n.dark}
+                disableAnimation
+                image={darkPallete}
+              />
+              <StageSettingsItem
+                currentStep={step}
+                preset={['theme', 'white']}
+                title={SecondStepTitleI18n.white}
+                text={SecondStepTextI18n.white}
+                disableAnimation
+                image={whitePallete}
+              />
             </div>
           </div>
           <div className="step step-3">

@@ -1,12 +1,27 @@
 import React from 'react';
 import './StageSettingsItem.scss';
-import { useDispatch } from 'react-redux';
-import { setPreset } from '../sliceStageController';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPreset, setPreset } from '../sliceStageController';
+import IconSuccess from '../../../components/IconSuccess/IconSuccess';
 
 const StageSettingsItem = ({
-  image, title, text, preset, changeLang,
+  image, title, text, preset, changeLang, disableAnimation, currentStep,
 }) => {
   const dispatch = useDispatch();
+  const selectedCard = useSelector(selectPreset);
+
+  const selectedTheme = selectedCard.theme === preset[1];
+  const selectedLang = selectedCard.lang === preset[1];
+  const selectedParicles = selectedCard.particles === preset[1];
+
+  const activeExpression = {
+    first: selectedLang,
+    second: selectedTheme,
+    third: selectedParicles,
+  };
+
+  const stepExpr = activeExpression[currentStep];
+
   return (
     <div
       role="button"
@@ -21,6 +36,7 @@ const StageSettingsItem = ({
         if (changeLang) changeLang(preset[1]);
       }}
     >
+      <IconSuccess active={stepExpr ? 'active' : false} />
       <div className="card__image-container" style={{ display: !image && 'none' }}>
         <img
           className="card__image"
@@ -29,7 +45,7 @@ const StageSettingsItem = ({
         />
       </div>
 
-      <svg className="card__svg" viewBox="0 0 800 500">
+      <svg className="card__svg" viewBox="0 0 800 500" style={{ display: disableAnimation && 'none' }}>
 
         <path
           d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"

@@ -2,19 +2,55 @@ const stagesData = {
   en: {
     helloFriend: 'Hello Friend 👋',
     steps: {
-      first: 'Choose language',
-      second: 'Choose theme',
-      third: 'Choose background',
-      fourth: 'Your settings are displayed here, make sure everything is OK or go back and change the settings',
+      first: {
+        headline: 'Choose language',
+      },
+      second: {
+        headline: 'Choose theme',
+        title: {
+          default: 'Default theme',
+          white: 'White theme',
+          dark: 'Dark theme',
+        },
+        text: {
+          default: 'Default theme with blackjack, and hookers',
+          white: 'Light UI-theme',
+          dark: 'Dark UI-theme',
+        },
+      },
+      third: {
+        headline: 'Choose background',
+      },
+      fourth: {
+        headline: 'Your settings are displayed here, make sure everything is OK or go back and change the settings',
+      },
     },
   },
   ru: {
     helloFriend: 'Привет Комрад 👋',
     steps: {
-      first: 'Выберите язык',
-      second: 'Выберите тему',
-      third: 'Выбрать задний фон',
-      fourth: 'Здесь отображенны ваши настройки, убедитесь что всё в порядке или вернитесь назад и смените настройки',
+      first: {
+        headline: 'Выберите язык',
+      },
+      second: {
+        headline: 'Выберите тему',
+        title: {
+          default: 'Дефолт тема',
+          white: 'Светлая тема',
+          dark: 'Темная тема',
+        },
+        text: {
+          default: 'Дефолтная тема для сайта',
+          white: 'Светлая тема для сайта',
+          dark: 'Тёмная тема для сайта',
+        },
+      },
+      third: {
+        headline: 'Выбрать задний фон',
+      },
+      fourth: {
+        headline: 'Здесь отображенны ваши настройки, убедитесь что всё в порядке или вернитесь назад и смените настройки',
+      },
     },
   },
 };
