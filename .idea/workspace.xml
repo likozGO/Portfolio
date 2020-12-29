@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70101b9c-82c4-48f5-b2eb-459f9a65af93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/domain/ParticlesBg/ParticlesBg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/global/css/themes.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageController.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageController.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageHello/StageHello.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageHello/StageHello.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettings.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettingsItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettingsItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/StageSettingsItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettingsItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettingsBtn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettingsBtn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettingsItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/StageSettings/css/StageSettingsItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/sliceStageController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/sliceStageController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/MenuSettings/stagesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MenuSettings/stagesData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/ParticlesBg/ParticlesBg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/ParticlesBg/ParticlesBg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global/css/animation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/global/css/animation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/global/css/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global/css/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global/css/mixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global/css/mixin.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/domain/MenuSettings" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/WorkProjects/profitquota" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -62,7 +62,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -85,29 +85,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608889315960">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1609237057084">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608889315960" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1608883218554">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609237057084" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1609229504342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608883218554" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609229504342" />
     <state x="368" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609024680441">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="368" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1609024680441" />
-    <state x="479" y="100" width="577" height="624" key="find.popup" timestamp="1609005659790">
+    <state x="479" y="100" width="577" height="624" key="find.popup" timestamp="1609246201308">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="100" width="577" height="624" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1609005659790" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1609078596793">
+    <state x="479" y="100" width="577" height="624" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1609246201308" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1609280290772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609078596793" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1609100221802">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609280290772" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1609143387039">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1609100221802" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1609143387039" />
   </component>
 </project>

@@ -1,26 +1,68 @@
+@import "mixin";
+
 html, body {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
+  height: 100%;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #7200a5;
-  color: #fff;
 }
+
+
+.bg-animation {
+  &.animated {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include background-image('body_bg_image');
+    position: fixed;
+    z-index: 9999;
+    background-position: center center;
+    background-size: cover;
+    mask-image: radial-gradient(#000 60%, transparent 61%);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    animation: mask-move .8s linear 1 alternate;
+    animation-fill-mode: both;
+  }
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include background-color('body_bg');
+  @include background-image('body_bg_image');
+}
+
+
+.theme-picker {
+  @include color('body_color');
+  transition: background-color .2s ease-in-out,
+  color .2s ease-in-out;
+}
+
 
 *, *:after, *:before {
   box-sizing: border-box;
 }
 
 #root {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
+
 .container {
   padding: 0 15px;
 }
 
-@media (min-width: 575.98px){
+@media (min-width: 575.98px) {
   .container {
     max-width: 540px;
     margin: auto;
@@ -28,7 +70,7 @@ body {
   }
 }
 
-@media (min-width: 767.98px){
+@media (min-width: 767.98px) {
   .container {
     max-width: 720px;
   }
@@ -40,11 +82,12 @@ body {
   }
 }
 
-@media (min-width: 1199.98px){
+@media (min-width: 1199.98px) {
   .container {
     max-width: 1140px;
   }
 }
+
 
 ::selection {
   background: #7200a5f5;

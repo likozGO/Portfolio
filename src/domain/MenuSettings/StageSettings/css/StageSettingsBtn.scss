@@ -1,7 +1,9 @@
+@import "../../../../global/css/mixin";
+
 .settings-btn {
   position: relative;
   text-decoration: none;
-  color: #fff;
+  @include color('settings-btn-collor');
   letter-spacing: 1px;
   font-size: 2rem;
 
@@ -11,8 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 120px;
+    @include border-color('settings-btn-border');
   }
 
   & span:before {
@@ -22,7 +25,8 @@
     display: block;
     position: absolute;
     border-radius: 100%;
-    border: 7px solid #fff;
+    border: 7px solid;
+    border-color: inherit;
     box-sizing: border-box;
     transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
     box-shadow: 0 30px 85px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
@@ -43,7 +47,7 @@
     width: 8px;
     height: 8px;
     display: block;
-    background-color: #fff;
+    @include background-color('settings-btn-lines');
     border-radius: 100%;
     position: absolute;
     transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);

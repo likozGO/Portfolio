@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/StageSettingsItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPreset, setPreset } from '../sliceStageController';
+import { selectPreset, setAnimationStart, setPreset } from '../sliceStageController';
 import IconSuccess from '../../../components/IconSuccess/IconSuccess';
 
 const StageSettingsItem = ({
@@ -21,16 +21,21 @@ const StageSettingsItem = ({
   const stepExpr = activeExpression[currentStep];
 
   const clickOnCard = () => {
-    if (preset) dispatch(setPreset([preset[0], preset[1]]));
+    if (preset) {
+      if (preset[0] === 'theme') {
+        dispatch(setAnimationStart('animated'));
+      }
+      dispatch(setPreset([preset[0], preset[1]]));
+    }
     if (changeLang && preset) changeLang(preset[1]);
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
       role="button"
       tabIndex={0}
       className="card"
-      onKeyDown={() => clickOnCard()}
       onClick={() => clickOnCard()}
     >
       <IconSuccess active={stepExpr ? 'active' : false} />
@@ -45,9 +50,10 @@ const StageSettingsItem = ({
       <svg className="card__svg" viewBox="0 0 800 500" style={{ display: disableAnimation && 'none' }}>
 
         <path
+          className="card__bg"
           d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
           stroke="transparent"
-          fill="#333"
+          fill="#000"
         />
         <path
           className="card__line"

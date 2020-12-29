@@ -1,14 +1,88 @@
-@mixin link-color ($link, $visit, $hover, $active) {
+@import "themes.scss";
+
+@mixin link-color($link, $visit, $hover, $active) {
   a {
     color: $link;
+
     &:visited {
       color: $visit;
     }
+
     &:hover {
       color: $hover;
     }
+
     &:active {
       color: $active;
     }
   }
+}
+
+
+/// Миксин Themify
+/// @access private
+/// @author Hugo Giraudel
+/// @param {String} $property - темизируемое свойство
+/// @param {String} $key - ключ цвета, используемого из темы
+/// @param {Map} $themes [$themes] - ассоциативный массив с темами
+@mixin themify($property, $key, $themes: $themes) {
+  // Проход по темам
+  @each $theme, $colors in $themes {
+    // Создание селектора (типа `.media.theme-unicorn, .theme-unicorn .media`)
+    &.theme-#{$theme},
+    .theme-#{$theme} & {
+      // Вывод декларации
+      #{$property}: map-get($colors, $key);
+    }
+  }
+}
+
+
+/// Темизация цвета шрифта с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin color($arguments...) {
+  @include themify('color', $arguments...);
+}
+
+/// Темизация цвета границы элемента с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin border-color($arguments...) {
+  @include themify('border-color', $arguments...);
+}
+
+/// Темизация цвета фона элемента с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin background-color($arguments...) {
+  @include themify('background-color', $arguments...);
+}
+
+/// Темизация цвета фона элемента с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin background-image($arguments...) {
+  @include themify('background-image', $arguments...);
+}
+
+/// Темизация тени с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin box-shadow($arguments...) {
+  @include themify('box-shadow', $arguments...);
+}
+
+/// Темизация fill с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin fill($arguments...) {
+  @include themify('fill', $arguments...);
+}
+
+/// Темизация stroke с помощью миксина `themify`
+/// @access public
+/// @see {mixin} themify
+@mixin stroke($arguments...) {
+  @include themify('stroke', $arguments...);
 }

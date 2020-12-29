@@ -81,7 +81,7 @@ const StageSettings = () => {
       className={`stage-settings ${selectHelloAnim && 'hide'}`}
     >
       <SettingsTitle word={stepsI18n} status={animController} />
-      <div className="steps-container">
+      <div className={`steps-container ${selectPrst.particles && 'bg-transparent'}`}>
         <AwesomeSlider
           animation="foldOutAnimation"
           fillParent

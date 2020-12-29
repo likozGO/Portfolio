@@ -1,3 +1,5 @@
+@import "../../../global/css/mixin";
+
 $fontSize: 8rem;
 .stage-hello {
   position: relative;
@@ -8,7 +10,7 @@ $fontSize: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  @include color('body_color');
   perspective: 800px;
 }
 
@@ -16,8 +18,9 @@ $fontSize: 8rem;
 #ui {
   .text {
     position: absolute;
+    user-select: none;
     font-size: $fontSize;
-    color: #fff;
+    @include color('body_color');
     line-height: $fontSize;
     opacity: 0;
     transform: translate(-50%, -50%);
@@ -27,13 +30,13 @@ $fontSize: 8rem;
       $key: $i + 1;
       &:nth-child(#{$key}) {
         $row: floor($i / 20);
-        color: #fff;
+        @include color('body_color');
         clip-path: polygon(
                         floor($i / 2) * 10% - $row * 100% $row * 50%,
                         floor($key / 2) * 10% - $row * 100% ceil($key % 2) * 50% + ($row * 50%),
                         ceil($key / 2) * 10% - $row * 100% ($row + 1) * 50%
         );
-        transform-origin: random(100) - 50 + floor($i / 2) * 10% - $row * 100%  random(100) - 50 + $row * 50%;
+        transform-origin: random(100) - 50 + floor($i / 2) * 10% - $row * 100% random(100) - 50 + $row * 50%;
         animation: fly#{$key} 5000ms $i * 40ms cubic-bezier(0.360, 0.100, 0.160, 1.000) 2 alternate;
 
         @keyframes fly#{$key} {

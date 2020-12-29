@@ -1,11 +1,17 @@
 import React from 'react';
 import Particles from 'react-tsparticles';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ParticlesSetting from './particles.settings';
-import { selectPreset } from '../MenuSettings/sliceStageController';
+import {
+  selectAnimationStart,
+  selectPreset,
+  setAnimationStart,
+} from '../MenuSettings/sliceStageController';
 
 const ParticlesBg = () => {
   const selectParticles = useSelector(selectPreset);
+  const selectAnimation = useSelector(selectAnimationStart);
+  const dispatch = useDispatch();
   if (selectParticles.particles !== 'disabled') {
     return (
       <Particles
@@ -14,7 +20,19 @@ const ParticlesBg = () => {
       />
     );
   }
-  return (null);
+
+  return (
+    <>
+      <div
+        className={`bg-animation ${selectAnimation}`}
+        onAnimationEnd={() => dispatch(setAnimationStart(''))}
+      >
+        <div className="first" />
+        <div className="second" />
+      </div>
+      <div className="bg" />
+    </>
+  );
 };
 
 export default ParticlesBg;

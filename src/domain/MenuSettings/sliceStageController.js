@@ -15,6 +15,7 @@ export const sliceStage = createSlice({
       theme: '',
       particles: '',
     },
+    animationStart: '',
   },
   reducers: {
     setHello: (state, action) => {
@@ -24,9 +25,11 @@ export const sliceStage = createSlice({
       state.settings = action.payload;
     },
     setPreset: (state, action) => {
-      console.log(action.payload);
       // eslint-disable-next-line prefer-destructuring
       state.preset[action.payload[0]] = action.payload[1];
+    },
+    setAnimationStart: (state, action) => {
+      state.animationStart = action.payload;
     },
   },
 });
@@ -34,7 +37,10 @@ export const sliceStage = createSlice({
 export const selectHello = (state) => state.stage.hello;
 export const selectSettings = (state) => state.stage.settings;
 export const selectPreset = (state) => state.stage.preset;
+export const selectAnimationStart = (state) => state.stage.animationStart;
 
-export const { setHello, setSettings, setPreset } = sliceStage.actions;
+export const {
+  setHello, setSettings, setPreset, setAnimationStart,
+} = sliceStage.actions;
 
 export default sliceStage.reducer;
