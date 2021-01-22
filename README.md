@@ -11,3 +11,13 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software._
+
+###TODO
+0. Пробросить задний фон для партикл бекграунда;
+1. Продумать роутинг (что home, что настройки);
+2. Сделать что бы привествие было 1 раз для юзера, либо ускорить и изменить сообщение;
+3. Анимация карточки - выезд снизу и fadeOut;
+4. Сделать шапку по примеру;
+5. Задеплоить куда то;
+
+

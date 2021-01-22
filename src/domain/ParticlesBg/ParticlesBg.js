@@ -6,7 +6,7 @@ import {
   selectAnimationStart,
   selectPreset,
   setAnimationStart,
-} from '../MenuSettings/sliceStageController';
+} from '../Settings/sliceStageController';
 
 const ParticlesBg = () => {
   const selectParticles = useSelector(selectPreset);

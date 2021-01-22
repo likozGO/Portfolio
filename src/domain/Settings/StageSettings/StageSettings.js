@@ -23,39 +23,40 @@ import parallaxParticles from './images/particles-parallax.jpg';
 import StageSettingsBtn from './StageSettingsBtn';
 
 const StageSettings = () => {
-  const { t, i18n } = useTranslation();
   const [step, setStep] = React.useState('first');
-  const stepsI18n = t(`stagesData.steps.${step}.headline`);
-
-  const FirstStepTitleI18n = {
-    en: t(`stagesData.steps.${step}.title.en`),
-    ru: t(`stagesData.steps.${step}.title.ru`),
-  };
-  const SecondStepTitleI18n = {
-    default: t(`stagesData.steps.${step}.title.default`),
-    white: t(`stagesData.steps.${step}.title.white`),
-    dark: t(`stagesData.steps.${step}.title.dark`),
-  };
-  const SecondStepTextI18n = {
-    default: t(`stagesData.steps.${step}.text.default`),
-    white: t(`stagesData.steps.${step}.text.white`),
-    dark: t(`stagesData.steps.${step}.text.dark`),
-  };
-  const ThirdStepTitleI18n = {
-    disabled: t(`stagesData.steps.${step}.title.disabled`),
-    stars: t(`stagesData.steps.${step}.title.stars`),
-    snow: t(`stagesData.steps.${step}.title.snow`),
-    parallax: t(`stagesData.steps.${step}.title.parallax`),
-  };
-
   const [animController, setAnimController] = React.useState(false);
   const selectHelloAnim = useSelector(selectHello);
   const selectPrst = useSelector(selectPreset);
+  const { t, i18n } = useTranslation();
+  const stepsI18n = t(`stagesData.steps.${step}.headline`);
+  const stepData = `stagesData.steps.${step}`;
+
   const steps = {
     0: 'first',
     1: 'second',
     2: 'third',
     3: 'fourth',
+  };
+
+  const FirstStepTitleI18n = {
+    en: t(`${stepData}.title.en`),
+    ru: t(`${stepData}.title.ru`),
+  };
+  const SecondStepTitleI18n = {
+    default: t(`${stepData}.title.default`),
+    white: t(`${stepData}.title.white`),
+    dark: t(`${stepData}.title.dark`),
+  };
+  const SecondStepTextI18n = {
+    default: t(`${stepData}.text.default`),
+    white: t(`${stepData}.text.white`),
+    dark: t(`${stepData}.text.dark`),
+  };
+  const ThirdStepTitleI18n = {
+    disabled: t(`${stepData}.title.disabled`),
+    stars: t(`${stepData}.title.stars`),
+    snow: t(`${stepData}.title.snow`),
+    parallax: t(`${stepData}.title.parallax`),
   };
 
   const imageCompare = {

@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import biographyData from '../domain/Profile/biographyData';
-import stagesData from '../domain/MenuSettings/stagesData';
+import stagesData from '../domain/Settings/stagesData';
 
 const resources = {
   en: {
