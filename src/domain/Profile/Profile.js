@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useHistory } from 'react-router-dom';
 import ProfileSocial from './ProfileSocial';
 import ProfileMain from './ProfileMain';
 import ProfileHeader from './ProfileHeader';
@@ -14,7 +14,10 @@ const Profile = () => {
   const positionI18n = t('biographyData.position');
   const aboutI18n = t('biographyData.about');
   const socialI18n = t('biographyData.social', { returnObjects: true });
-
+  const history = useHistory();
+  useEffect(() => {
+    history.push('/settings');
+  });
   return (
     <>
       <ParticlesBg />
