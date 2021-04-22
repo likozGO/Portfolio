@@ -6,7 +6,6 @@ import ParticlesBg from './domain/ParticlesBg/ParticlesBg';
 import { selectPreset } from './domain/Settings/sliceStageController';
 import RouterComponent from './router/RouterComponent';
 import routes from './router/Router';
-
 // import Profile from './domain/Profile/Profile';
 
 function App() {
