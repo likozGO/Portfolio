@@ -28,7 +28,7 @@ const stagesData = {
           disabled: 'Disable particles',
           stars: 'Stars',
           snow: 'Snow',
-          parallax: 'Background run to cursor',
+          bubbles: 'Bubbles Background',
         },
       },
       fourth: {
@@ -65,7 +65,7 @@ const stagesData = {
           disabled: 'Отключить',
           stars: 'Звёзды',
           snow: 'Снег',
-          parallax: 'Паралакс эффект',
+          bubbles: 'Эффект "Бульбашкы")',
         },
       },
       fourth: {

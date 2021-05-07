@@ -16,7 +16,7 @@ const ParticlesBg = () => {
     return (
       <Particles
         id="tsparticles"
-        options={ParticlesSetting[selectParticles.particles]}
+        options={ParticlesSetting[selectParticles.theme][selectParticles.particles]}
       />
     );
   }

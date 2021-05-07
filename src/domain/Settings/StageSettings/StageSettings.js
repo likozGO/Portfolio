@@ -19,7 +19,7 @@ import whitePallete from './images/palette-white.jpg';
 import noParticles from './images/particles-no.png';
 import starsParticles from './images/particles-stars.jpg';
 import snowParticles from './images/particles-snow.jpg';
-import parallaxParticles from './images/particles-parallax.jpg';
+import bubblesParticles from './images/particles-bubbles.jpg';
 import StageSettingsBtn from './StageSettingsBtn';
 
 const StageSettings = () => {
@@ -56,7 +56,7 @@ const StageSettings = () => {
     disabled: t(`${stepData}.title.disabled`),
     stars: t(`${stepData}.title.stars`),
     snow: t(`${stepData}.title.snow`),
-    parallax: t(`${stepData}.title.parallax`),
+    bubbles: t(`${stepData}.title.bubbles`),
   };
 
   const imageCompare = {
@@ -73,7 +73,7 @@ const StageSettings = () => {
       disabled: noParticles,
       stars: starsParticles,
       snow: snowParticles,
-      parallax: parallaxParticles,
+      bubbles: bubblesParticles,
     },
   };
 
@@ -164,9 +164,9 @@ const StageSettings = () => {
               />
               <StageSettingsItem
                 currentStep={step}
-                image={parallaxParticles}
-                title={ThirdStepTitleI18n.parallax}
-                preset={['particles', 'parallax']}
+                image={bubblesParticles}
+                title={ThirdStepTitleI18n.bubbles}
+                preset={['particles', 'bubbles']}
               />
             </div>
           </div>

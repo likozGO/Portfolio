@@ -1,482 +1,683 @@
 const ParticlesSetting = {
-  parallax: {
-    autoPlay: true,
-    background: {
-      color: { value: '#7200a5' },
-      image: '',
-      position: '50% 50%',
-      repeat: 'no-repeat',
-      size: 'cover',
-      opacity: 1,
-    },
-    backgroundMask: {
-      composite: 'destination-out',
-      cover: {
-        color: { value: '#fff' },
-        opacity: 1,
+  default: {
+    bubbles: {
+      background: {
+        color: '#7200a5',
       },
-      enable: false,
-    },
-    backgroundMode: {
-      enable: false,
-      zIndex: -1,
-    },
-    detectRetina: true,
-    fpsLimit: 60,
-    infection: {
-      cure: false,
-      delay: 0,
-      enable: false,
-      infections: 0,
-      stages: [],
-    },
-    interactivity: {
-      detectsOn: 'window',
-      events: {
-        onClick: {
-          enable: true,
-          mode: 'push',
+      emitters: {
+        direction: 'random',
+        size: {
+          width: 100,
+          height: 100,
         },
-        onDiv: {
-          selectors: [],
-          enable: false,
-          mode: [],
+        position: {
+          x: 50,
+          y: 50,
+        },
+        rate: {
+          delay: 0.1,
+          quantity: 2,
+        },
+      },
+      particles: {
+        number: {
+          value: 0,
+        },
+        color: {
+          value: [
+            '#3998D0',
+            '#2EB6AF',
+            '#A9BD33',
+            '#FEC73B',
+            '#F89930',
+            '#F45623',
+            '#D62E32',
+            '#EB586E',
+            '#9952CF',
+          ],
+        },
+        shape: {
           type: 'circle',
         },
-        onHover: {
-          enable: false,
-          mode: 'grab',
-          parallax: {
+        opacity: {
+          value: 0.8,
+          random: {
             enable: true,
-            force: 40,
-            smooth: 20,
+            minimumValue: 0.3,
           },
         },
-        resize: true,
+        size: {
+          value: 200,
+          anim: {
+            enable: true,
+            speed: 50,
+            size_min: 2,
+            sync: true,
+            startValue: 'max',
+            destroy: 'min',
+          },
+        },
+        move: {
+          enable: true,
+          speed: 5,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'destroy',
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
       },
-      modes: {
-        attract: {
-          distance: 200,
-          duration: 0.4,
-          speed: 1,
-        },
-        bounce: { distance: 200 },
-        bubble: {
-          distance: 400,
-          duration: 2,
-          opacity: 0.8,
-          size: 40,
-        },
-        connect: {
-          distance: 80,
-          links: { opacity: 0.5 },
-          radius: 60,
-        },
-        grab: {
-          distance: 400,
-          links: {
-            blink: false,
-            consent: false,
-            opacity: 1,
-          },
-        },
-        light: {
-          area: {
-            gradient: {
-              start: { value: '#ffffff' },
-              stop: { value: '#000000' },
+      interactivity: {
+        detect_on: 'canvas',
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
             },
-            radius: 1000,
           },
-          shadow: {
-            color: { value: '#000000' },
-            length: 2000,
+          repulse: {
+            distance: 100,
+          },
+          push: {
+            quantity: 4,
           },
         },
-        push: { quantity: 4 },
-        remove: { quantity: 2 },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-          speed: 1,
+      },
+      detectRetina: true,
+    },
+    snow: {
+      background: {
+        color: '#7200a5',
+      },
+      interactivity: {
+        modes: {
+          bubble: {
+            distance: 400,
+            duration: 0.3,
+            opacity: 1,
+            size: 2,
+          },
+          grab: {
+            distance: 400,
+            links: {
+              opacity: 0.5,
+            },
+          },
         },
-        slow: {
-          factor: 3,
-          radius: 200,
+      },
+      particles: {
+        links: {
+          color: {
+            value: '#ffffff',
+          },
+          distance: 500,
+          opacity: 0.4,
+          width: 1,
         },
-        trail: {
-          delay: 1,
+        move: {
+          attract: {
+            rotate: {
+              x: 600,
+              y: 1200,
+            },
+          },
+          direction: 'bottom',
+          enable: true,
+          outModes: {
+            bottom: 'out',
+            left: 'out',
+            right: 'out',
+            top: 'out',
+          },
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          limit: 40,
+          value: 40,
+        },
+        opacity: {
+          random: {
+            enable: true,
+          },
+          value: 0.5,
+          animation: {
+            minimumValue: 0.1,
+            speed: 0.1,
+          },
+        },
+        size: {
+          random: {
+            enable: true,
+          },
+          value: 10,
+          animation: {
+            minimumValue: 0,
+            speed: 0.1,
+          },
+        },
+        stroke: {
+          color: {
+            value: '#000000',
+            animation: {
+              enable: false,
+              speed: 0.1,
+              sync: true,
+            },
+          },
+        },
+      },
+    },
+    stars: {
+      background: {
+        color: '#7200a5',
+      },
+      detectRetina: false,
+      fpsLimit: 60,
+      interactivity: {
+        detectsOn: 'canvas',
+        events: {
+          resize: true,
+        },
+      },
+      particles: {
+        color: {
+          value: '#fff',
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 1080,
+          },
+          limit: 500,
+          value: 400,
+        },
+        opacity: {
+          animation: {
+            enable: true,
+            minimumValue: 0.05,
+            speed: 0.25,
+            sync: false,
+          },
+          random: {
+            enable: true,
+            minimumValue: 0.05,
+          },
+          value: 1,
+        },
+        shape: {
+          type: 'circle',
+        },
+        size: {
+          random: {
+            enable: true,
+            minimumValue: 0.5,
+          },
+          value: 1,
+        },
+        move: {
+          direction: 'none',
+          enable: true,
+          outMode: 'bounce',
+          random: false,
+          speed: 0.1,
+          straight: false,
+        },
+      },
+    },
+  },
+  dark: {
+    bubbles: {
+      background: {
+        color: '#000',
+      },
+      emitters: {
+        direction: 'random',
+        size: {
+          width: 100,
+          height: 100,
+        },
+        position: {
+          x: 50,
+          y: 50,
+        },
+        rate: {
+          delay: 0.1,
+          quantity: 2,
+        },
+      },
+      particles: {
+        number: {
+          value: 0,
+        },
+        color: {
+          value: [
+            '#484f56',
+            '#466967',
+            '#484a3b',
+            '#665c48',
+            '#5f5443',
+            '#2b2322',
+            '#665657',
+            '#5f4f51',
+            '#786e83',
+          ],
+        },
+        shape: {
+          type: 'circle',
+        },
+        opacity: {
+          value: 0.8,
+          random: {
+            enable: true,
+            minimumValue: 0.3,
+          },
+        },
+        size: {
+          value: 200,
+          anim: {
+            enable: true,
+            speed: 50,
+            size_min: 2,
+            sync: true,
+            startValue: 'max',
+            destroy: 'min',
+          },
+        },
+        move: {
+          enable: true,
+          speed: 5,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'destroy',
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
+          repulse: {
+            distance: 100,
+          },
+          push: {
+            quantity: 4,
+          },
+        },
+      },
+      detectRetina: true,
+    },
+    snow: {
+      background: {
+        color: '#000',
+      },
+      interactivity: {
+        modes: {
+          bubble: {
+            distance: 400,
+            duration: 0.3,
+            opacity: 1,
+            size: 2,
+          },
+          grab: {
+            distance: 400,
+            links: {
+              opacity: 0.5,
+            },
+          },
+        },
+      },
+      particles: {
+        links: {
+          color: {
+            value: '#ffffff',
+          },
+          distance: 500,
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          attract: {
+            rotate: {
+              x: 600,
+              y: 1200,
+            },
+          },
+          direction: 'bottom',
+          enable: true,
+          outModes: {
+            bottom: 'out',
+            left: 'out',
+            right: 'out',
+            top: 'out',
+          },
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          limit: 40,
+          value: 40,
+        },
+        opacity: {
+          random: {
+            enable: true,
+          },
+          value: 0.5,
+          animation: {
+            minimumValue: 0.1,
+            speed: 0.1,
+          },
+        },
+        size: {
+          random: {
+            enable: true,
+          },
+          value: 10,
+          animation: {
+            minimumValue: 0,
+            speed: 0.1,
+          },
+        },
+        stroke: {
+          color: {
+            value: '#000000',
+            animation: {
+              enable: false,
+              speed: 0.1,
+              sync: true,
+            },
+          },
+        },
+      },
+    },
+    stars: {
+      background: {
+        color: '#000',
+      },
+      detectRetina: false,
+      fpsLimit: 60,
+      interactivity: {
+        detectsOn: 'canvas',
+        events: {
+          resize: true,
+        },
+      },
+      particles: {
+        color: {
+          value: '#fff',
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 1080,
+          },
+          limit: 500,
+          value: 400,
+        },
+        opacity: {
+          animation: {
+            enable: true,
+            minimumValue: 0.05,
+            speed: 0.25,
+            sync: false,
+          },
+          random: {
+            enable: true,
+            minimumValue: 0.05,
+          },
+          value: 1,
+        },
+        shape: {
+          type: 'circle',
+        },
+        size: {
+          random: {
+            enable: true,
+            minimumValue: 0.5,
+          },
+          value: 1,
+        },
+        move: {
+          direction: 'none',
+          enable: true,
+          outMode: 'bounce',
+          random: false,
+          speed: 0.1,
+          straight: false,
+        },
+      },
+    },
+  },
+  white: {
+    bubbles: {
+      background: {
+        color: '#e5e5e5',
+      },
+      emitters: {
+        direction: 'random',
+        size: {
+          width: 60,
+          height: 60,
+        },
+        position: {
+          x: 50,
+          y: 50,
+        },
+        rate: {
+          delay: 0.7,
           quantity: 1,
         },
       },
+      particles: {
+        limit: 10,
+        number: {
+          value: 0,
+        },
+        color: {
+          value: [
+            '#7ba9c4',
+            '#a1c4c3',
+            '#adb388',
+            '#cabd9d',
+            '#d6c3af',
+            '#c35431',
+            '#cf797b',
+            '#c3707c',
+            '#a690b7',
+          ],
+        },
+        shape: {
+          type: 'circle',
+        },
+        opacity: {
+          value: 0.8,
+          random: {
+            enable: true,
+            minimumValue: 0.3,
+          },
+        },
+        size: {
+          value: 100,
+          anim: {
+            enable: true,
+            speed: 50,
+            size_min: 2,
+            sync: true,
+            startValue: 'max',
+            destroy: 'min',
+          },
+        },
+        move: {
+          enable: true,
+          speed: 5,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'destroy',
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        modes: {
+          repulse: {
+            distance: 100,
+          },
+          push: {
+            quantity: 4,
+          },
+        },
+      },
     },
-    manualParticles: [],
-    motion: {
-      disable: false,
-      reduce: {
-        factor: 4,
-        value: false,
+    snow: {
+      background: {
+        color: '#e5e5e5',
       },
-    },
-    particles: {
-      bounce: {
-        horizontal: {
-          random: {
-            enable: false,
-            minimumValue: 0.1,
+      interactivity: {
+        modes: {
+          bubble: {
+            distance: 400,
+            duration: 0.3,
+            opacity: 1,
+            size: 2,
           },
-          value: 1,
-        },
-        vertical: {
-          random: {
-            enable: false,
-            minimumValue: 0.1,
-          },
-          value: 1,
-        },
-      },
-      collisions: {
-        bounce: {
-          horizontal: {
-            random: {
-              enable: false,
-              minimumValue: 0.1,
+          grab: {
+            distance: 400,
+            links: {
+              opacity: 0.5,
             },
-            value: 1,
           },
-          vertical: {
-            random: {
-              enable: false,
-              minimumValue: 0.1,
+        },
+      },
+      particles: {
+        links: {
+          color: {
+            value: '#000',
+          },
+          distance: 500,
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          attract: {
+            rotate: {
+              x: 600,
+              y: 1200,
             },
-            value: 1,
+          },
+          direction: 'bottom',
+          enable: true,
+          outModes: {
+            bottom: 'out',
+            left: 'out',
+            right: 'out',
+            top: 'out',
           },
         },
-        enable: false,
-        mode: 'bounce',
-      },
-      color: {
-        value: '#ffffff',
-        animation: {
-          enable: false,
-          speed: 1,
-          sync: true,
+        number: {
+          density: {
+            enable: true,
+          },
+          limit: 40,
+          value: 40,
         },
-      },
-      life: {
-        count: 0,
-        delay: {
+        size: {
           random: {
-            enable: false,
+            enable: true,
+          },
+          value: 10,
+          animation: {
             minimumValue: 0,
-          },
-          value: 0,
-          sync: false,
-        },
-        duration: {
-          random: {
-            enable: false,
-            minimumValue: 0.0001,
-          },
-          value: 0,
-          sync: false,
-        },
-      },
-      links: {
-        blink: false,
-        color: { value: '#ffffff' },
-        consent: false,
-        distance: 150,
-        enable: true,
-        frequency: 1,
-        opacity: 0.4,
-        shadow: {
-          blur: 5,
-          color: { value: '#00ff00' },
-          enable: false,
-        },
-        triangles: {
-          enable: false,
-          frequency: 1,
-        },
-        width: 1,
-        warp: false,
-      },
-      move: {
-        angle: {
-          offset: 45,
-          value: 90,
-        },
-        attract: {
-          enable: false,
-          rotate: {
-            x: 600,
-            y: 1200,
+            speed: 0.1,
           },
         },
-        direction: 'none',
-        distance: 0,
-        enable: true,
-        gravity: {
-          acceleration: 9.81,
-          enable: false,
-          maxSpeed: 50,
-        },
-        noise: {
-          delay: {
-            random: {
+        stroke: {
+          color: {
+            value: '#000000',
+            animation: {
               enable: false,
-              minimumValue: 0,
+              speed: 0.1,
+              sync: true,
             },
-            value: 0,
           },
-          enable: false,
-        },
-        outModes: {
-          default: 'out',
-          bottom: 'out',
-          left: 'out',
-          right: 'out',
-          top: 'out',
-        },
-        random: false,
-        size: false,
-        speed: 2,
-        straight: false,
-        trail: {
-          enable: false,
-          length: 10,
-          fillColor: { value: '#000000' },
-        },
-        vibrate: false,
-        warp: false,
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 800,
-          factor: 1000,
-        },
-        limit: 100,
-        value: 100,
-      },
-      opacity: {
-        random: {
-          enable: true,
-          minimumValue: 0.1,
-        },
-        value: 0.5,
-        animation: {
-          enable: true,
-          minimumValue: 0.1,
-          speed: 3,
-          sync: false,
         },
       },
-      reduceDuplicates: false,
-      rotate: {
-        random: {
-          enable: false,
-          minimumValue: 0,
-        },
-        value: 0,
-        animation: {
-          enable: false,
-          speed: 0,
-          sync: false,
-        },
-        direction: 'clockwise',
-        path: false,
+    },
+    stars: {
+      background: {
+        color: '#fff',
       },
-      shadow: {
-        blur: 0,
-        color: { value: '#000000' },
-        enable: false,
-        offset: {
-          x: 0,
-          y: 0,
+      detectRetina: false,
+      interactivity: {
+        detectsOn: 'canvas',
+        events: {
+          resize: true,
         },
       },
-      size: {
-        random: {
-          enable: true,
-          minimumValue: 1,
-        },
-        value: 10,
-        animation: {
-          destroy: 'none',
-          enable: true,
-          minimumValue: 0.1,
-          speed: 20,
-          startValue: 'max',
-          sync: false,
-        },
-      },
-      stroke: {
-        width: 0,
+      particles: {
         color: {
-          value: '#000000',
+          value: '#000',
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 1080,
+          },
+          limit: 500,
+          value: 400,
+        },
+        opacity: {
           animation: {
-            enable: false,
-            speed: 1,
-            sync: true,
+            enable: true,
+            minimumValue: 0.05,
+            speed: 0.25,
+            sync: false,
           },
-        },
-      },
-      twinkle: {
-        lines: {
-          enable: false,
-          frequency: 0.05,
-          opacity: 1,
-        },
-        particles: {
-          enable: false,
-          frequency: 0.05,
-          opacity: 1,
-        },
-      },
-    },
-    pauseOnBlur: true,
-    pauseOnOutsideViewport: false,
-    themes: [],
-  },
-  snow: {
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: 'repulse',
-        },
-        onHover: {
-          enable: true,
-          mode: 'bubble',
-        },
-      },
-      modes: {
-        bubble: {
-          distance: 400,
-          duration: 0.3,
-          opacity: 1,
-          size: 4,
-        },
-        grab: {
-          distance: 400,
-          links: {
-            opacity: 0.5,
+          random: {
+            enable: true,
+            minimumValue: 0.05,
           },
+          value: 1,
         },
-      },
-    },
-    particles: {
-      links: {
-        color: {
-          value: '#ffffff',
+        shape: {
+          type: 'circle',
         },
-        distance: 500,
-        opacity: 0.4,
-        width: 2,
-      },
-      move: {
-        attract: {
-          rotate: {
-            x: 600,
-            y: 1200,
+        size: {
+          random: {
+            enable: true,
+            minimumValue: 0.5,
           },
+          value: 1,
         },
-        direction: 'bottom',
-        enable: true,
-        outModes: {
-          bottom: 'out',
-          left: 'out',
-          right: 'out',
-          top: 'out',
-        },
-      },
-      number: {
-        density: {
+        move: {
+          direction: 'none',
           enable: true,
+          outMode: 'bounce',
+          random: false,
+          speed: 0.1,
+          straight: false,
         },
-        limit: 250,
-        value: 250,
-      },
-      opacity: {
-        random: {
-          enable: true,
-        },
-        value: 0.5,
-        animation: {
-          minimumValue: 0.1,
-          speed: 1,
-        },
-      },
-      size: {
-        random: {
-          enable: true,
-        },
-        value: 10,
-        animation: {
-          minimumValue: 0.1,
-          speed: 40,
-        },
-      },
-      stroke: {
-        color: {
-          value: '#000000',
-          animation: {
-            enable: false,
-            speed: 1,
-            sync: true,
-          },
-        },
-      },
-    },
-  },
-  stars: {
-    background: {
-      color: '#000',
-    },
-    detectRetina: false,
-    fpsLimit: 60,
-    interactivity: {
-      detectsOn: 'canvas',
-      events: {
-        resize: true,
-      },
-    },
-    particles: {
-      color: {
-        value: '#fff',
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 1080,
-        },
-        limit: 500,
-        value: 400,
-      },
-      opacity: {
-        animation: {
-          enable: true,
-          minimumValue: 0.05,
-          speed: 0.25,
-          sync: false,
-        },
-        random: {
-          enable: true,
-          minimumValue: 0.05,
-        },
-        value: 1,
-      },
-      shape: {
-        type: 'circle',
-      },
-      size: {
-        random: {
-          enable: true,
-          minimumValue: 0.5,
-        },
-        value: 1,
       },
     },
   },
