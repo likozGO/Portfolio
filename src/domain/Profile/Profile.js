@@ -16,8 +16,9 @@ const Profile = () => {
   const socialI18n = t('biographyData.social', { returnObjects: true });
   const history = useHistory();
   useEffect(() => {
-    history.push('/settings');
-  });
+    console.log(history);
+    // history.push('/settings');
+  }, []);
   return (
     <>
       <ParticlesBg />

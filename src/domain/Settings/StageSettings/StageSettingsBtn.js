@@ -1,11 +1,19 @@
 import React from 'react';
 import './css/StageSettingsBtn.scss';
 import { Link } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
 
 const StageSettingsBtn = () => {
-  console.log(123);
+  // const dispatch = useDispatch();
+  const navigateToMenu = () => {
+
+  };
   return (
-    <Link to="/" className="settings-btn">
+    <Link
+      to="/"
+      className="settings-btn"
+      onClick={navigateToMenu}
+    >
       <div className="dots-container">
         <div className="dot" />
         <div className="dot" />
