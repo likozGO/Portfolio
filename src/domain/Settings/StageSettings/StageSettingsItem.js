@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/StageSettingsItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPreset, setAnimationStart, setPreset } from '../sliceStageController';
+import { selectPreset, setAnimationStart, setPreset } from '../StageController.slice';
 import IconSuccess from '../../../components/IconSuccess/IconSuccess';
 
 const StageSettingsItem = ({

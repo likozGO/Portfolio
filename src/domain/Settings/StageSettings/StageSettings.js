@@ -5,7 +5,7 @@ import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 import AnimationStyles
   from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 import { useSelector } from 'react-redux';
-import { selectHello, selectPreset } from '../sliceStageController';
+import { selectHello, selectPreset } from '../StageController.slice';
 import './css/StageSettings.scss';
 import StageSettingsItem from './StageSettingsItem';
 

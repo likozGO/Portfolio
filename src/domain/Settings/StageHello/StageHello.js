@@ -2,7 +2,7 @@ import React from 'react';
 import './StageHello.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { selectHello, setHello } from '../sliceStageController';
+import { selectHello, setHello } from '../StageController.slice';
 
 const StageHello = () => {
   const dispatch = useDispatch();

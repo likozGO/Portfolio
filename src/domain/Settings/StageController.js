@@ -5,7 +5,7 @@ import StageHello from './StageHello/StageHello';
 import StageSettings from './StageSettings/StageSettings';
 import {
   setHello,
-} from './sliceStageController';
+} from './StageController.slice';
 
 const StageController = () => {
   const dispatch = useDispatch();

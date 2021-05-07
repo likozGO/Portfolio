@@ -1,10 +1,35 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './domain/Profile/sliceProfile';
-import stageReducer from './domain/Settings/sliceStageController';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER, persistCombineReducers,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import counterReducer from './domain/Profile/Profile.slice';
+import stageReducer from './domain/Settings/StageController.slice';
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+};
+
+const rootReducer = persistCombineReducers(persistConfig, {
+  counter: counterReducer,
+  stage: stageReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default configureStore({
-  reducer: {
-    counter: counterReducer,
-    stage: stageReducer,
-  },
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
 });
