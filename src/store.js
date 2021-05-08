@@ -9,8 +9,8 @@ import {
   REGISTER, persistCombineReducers,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import counterReducer from './domain/Profile/Profile.slice';
-import stageReducer from './domain/Settings/StageController.slice';
+import counterReducer from './pages/Profile/Profile.slice';
+import stageReducer from './pages/Settings/StageController.slice';
 
 const persistConfig = {
   key: 'root',

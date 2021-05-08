@@ -12,8 +12,8 @@ import './i18n';
 import App from './App';
 
 import 'normalize.css';
-import './global/css/index.scss';
-import './global/css/fonts.css';
+import './assets/css/index.scss';
+import './assets/css/fonts.css';
 
 const persistor = persistStore(store);
 

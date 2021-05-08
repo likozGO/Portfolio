@@ -1,7 +1,7 @@
-import ViewHome from '../domain/Profile/Profile';
-import ViewSettings from '../domain/Settings/StageController';
+import ViewHome from '../pages/Profile/Profile';
+import ViewSettings from '../pages/Settings/StageController';
 
-import ViewNoFound from '../domain/Error/NoFound';
+import ViewNoFound from '../pages/Error/NoFound';
 
 export default {
   ViewHome,
