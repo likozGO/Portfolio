@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  FaDownload, FaMailBulk, FaTelegram, FaSkype,
+  FaDownload, FaMailBulk, FaTelegram, FaSkype, FaCogs,
 } from 'react-icons/fa';
 
 import CvPDF from './CV.pdf';
+import { SETTINGS_PATH } from '../../router/RouterUrl';
 
 const biographyData = {
   en: {
@@ -32,6 +33,15 @@ const biographyData = {
         icon: () => <FaSkype />,
       },
     ],
+    header: {
+      links: [
+        {
+          text: 'Settings',
+          link: SETTINGS_PATH,
+          icon: () => <FaCogs />,
+        },
+      ],
+    },
   },
   ru: {
     name: 'Поршнев Денис',
@@ -59,6 +69,15 @@ const biographyData = {
         icon: () => <FaSkype />,
       },
     ],
+    header: {
+      links: [
+        {
+          text: 'Настройки',
+          link: SETTINGS_PATH,
+          icon: () => <FaCogs />,
+        },
+      ],
+    },
   },
 };
 

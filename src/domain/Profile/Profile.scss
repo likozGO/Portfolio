@@ -1,4 +1,4 @@
-@import '../../global/css/mixin';
+@import '../../assets/css/mixin';
 
 //Profile
 .profile-card {
@@ -128,8 +128,6 @@
     padding: 50px 5px 5px 5px;
   }
 }
-
-
 
 @media (max-height: 500px) {
   .profile-card {

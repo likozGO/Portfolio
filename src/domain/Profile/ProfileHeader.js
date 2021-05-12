@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePhoto from './images/photo.jpg';
+import ProfilePhoto from './images/photo.png';
 
 const ProfileHeader = ({ name, position }) => {
   console.log(123);

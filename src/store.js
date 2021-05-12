@@ -11,6 +11,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import counterReducer from './domain/Profile/Profile.slice';
 import stageReducer from './domain/Settings/StageController.slice';
+import navbarReducer from './domain/Navbar/Navbar.slice';
 
 const persistConfig = {
   key: 'root',
@@ -21,6 +22,7 @@ const persistConfig = {
 const rootReducer = persistCombineReducers(persistConfig, {
   counter: counterReducer,
   stage: stageReducer,
+  navbar: navbarReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
