@@ -2,11 +2,20 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import Tooltip from '../../components/Tooltip/Tooltip';
 
-const ProfileSocial = ({ social }) => {
+const ProfileSocial = ({
+  social, greeting, name, position,
+}) => {
   const ExprDownload = 'Download CV';
+
   return (
-    <ul className="profile-social-links">
-      {
+    <>
+      <div className="profile-title">
+        <span>{greeting}</span>
+        <h1>{name}</h1>
+        <h2>{position}</h2>
+      </div>
+      <ul className="profile-social-links">
+        {
         social.map((a, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <li key={i}>
@@ -37,7 +46,8 @@ const ProfileSocial = ({ social }) => {
           </li>
         ))
       }
-    </ul>
+      </ul>
+    </>
   );
 };
 

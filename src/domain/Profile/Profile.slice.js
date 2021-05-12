@@ -1,31 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const profileSlice = createSlice({
-  name: 'counter',
+  name: 'profile',
   initialState: {
-    value: 0,
+    example: '',
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    setExample: (state, action) => {
+      state.example = action.payload;
     },
   },
 });
 
-export const selectCount = (state) => state.counter.value;
+export const selectCount = (state) => state.profile.value;
 
-export const { increment, decrement, incrementByAmount } = profileSlice.actions;
-
-export const incrementAsync = (amount) => (dispatch) => {
-  setTimeout(() => {
-    dispatch(incrementByAmount(amount));
-  }, 1000);
-};
+export const { setExample } = profileSlice.actions;
 
 export default profileSlice.reducer;

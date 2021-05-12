@@ -12,6 +12,11 @@ body {
 }
 
 
+.component-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .bg-animation {
   &.animated {
     top: 0;

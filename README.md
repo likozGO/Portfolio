@@ -13,3 +13,8 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 
+
+//TODO
+0. Занять пространство сверху на странице обо мне
+1. Адаптив;
+2. Подогнать иконки под каждую тему

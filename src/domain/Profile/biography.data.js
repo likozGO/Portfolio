@@ -3,11 +3,12 @@ import {
   FaDownload, FaMailBulk, FaTelegram, FaSkype, FaCogs,
 } from 'react-icons/fa';
 
-import CvPDF from './CV.pdf';
+import CvPDF from '../../assets/documents/CV.pdf';
 import { SETTINGS_PATH } from '../../router/RouterUrl';
 
 const biographyData = {
   en: {
+    greeting: 'Hello there! IM',
     name: 'Porshnev Denis',
     position: 'Frontend Developer',
     about: 'Web developer with experience in the office and remotely. Experienced in dealing with people. Purposeful, proactive and responsible. I have experience working with back-end developers. Specializes in React JS and responsive design.',
@@ -44,6 +45,7 @@ const biographyData = {
     },
   },
   ru: {
+    greeting: 'Привет комрад! Я',
     name: 'Поршнев Денис',
     position: 'ФронтЕнд разработчик',
     about: 'Веб-разработчик с опытом работы в офисе и удаленно. Опытный в общении с людьми. Целеустремленный, инициативный и ответственный. Имею опыт работы с БекЕнд разработчиками. Специализируюсь на React\'е и отзывчивом дизайне.',
