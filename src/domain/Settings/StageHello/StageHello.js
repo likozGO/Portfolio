@@ -9,8 +9,6 @@ const StageHello = () => {
   const { t } = useTranslation();
   const selectHelloAnim = useSelector(selectHello);
   const helloFriendI18n = t('stagesData.helloFriend');
-  console.log(selectHello);
-  console.log(123);
   const hello = new Array(40).fill(helloFriendI18n);
   return (
     <div

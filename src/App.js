@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 // import StageController from './domain/Settings/StageController';
 import { useTranslation } from 'react-i18next';
-import ParticlesBg from './pages/ParticlesBg/ParticlesBg';
-import { selectPreset } from './pages/Settings/StageController.slice';
+import ParticlesBg from './domain/ParticlesBg/ParticlesBg';
+import { selectPreset } from './domain/Settings/StageController.slice';
 import RouterComponent from './router/RouterComponent';
 import routes from './router/Router';
-// import Profile from './domain/Profile/Profile';
+import Navbar from './domain/Navbar/Navbar';
 
 function App() {
   const selectTheme = useSelector(selectPreset);
@@ -18,6 +18,7 @@ function App() {
   return (
     <Router>
       <div className={`theme-picker theme-${selectTheme.theme}`}>
+        <Navbar />
         <ParticlesBg />
         <Switch>
           {routes.map((route) => (

@@ -1,0 +1,92 @@
+@import '../../assets/css/mixin';
+
+.navbar {
+  z-index: 1;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity .5s;
+  &.loading {
+    opacity: 0;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-btn {
+    cursor: pointer;
+    z-index: 1;
+    width: 60px;
+    height: 30px;
+  }
+  .navbar-icons {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    p {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a:visited {
+        color: inherit;
+      }
+    }
+    .navbar-icon-item {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+
+
+.navbar.show-navbar {
+  animation: showNavbar .4s ease-in-out both;
+  .navbar-icons {
+    animation: fadeIn .3s ease-in-out both;
+  }
+}
+.navbar.hide-navbar {
+  animation: hideNavbar .4s ease-in-out both;
+  .navbar-icons {
+    animation: fadeOut .3s ease-in-out both;
+  }
+}
+
+@keyframes showNavbar {
+  0% {
+    right: -50px;
+  }
+  100% {
+    right: 50px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideNavbar {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: -50px;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
