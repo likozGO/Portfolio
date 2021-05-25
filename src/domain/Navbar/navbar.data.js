@@ -10,7 +10,7 @@ const navbarData = {
       links: [
         {
           text: 'Settings',
-          link: SETTINGS_PATH,
+          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
           icon: () => <FaCogs />,
         },
         {
@@ -26,7 +26,7 @@ const navbarData = {
       links: [
         {
           text: 'Настройки',
-          link: SETTINGS_PATH,
+          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
           icon: () => <FaCogs />,
         },
         {

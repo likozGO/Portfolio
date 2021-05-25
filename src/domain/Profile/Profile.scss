@@ -1,17 +1,18 @@
 @import '../../assets/css/mixin';
 
 .profile-card {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  height: 100vh;
   .container {
+    height: 100%;
     display: flex;
+    flex-direction: row;
     max-width: 100%;
   }
   .component-group {
-    padding: 30px;
+    padding: 20px;
     justify-content: center;
-    margin: 10px;
+    margin: 0 10px 0 -160px;
   }
 }
 
@@ -19,7 +20,7 @@
 .profile-header {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   .image-wrapper {
     display: flex;
     text-align: center;
@@ -82,11 +83,11 @@
       margin-right: 0;
     }
     &:hover .social-icon {
-      color: rgba(0, 0, 0, .8);
+      @include color('profile-social-icon-hover');
     }
     .social-icon {
       transition: color linear .15s;
-      color: rgba(0, 0, 0, 1);
+      @include color('profile-social-icon');
     }
     a, span {
       &:before {
@@ -97,7 +98,7 @@
         width: 34px;
         height: 34px;
         border-radius: 50%;
-        background: rgba(0, 0, 0, 0.15);
+        @include background-color('social-icon-highlight');
         opacity: 0;
         transition: opacity 0.15s linear;
         user-select: none;
@@ -114,7 +115,9 @@
 
 //ProfileMain
 .profile-about {
-  background: rgba(0,0,0,.3);
+  @include background-color('profile-about');
+  border: 2px solid;
+  @include border-color('profile-about-border');
   margin-top: 15px;
   padding: 10px 20px;
   p {

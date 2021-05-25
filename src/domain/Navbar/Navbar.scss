@@ -3,12 +3,17 @@
 .navbar {
   z-index: 1;
   display: flex;
-  position: absolute;
-  top: 5%;
-  transform: translateY(-5%);
+  align-items: center;
+  position: relative;
   transition: opacity .5s;
+  height: 100vh;
+  @include background-color('navbar-bg');
+  border-left: 3px solid;
+  @include border-color('navbar-border');
+  @include color('navbar-color');
   &.loading {
     opacity: 0;
+    width: 0;
   }
   .container {
     display: flex;
@@ -21,6 +26,7 @@
     height: 30px;
   }
   .navbar-icons {
+    overflow-x: hidden;
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -39,54 +45,49 @@
       height: 48px;
     }
   }
+
 }
 
 
 
 .navbar.show-navbar {
-  animation: showNavbar .4s ease-in-out both;
   .navbar-icons {
-    animation: fadeIn .3s ease-in-out both;
+    animation: fadeInNavbar .5s ease-in-out both;
   }
 }
 .navbar.hide-navbar {
-  animation: hideNavbar .4s ease-in-out both;
   .navbar-icons {
-    animation: fadeOut .3s ease-in-out both;
+    animation: fadeOutNavbar .5s ease-in-out both;
   }
 }
 
-@keyframes showNavbar {
-  0% {
-    right: -50px;
-  }
-  100% {
-    right: 50px;
-  }
-}
-@keyframes fadeIn {
+@keyframes fadeInNavbar {
   0% {
     opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 0;
+    width: 290px;
   }
   100% {
     opacity: 1;
+    width: 290px;
   }
 }
 
-@keyframes hideNavbar {
-  0% {
-    right: 50px;
-  }
-  100% {
-    right: -50px;
-  }
-}
 
-@keyframes fadeOut {
+@keyframes fadeOutNavbar {
   0% {
     opacity: 1;
+    width: 290px;
+  }
+  50% {
+    opacity: 0;
+    width: 290px;
   }
   100% {
+    width: 0;
     opacity: 0;
   }
 }

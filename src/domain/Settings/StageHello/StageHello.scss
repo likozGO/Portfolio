@@ -1,6 +1,9 @@
 @import "../../../assets/css/mixin";
 
 $fontSize: 8rem;
+$fontSizeTablet: 4rem;
+$fontSizeMobile: 4rem;
+
 .stage-hello {
   position: relative;
   transform-style: preserve-3d;
@@ -62,6 +65,14 @@ $fontSize: 8rem;
           }
         }
       }
+    }
+    @include respond(tablet) {
+      font-size: $fontSizeTablet;
+      line-height: $fontSizeTablet;
+    }
+    @include respond(mobile) {
+      font-size: $fontSizeMobile;
+      line-height: $fontSizeMobile;
     }
   }
 }

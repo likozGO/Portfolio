@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const sliceStage = createSlice({
   name: 'stage',
   initialState: {
-    hello: false,
+    hello: true,
     settings: false,
     preset: {
       lang: 'en',

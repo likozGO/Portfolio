@@ -87,6 +87,7 @@ const StageSettings = () => {
           animation="foldOutAnimation"
           fillParent
           buttons={false}
+          mobileTouch={false}
           infinite={false}
           cssModule={[CoreStyles, AnimationStyles]}
           onTransitionStart={() => setAnimController(true)}

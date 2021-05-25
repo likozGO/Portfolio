@@ -14,6 +14,15 @@ $themes: (
                 'card-bg': #333,
                 'card-shadow': (0 .25rem .25rem rgba(0, 0, 0, 0.2),
                 0 0 1rem rgba(0, 0, 0, 0.2)),
+
+                'profile-social-icon': rgba(255, 255, 255, 1),
+                'profile-social-icon-hover': rgba(114,0,165, .8),
+                'social-icon-highlight': rgba(114,0,165, 0.15),
+                'profile-about': rgba(114,0,165,.7),
+                'profile-about-border': #fff,
+                'navbar-bg': rgba(114,0,165,.7),
+                'navbar-color': #fff,
+                'navbar-border': #fff,
         ),
         'white': (
                 'body_bg': #fff,
@@ -30,6 +39,15 @@ $themes: (
                 'card-bg': #808080,
                 'card-shadow': (0 .25rem .25rem rgba(33, 33, 33, 0.2),
                 0 0 1rem rgba(33, 33, 33, 0.2)),
+
+                'profile-social-icon': rgba(0, 0, 0, 1),
+                'profile-social-icon-hover': rgba(0, 0, 0, .8),
+                'social-icon-highlight': rgba(0, 0, 0, 0.15),
+                'profile-about': rgba(255,255,255,.7),
+                'profile-about-border': #000,
+                'navbar-bg': rgba(255,255,255,.7),
+                'navbar-color': #000,
+                'navbar-border': #000,
         ),
         'dark': (
                 'body_bg': #000,
@@ -46,5 +64,14 @@ $themes: (
                 'card-bg': #111111,
                 'card-shadow': (0 0.25rem 0.25rem rgba(0, 0, 0, 0.2),
                 0 0 1rem rgba(195, 195, 195, 0.2)),
+
+                'profile-social-icon': rgba(255, 255, 255, 1),
+                'profile-social-icon-hover': rgba(255, 255, 255, .8),
+                'social-icon-highlight': rgba(255, 255, 255, 0.15),
+                'profile-about': rgba(0,0,0,.7),
+                'profile-about-border': #fff,
+                'navbar-bg': #000,
+                'navbar-color': #fff,
+                'navbar-border': #fff,
         )
 ) !default;

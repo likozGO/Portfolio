@@ -5,6 +5,7 @@ import ProfileMain from './ProfileMain';
 import ProfileHeader from './ProfileHeader';
 import './Profile.scss';
 import ProfileSocial from './ProfileSocial';
+import Navbar from '../Navbar/Navbar';
 
 const Profile = () => {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ const Profile = () => {
           />
           <ProfileMain about={aboutI18n} />
         </div>
+        <Navbar />
       </div>
     </section>
   );
