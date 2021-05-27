@@ -32,6 +32,9 @@
       pointer-events: none;
       cursor: default;
     }
+    @include respond(_768_min) {
+      padding-top: 135px;
+    }
   }
 }
 
@@ -128,5 +131,8 @@
   }
   @include respond(_768_min) {
     max-width: 160px;
+  }
+  @include respond(_768_min) {
+    top: 100px;
   }
 }

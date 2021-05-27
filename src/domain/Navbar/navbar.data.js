@@ -9,14 +9,14 @@ const navbarData = {
     navbar: {
       links: [
         {
-          text: 'Settings',
-          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
-          icon: () => <FaCogs />,
-        },
-        {
           text: 'About me',
           link: HOME_PATH,
           icon: () => <FaUserNinja />,
+        },
+        {
+          text: 'Settings',
+          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
+          icon: () => <FaCogs />,
         },
       ],
     },
@@ -25,14 +25,14 @@ const navbarData = {
     navbar: {
       links: [
         {
-          text: 'Настройки',
-          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
-          icon: () => <FaCogs />,
-        },
-        {
           text: 'О мне',
           link: HOME_PATH,
           icon: () => <FaUserNinja />,
+        },
+        {
+          text: 'Настройки',
+          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
+          icon: () => <FaCogs />,
         },
       ],
     },

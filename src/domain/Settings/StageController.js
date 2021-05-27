@@ -8,6 +8,7 @@ import {
   setHello,
   selectHello,
 } from './StageController.slice';
+import Navbar from '../Navbar/Navbar';
 
 const StageController = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const StageController = () => {
     <section className="stage-controller">
       <StageHello />
       <StageSettings />
+      <Navbar />
     </section>
   );
 };

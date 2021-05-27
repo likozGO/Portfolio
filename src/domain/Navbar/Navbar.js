@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.scss';
 import { IconContext } from 'react-icons';
 import {
@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Tooltip from '../../components/Tooltip/Tooltip';
 import { selectIsVisible, selectVisibleClass, toggleVisible } from './Navbar.slice';
+import { HOME_PATH } from '../../router/RouterUrl';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -49,11 +50,11 @@ const Navbar = () => {
               delayHide={0}
               clickable
               Elem={(
-                <Link to={item.link}>
+                <NavLink to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
                   <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
                     {item.icon()}
                   </IconContext.Provider>
-                </Link>
+                </NavLink>
               )}
             />
           ))}

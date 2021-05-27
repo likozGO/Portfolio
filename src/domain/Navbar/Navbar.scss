@@ -11,6 +11,7 @@
   border-left: 3px solid;
   @include border-color('navbar-border');
   @include color('navbar-color');
+
   &.loading {
     opacity: 0;
     width: 0;
@@ -46,6 +47,17 @@
       }
       @include respond(_420_min) {
         margin-bottom: unset;
+      }
+      svg {
+        opacity: 0.8;
+        padding: 5px;
+        &:hover {
+          border: 1px solid;
+        }
+      }
+      .active-link svg {
+        opacity: 1;
+        border: 3px solid;
       }
     }
     .navbar-icon-item {
