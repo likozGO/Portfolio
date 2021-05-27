@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import ProfileMain from './ProfileMain';
-import ProfileHeader from './ProfileHeader';
+import ProfilePhoto from './ProfilePhoto';
 import './Profile.scss';
 import ProfileSocial from './ProfileSocial';
 import Navbar from '../Navbar/Navbar';
@@ -24,7 +24,7 @@ const Profile = () => {
   return (
     <section className="profile-card">
       <div className="container">
-        <ProfileHeader />
+        <ProfilePhoto />
         <div className="component-group">
           <ProfileSocial
             social={socialI18n}

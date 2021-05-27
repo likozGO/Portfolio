@@ -66,11 +66,11 @@ $fontSizeMobile: 4rem;
         }
       }
     }
-    @include respond(tablet) {
+    @include respond(_768_min) {
       font-size: $fontSizeTablet;
       line-height: $fontSizeTablet;
     }
-    @include respond(mobile) {
+    @include respond(_480_min) {
       font-size: $fontSizeMobile;
       line-height: $fontSizeMobile;
     }

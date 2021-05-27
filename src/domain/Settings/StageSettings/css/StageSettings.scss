@@ -126,7 +126,7 @@
       --text-color: var(--color-yellow);
     }
   }
-  @include respond(tablet) {
+  @include respond(_768_min) {
     max-width: 160px;
   }
 }

@@ -29,7 +29,7 @@
     overflow: hidden;
     transition: .15s transform linear;
 
-    @include respond(tablet) {
+    @include respond(_768_min) {
       margin: 10px 10px;
     }
 
@@ -43,7 +43,7 @@
       max-height: 200px;
       margin: 0 auto;
       display: block;
-      @include respond(tablet) {
+      @include respond(_768_min) {
         max-height: 150px;
       }
     }
@@ -73,7 +73,7 @@
       margin-top: 30px;
       font-weight: 800;
       letter-spacing: 0.01em;
-        @include respond(tablet) {
+        @include respond(_768_min) {
           font-size: 1.4em;
       }
     }
