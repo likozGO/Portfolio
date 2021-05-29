@@ -50,7 +50,7 @@ const Navbar = () => {
               delayHide={0}
               clickable
               Elem={(
-                <NavLink to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
+                <NavLink onClick={toogleVisible} to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
                   <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
                     {item.icon()}
                   </IconContext.Provider>

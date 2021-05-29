@@ -25,7 +25,7 @@ const Profile = () => {
     <section className="profile-card">
       <div className="container">
         <ProfilePhoto />
-        <div className="component-group">
+        <div className="component-group slide-in-top">
           <ProfileSocial
             social={socialI18n}
             name={nameI18n}
