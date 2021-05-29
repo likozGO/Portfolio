@@ -20,7 +20,9 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-spring": "^9.2.1",
     "react-tooltip": "^4.2.19",
+    "react-transition-group": "^4.4.2",
     "react-tsparticles": "^1.27.0",
     "redux-persist": "^6.0.0"
   },

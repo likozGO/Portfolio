@@ -7,26 +7,26 @@ import {
 
 export const HOME = {
   component: views.ViewHome,
+  exact: true,
   path: HOME_PATH,
   isPrivate: false,
   isRestricted: false,
-  exact: true,
 };
 
 export const SETTINGS = {
   component: views.ViewSettings,
+  exact: false,
   path: SETTINGS_PATH,
   isPrivate: false,
   isRestricted: false,
-  exact: true,
 };
 
 export const NO_FOUND = {
   component: views.ViewNoFound,
+  exact: false,
   path: NO_FOUND_PATH,
   isPrivate: false,
   isRestricted: false,
-  exact: false,
 };
 
 export default [

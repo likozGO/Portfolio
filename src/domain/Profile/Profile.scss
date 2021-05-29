@@ -1,5 +1,6 @@
 @import '../../assets/css/mixin';
 
+
 .profile-card {
   position: relative;
   height: 100vh;
@@ -67,7 +68,6 @@
       width: 100%;
     }
     .image-personal {
-      transform: translateX(-100%);
       width: 80vh;
       height: auto;
       min-width: 200px;
@@ -195,11 +195,43 @@
 }
 
 
-
-.slide-in {
-  animation: slide-in 1s forwards;
-  -webkit-animation: slide-in 1s forwards;
+.profile-card {
+  &.css-transition {
+    &-enter {
+      opacity: 0;
+      .image-personal {
+        transform: translateX(-100%);
+        background: green;
+      }
+    }
+    &-enter-active {
+      opacity: 1;
+      transition: all 500ms ease-in;
+      .image-personal {
+        transform: translateX(0);
+        transition: transform .8s;
+        background: red;
+      }
+    }
+    &-exit {
+      opacity: 1;
+      .image-personal {
+        transform: translateX(0);
+        background: green;
+      }
+    }
+    &-exit-active {
+      opacity: 0;
+      transition: all 500ms ease-out;
+      .image-personal {
+        background: red;
+        transform: translateX(-100%);
+        transition: transform .8s;
+      }
+    }
+  }
 }
+
 
 .slide-in-top {
   animation: slide-in-top 2s forwards;

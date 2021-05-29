@@ -4,7 +4,7 @@ import './NoFound.scss';
 const NoFound = () => {
   console.log(123);
   return (
-    <div>
+    <div className="no-found">
       No found
     </div>
   );

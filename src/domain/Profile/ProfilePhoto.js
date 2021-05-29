@@ -17,7 +17,7 @@ const ProfilePhoto = () => {
   return (
     <div className="profile-photo">
       <div className="image-wrapper">
-        <img alt="Profile" src={currentPhoto[selectTheme.theme]} className="image-personal slide-in" />
+        <img alt="Profile" src={currentPhoto[selectTheme.theme]} className="image-personal" />
         <img alt="Mr Homer" src={CartmanPhoto} className="image-cartoon" />
       </div>
     </div>
