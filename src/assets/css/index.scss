@@ -123,13 +123,13 @@ body {
     }
     &-enter-active {
       opacity: 1;
-      transition: all .4ms ease-in;
+      transition: all .5s linear;
     }
     &-exit {
       opacity: 1;
     }
     &-exit-active {
       opacity: 0;
-      transition: all .4ms ease-out;
+      transition: all .5s linear;
     }
   }

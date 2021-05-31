@@ -195,38 +195,34 @@
 }
 
 
+
+//Animation
 .profile-card {
   &.css-transition {
     &-enter {
-      opacity: 0;
       .image-personal {
         transform: translateX(-100%);
-        background: green;
+        //background: green;
       }
     }
     &-enter-active {
-      opacity: 1;
-      transition: all 500ms ease-in;
       .image-personal {
         transform: translateX(0);
-        transition: transform .8s;
-        background: red;
+        transition: transform .3s;
+        //background: red;
       }
     }
     &-exit {
-      opacity: 1;
       .image-personal {
         transform: translateX(0);
-        background: green;
+        //background: green;
       }
     }
     &-exit-active {
-      opacity: 0;
-      transition: all 500ms ease-out;
       .image-personal {
-        background: red;
+        //background: red;
         transform: translateX(-100%);
-        transition: transform .8s;
+        transition: transform .3s;
       }
     }
   }
