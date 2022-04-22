@@ -60,7 +60,7 @@ export default function RouterComponent({
           classNames="css-transition"
           unmountOnExit
         >
-          {props.disable ? <div /> : <Component />}
+          <Component />
         </CSSTransition>
       )}
     </Route>
