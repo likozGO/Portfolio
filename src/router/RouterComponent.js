@@ -56,7 +56,7 @@ export default function RouterComponent({
       {({ match }) => (
         <CSSTransition
           in={match != null}
-          timeout={700}
+          timeout={400}
           classNames="css-transition"
           unmountOnExit
         >

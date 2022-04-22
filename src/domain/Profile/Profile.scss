@@ -24,7 +24,6 @@
     }
   }
   .component-group {
-    transform: translateY(-100%);
     padding: 20px;
     justify-content: center;
     margin: 0 10px 0 -220px;
@@ -204,6 +203,9 @@
         transform: translateX(-100%);
         //background: green;
       }
+      .component-group {
+        transform: translateY(-100%);
+      }
     }
     &-enter-active {
       .image-personal {
@@ -211,17 +213,28 @@
         transition: transform .3s;
         //background: red;
       }
+      .component-group {
+        transform: translateY(0);
+        transition: transform .3s;
+      }
     }
     &-exit {
       .image-personal {
         transform: translateX(0);
         //background: green;
       }
+      .component-group {
+        transform: translateY(0);
+      }
     }
     &-exit-active {
       .image-personal {
         //background: red;
         transform: translateX(-100%);
+        transition: transform .3s;
+      }
+      .component-group {
+        transform: translateY(-100%);
         transition: transform .3s;
       }
     }
