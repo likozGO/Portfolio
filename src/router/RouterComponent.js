@@ -1,8 +1,8 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { HOME_PATH } from './RouterUrl';
-// import routes from './Router';
+import { HOME_PATH, NO_FOUND_PATH } from './RouterUrl';
+import routes from './Router';
 
 const HandleAuth = () => {
   const checkKey = true;
@@ -18,12 +18,12 @@ const HandleAuth = () => {
 export default function RouterComponent({
   component: Component, path, isPrivate, isRestricted, ...props
 }) {
-  // const location = useLocation();
-  // const pageFound = routes.find((page) => page.path === location.pathname);
-  //
-  // if (!pageFound) {
-  //   return <Redirect to={NO_FOUND_PATH} />;
-  // }
+  const location = useLocation();
+  const pageFound = routes.find((page) => page.path === location.pathname);
+
+  if (!pageFound) {
+    return <Redirect to={NO_FOUND_PATH} />;
+  }
 
   if (!HandleAuth() && isPrivate) {
     // Path private, example: if dont have rights, cant go in
@@ -60,7 +60,7 @@ export default function RouterComponent({
           classNames="css-transition"
           unmountOnExit
         >
-          <Component />
+          {props.disable ? <div /> : <Component />}
         </CSSTransition>
       )}
     </Route>
