@@ -1,0 +1,129 @@
+@import '../stylesheets/mixin';
+
+.navbar {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: opacity .5s;
+  height: 100vh;
+  @include background-color('navbar-bg');
+  border-left: 3px solid;
+  @include border-color('navbar-border');
+  @include color('navbar-color');
+
+  &.loading {
+    opacity: 0;
+    width: 0;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-btn {
+    cursor: pointer;
+    z-index: 1;
+    width: 60px;
+    height: 30px;
+  }
+  .navbar-icons {
+    overflow-x: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include respond(_420_min) {
+      flex-direction: row;
+      width: 100%!important;
+      justify-content: space-evenly;
+    }
+    p {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a:visited {
+        color: inherit;
+      }
+      @include respond(_420_min) {
+        margin-bottom: unset;
+      }
+      svg {
+        opacity: 0.8;
+        padding: 5px;
+        &:hover {
+          border: 1px solid;
+        }
+      }
+      .active-link svg {
+        opacity: 1;
+        border: 3px solid;
+      }
+    }
+    .navbar-icon-item {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @include respond(_1320_min) {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  @include respond(_420_min) {
+    position: absolute;
+    right: unset;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    border: 0;
+    border-bottom: 3px solid;
+  }
+
+}
+
+
+
+.navbar.show-navbar {
+  .navbar-icons {
+    animation: fadeInNavbar .5s ease-in-out both;
+  }
+}
+.navbar.hide-navbar {
+  .navbar-icons {
+    animation: fadeOutNavbar .5s ease-in-out both;
+  }
+}
+
+@keyframes fadeInNavbar {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 0;
+    width: 90px;
+  }
+  100% {
+    opacity: 1;
+    width: 90px;
+  }
+}
+
+
+@keyframes fadeOutNavbar {
+  0% {
+    opacity: 1;
+    width: 90px;
+  }
+  50% {
+    opacity: 0;
+    width: 90px;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}

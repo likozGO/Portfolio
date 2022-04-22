@@ -9,9 +9,10 @@ import {
   REGISTER, persistCombineReducers,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import counterReducer from './domain/Profile/Profile.slice';
-import stageReducer from './domain/Settings/StageController.slice';
-import navbarReducer from './domain/Navbar/Navbar.slice';
+
+import counterReducer from './ducks/profile/profile-slice';
+import stageReducer from './ducks/stages/stage-controller-slice';
+import navbarReducer from './ducks/navbar/navbar-slice';
 
 const persistConfig = {
   key: 'root',

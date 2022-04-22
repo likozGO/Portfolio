@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-
 import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import store from './store';
-
-import './i18n';
-import App from './App';
-
+import './internationalization';
+import App from './app';
 import 'normalize.css';
-import './assets/css/index.scss';
-import './assets/css/fonts.css';
+import './stylesheets/index.scss';
+import './stylesheets/fonts.css';
 
 const persistor = persistStore(store);
 
