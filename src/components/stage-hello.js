@@ -1,20 +1,16 @@
 import React from 'react';
 import './stage-hello.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { selectHello, setHello } from '../ducks/stages/stage-controller-slice';
 
-const StageHello = () => {
-  const dispatch = useDispatch();
+const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
   const { t } = useTranslation();
-  const selectHelloAnim = useSelector(selectHello);
-  const helloFriendI18n = t('stagesData.helloFriend');
+  const helloFriendI18n = t(helloFriendTranslation);
   const hello = new Array(40).fill(helloFriendI18n);
   return (
     <div
-      className={`stage-hello ${!selectHelloAnim && 'hide'}`}
-      onAnimationStart={() => !selectHelloAnim && dispatch(setHello(true))}
-      onAnimationEnd={() => selectHelloAnim && dispatch(setHello(false))}
+      className={`stage-hello ${!selectHello && 'hide'}`}
+      onAnimationStart={() => !selectHello && setHello(true)}
+      onAnimationEnd={() => selectHello && setHello(false)}
     >
       <div
         id="ui"

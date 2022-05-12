@@ -1,32 +1,23 @@
 import React from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import { useDispatch, useSelector } from 'react-redux';
-import ParticlesSetting from '../constanst/particles-settings';
-import {
+import ParticlesSetting from '../constants/particles-settings';
+
+const ParticlesBg = ({
   selectAnimationStart,
   selectPreset,
   setAnimationStart,
-} from '../ducks/stages/stage-controller-slice';
-
-const ParticlesBg = () => {
-  const selectParticles = useSelector(selectPreset);
-  const selectAnimation = useSelector(selectAnimationStart);
-  const dispatch = useDispatch();
+  isEnabled,
+}) => {
   const particlesInit = async (main) => {
     await loadFull(main);
   };
-
-  // const particlesLoaded = (container) => {
-  //   console.log(container);
-  // };
-  if (selectParticles.particles !== 'disabled') {
+  if (isEnabled) {
     return (
       <Particles
         id="tsparticles"
         init={particlesInit}
-        // loaded={particlesLoaded}
-        options={ParticlesSetting[selectParticles.theme][selectParticles.particles]}
+        options={ParticlesSetting[selectPreset.theme][selectPreset.particles]}
       />
     );
   }
@@ -34,8 +25,8 @@ const ParticlesBg = () => {
   return (
     <>
       <div
-        className={`bg-animation ${selectAnimation}`}
-        onAnimationEnd={() => dispatch(setAnimationStart(''))}
+        className={`bg-animation ${selectAnimationStart}`}
+        onAnimationEnd={() => setAnimationStart('')}
       >
         <div className="first" />
         <div className="second" />

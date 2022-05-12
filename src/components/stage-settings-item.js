@@ -1,18 +1,15 @@
 import React from 'react';
 import './stage-settings-item.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectPreset, setAnimationStart, setPreset } from '../ducks/stages/stage-controller-slice';
 import IconSuccess from './icon-success';
 
 const StageSettingsItem = ({
   image, title, text, preset, changeLang,
   disableAnimation, currentStep,
+  selectPreset, setAnimationStart, setPreset,
 }) => {
-  const dispatch = useDispatch();
-  const selectedCard = useSelector(selectPreset);
-  const selectedTheme = preset && selectedCard.theme === preset[1];
-  const selectedLang = preset && selectedCard.lang === preset[1];
-  const selectedParticles = preset && selectedCard.particles === preset[1];
+  const selectedTheme = preset && selectPreset.theme === preset[1];
+  const selectedLang = preset && selectPreset.lang === preset[1];
+  const selectedParticles = preset && selectPreset.particles === preset[1];
   const activeExpression = {
     first: selectedLang,
     second: selectedTheme,
@@ -23,9 +20,9 @@ const StageSettingsItem = ({
   const clickOnCard = () => {
     if (preset) {
       if (preset[0] === 'theme') {
-        dispatch(setAnimationStart('animated'));
+        setAnimationStart('animated');
       }
-      dispatch(setPreset([preset[0], preset[1]]));
+      setPreset([preset[0], preset[1]]);
     }
     if (changeLang && preset) changeLang(preset[1]);
   };

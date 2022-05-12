@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import biographyData from './constanst/biography-data';
-import stagesData from './constanst/stages-data';
-import navbarData from './constanst/navbar-data';
+import biographyData from './constants/biography-data';
+import stagesData from './constants/stages-data';
+import navbarData from './constants/navbar-data';
 
 const resources = {
   en: {
@@ -26,7 +26,6 @@ i18n
   .init({
     resources,
     lng: 'en',
-
     react: {
       useSuspense: false,
     },

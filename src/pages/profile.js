@@ -1,20 +1,29 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
-import './profile.scss';
 import ProfileSocial from '../components/profile-social';
-import Navbar from '../components/navbar';
+import './profile.scss';
+import NavbarContainer from '../containers/navbar-container';
+import { stagesSelectors } from '../ducks/stages';
 
-const Profile = () => {
+const Profile = ({
+  socialTranslation,
+  greetingTranslation,
+  nameTranslation,
+  positionTranslation,
+  aboutTranslation,
+  selectPreset,
+}) => {
   const { t } = useTranslation();
 
-  const socialI18n = t('biographyData.social', { returnObjects: true });
-  const greetingI18n = t('biographyData.greeting');
-  const nameI18n = t('biographyData.name');
-  const positionI18n = t('biographyData.position');
-  const aboutI18n = t('biographyData.about');
+  const socialI18n = t(...socialTranslation);
+  const greetingI18n = t(greetingTranslation);
+  const nameI18n = t(nameTranslation);
+  const positionI18n = t(positionTranslation);
+  const aboutI18n = t(aboutTranslation);
 
   const history = useHistory();
   useEffect(() => {
@@ -24,7 +33,9 @@ const Profile = () => {
   return (
     <section className="profile-card">
       <div className="container">
-        <ProfilePhoto />
+        <ProfilePhoto
+          selectPreset={selectPreset}
+        />
         <div className="component-group">
           <ProfileSocial
             social={socialI18n}
@@ -34,10 +45,24 @@ const Profile = () => {
           />
           <ProfileMain about={aboutI18n} />
         </div>
-        <Navbar />
+        <NavbarContainer />
       </div>
     </section>
   );
 };
 
-export default Profile;
+// eslint-disable-next-line no-unused-vars
+function mapStateToProps(state) {
+  return {
+    socialTranslation: ['biographyData.social', { returnObjects: true }],
+    greetingTranslation: 'biographyData.greeting',
+    nameTranslation: 'biographyData.name',
+    positionTranslation: 'biographyData.position',
+    aboutTranslation: 'biographyData.about',
+    selectPreset: stagesSelectors.selectPreset(state),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+)(Profile);

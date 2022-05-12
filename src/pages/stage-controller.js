@@ -1,34 +1,46 @@
 import React, { useEffect } from 'react';
 import './stage-controller.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import StageHello from '../components/stage-hello';
-import StageSettings from '../components/stage-settings';
-import {
-  setHello,
-  selectHello,
-} from '../ducks/stages/stage-controller-slice';
-import Navbar from '../components/navbar';
+import StageHelloContainer from '../containers/stage-hello-container';
+import StageSettingsContainer from '../containers/stage-settings-container';
+import { stagesSelectors, stagesOperations } from '../ducks/stages';
+import NavbarContainer from '../containers/navbar-container';
 
-const StageController = () => {
-  const dispatch = useDispatch();
-  const helloSelect = useSelector(selectHello);
+const StageController = ({ setHello, isHelloStage }) => {
   const history = useHistory();
 
   // При первом рендере запускаем хелло
+  const isFirstVisit = isHelloStage !== false && !history.location.state.fromHome;
+  console.log(isHelloStage);
   useEffect(() => {
-    if (helloSelect !== false && !history.location.state.fromHome) {
-      dispatch(setHello(true));
-    }
+    if (isFirstVisit) setHello();
   }, []);
 
   return (
     <section className="stage-controller">
-      <StageHello />
-      <StageSettings />
-      <Navbar />
+      <StageHelloContainer />
+      <StageSettingsContainer />
+      <NavbarContainer />
     </section>
   );
 };
 
-export default StageController;
+function mapStateToProps(state) {
+  return {
+    isHelloStage: stagesSelectors.selectHello(state),
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setHello: () => {
+      dispatch(stagesOperations.setHello(true));
+    },
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(StageController);

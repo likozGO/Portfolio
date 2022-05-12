@@ -4,8 +4,6 @@ import AwesomeSlider from 'react-awesome-slider';
 import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 import AnimationStyles
   from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
-import { useSelector } from 'react-redux';
-import { selectHello, selectPreset } from '../ducks/stages/stage-controller-slice';
 import './stage-settings.scss';
 import StageSettingsItem from './stage-settings-item';
 
@@ -22,11 +20,14 @@ import snowParticles from '../assets/images/particles-snow.jpg';
 import bubblesParticles from '../assets/images/particles-bubbles.jpg';
 import StageSettingsBtn from './stage-settings-btn';
 
-const StageSettings = () => {
+const StageSettings = ({
+  selectPreset,
+  selectHello,
+  setAnimationStart,
+  setPreset,
+}) => {
   const [step, setStep] = React.useState('first');
   const [animController, setAnimController] = React.useState(false);
-  const selectHelloAnim = useSelector(selectHello);
-  const selectPrst = useSelector(selectPreset);
   const { t, i18n } = useTranslation();
   const stepsI18n = t(`stagesData.steps.${step}.headline`);
   const stepData = `stagesData.steps.${step}`;
@@ -79,10 +80,10 @@ const StageSettings = () => {
 
   return (
     <section
-      className={`stage-settings ${selectHelloAnim && 'hide'}`}
+      className={`stage-settings ${selectHello && 'hide'}`}
     >
       <SettingsTitle word={stepsI18n} status={animController} />
-      <div className={`steps-container ${selectPrst.particles && 'bg-transparent'}`}>
+      <div className={`steps-container ${selectPreset.particles && 'bg-transparent'}`}>
         <AwesomeSlider
           animation="foldOutAnimation"
           fillParent
@@ -100,6 +101,9 @@ const StageSettings = () => {
           <div className="step step-1">
             <div className="container">
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={EnFlag}
                 title={FirstStepTitleI18n.en}
@@ -107,6 +111,9 @@ const StageSettings = () => {
                 changeLang={() => i18n.changeLanguage('en')}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={RuFlag}
                 title={FirstStepTitleI18n.ru}
@@ -118,6 +125,9 @@ const StageSettings = () => {
           <div className="step step-2">
             <div className="container">
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 preset={['theme', 'default']}
                 title={SecondStepTitleI18n.default}
@@ -126,6 +136,9 @@ const StageSettings = () => {
                 image={defaultPallete}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 preset={['theme', 'dark']}
                 title={SecondStepTitleI18n.dark}
@@ -134,6 +147,9 @@ const StageSettings = () => {
                 image={darkPallete}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 preset={['theme', 'white']}
                 title={SecondStepTitleI18n.white}
@@ -146,24 +162,36 @@ const StageSettings = () => {
           <div className="step step-3">
             <div className="container">
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={noParticles}
                 title={ThirdStepTitleI18n.disabled}
                 preset={['particles', 'disabled']}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={starsParticles}
                 title={ThirdStepTitleI18n.stars}
                 preset={['particles', 'stars']}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={snowParticles}
                 title={ThirdStepTitleI18n.snow}
                 preset={['particles', 'snow']}
               />
               <StageSettingsItem
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
                 currentStep={step}
                 image={bubblesParticles}
                 title={ThirdStepTitleI18n.bubbles}
@@ -174,18 +202,27 @@ const StageSettings = () => {
           <div className="step step-4">
             <div className="container">
               <StageSettingsItem
-                image={imageCompare.first[selectPrst.lang]}
-                title={t(`stagesData.steps.first.title.${[selectPrst.lang]}`)}
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
+                image={imageCompare.first[selectPreset.lang]}
+                title={t(`stagesData.steps.first.title.${[selectPreset.lang]}`)}
               />
               <StageSettingsItem
-                image={imageCompare.second[selectPrst.theme]}
-                title={t(`stagesData.steps.second.title.${[selectPrst.theme]}`)}
-                text={t(`stagesData.steps.second.text.${[selectPrst.theme]}`)}
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
+                image={imageCompare.second[selectPreset.theme]}
+                title={t(`stagesData.steps.second.title.${[selectPreset.theme]}`)}
+                text={t(`stagesData.steps.second.text.${[selectPreset.theme]}`)}
                 disableAnimation
               />
               <StageSettingsItem
-                image={imageCompare.third[selectPrst.particles]}
-                title={t(`stagesData.steps.third.title.${[selectPrst.particles]}`)}
+                selectPreset={selectPreset}
+                setAnimationStart={setAnimationStart}
+                setPreset={setPreset}
+                image={imageCompare.third[selectPreset.particles]}
+                title={t(`stagesData.steps.third.title.${[selectPreset.particles]}`)}
               />
               <div className="settings-btn-wrapper">
                 <StageSettingsBtn />

@@ -6,7 +6,7 @@ import {
   HOME_PATH,
   SETTINGS_PATH,
   NO_FOUND_PATH,
-} from './constanst/router-urls';
+} from './constants/router-urls';
 
 export const HOME = {
   component: ViewHome,

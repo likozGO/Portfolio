@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import ParticlesBg from './components/particles-bg';
-import { selectPreset } from './ducks/stages/stage-controller-slice';
+import ParticlesBgContainer from './containers/particles-bg-container';
+import { stagesSelectors } from './ducks/stages/index';
 import RouterComponent from './components/router-component';
 import routes from './routes';
 
 function App() {
-  const selectTheme = useSelector(selectPreset);
+  const selectTheme = useSelector(stagesSelectors.selectPreset);
   const { i18n } = useTranslation();
   useEffect(() => {
     i18n.changeLanguage(selectTheme.lang);
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className={`theme-picker theme-${selectTheme.theme}`}>
-        <ParticlesBg />
+        <ParticlesBgContainer />
         {routes.map((route) => (
           <RouterComponent
             key={route.path}

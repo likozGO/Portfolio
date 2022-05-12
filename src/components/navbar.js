@@ -6,29 +6,17 @@ import {
   FaBars, FaTimes,
 } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
 import Tooltip from './tooltip';
-import { selectIsVisible, selectVisibleClass, toggleVisible } from '../ducks/navbar/navbar-slice';
-import { HOME_PATH } from '../constanst/router-urls';
+import { HOME_PATH } from '../constants/router-urls';
 
-const Navbar = () => {
-  const dispatch = useDispatch();
-  const selectVisible = useSelector(selectIsVisible);
-  const selectVisibleModifier = useSelector(selectVisibleClass);
+const Navbar = ({
+  toggleVisible, navbarTranslation, selectVisible, selectVisibleModifier,
+}) => {
   const [isAnimationReady, setAnimationReady] = useState(false);
   const { t } = useTranslation();
-  const navbarI18n = t('navbarData.navbar.links', { returnObjects: true });
-
-  const toogleVisible = () => {
-    if (selectVisible) {
-      dispatch(toggleVisible({ isVisible: false, visibleClass: 'hide-navbar' }));
-    } else {
-      dispatch(toggleVisible({ isVisible: true, visibleClass: 'show-navbar' }));
-    }
-  };
-
+  const navbarI18n = t(...navbarTranslation);
   useEffect(() => {
-    if (!selectVisibleModifier) dispatch(toggleVisible({ isVisible: false, visibleClass: 'hide-navbar' }));
+    if (!selectVisibleModifier) toggleVisible(selectVisible);
   }, []);
   return (
     <>
@@ -38,8 +26,8 @@ const Navbar = () => {
       >
         <IconContext.Provider value={{ className: 'btn navbar-btn' }} type="button">
           {selectVisible
-            ? <FaTimes onClick={toogleVisible} />
-            : <FaBars onClick={toogleVisible} />}
+            ? <FaTimes onClick={() => toggleVisible(selectVisible)} />
+            : <FaBars onClick={() => toggleVisible(selectVisible)} />}
         </IconContext.Provider>
         <div className="navbar-icons">
           {/* eslint-disable react/no-array-index-key */}
@@ -50,7 +38,7 @@ const Navbar = () => {
               delayHide={0}
               clickable
               Elem={(
-                <NavLink onClick={toogleVisible} to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
+                <NavLink onClick={toggleVisible} to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
                   <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
                     {item.icon()}
                   </IconContext.Provider>

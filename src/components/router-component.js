@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { HOME_PATH, NO_FOUND_PATH } from '../constanst/router-urls';
+import { HOME_PATH, NO_FOUND_PATH } from '../constants/router-urls';
 import routes from '../routes';
 
 const HandleAuth = () => {
