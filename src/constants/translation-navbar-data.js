@@ -1,8 +1,10 @@
 import React from 'react';
 import {
-  FaCogs, FaUserNinja,
+  FaCogs, FaUserNinja, FaCode, FaBuilding,
 } from 'react-icons/fa';
-import { HOME_PATH, SETTINGS_PATH } from './router-urls';
+import {
+  COMPANY_PATH, HOME_PATH, SETTINGS_PATH, PROJECTS_PATH,
+} from './router-urls';
 
 const navbarData = {
   en: {
@@ -17,6 +19,16 @@ const navbarData = {
           text: 'Settings',
           link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
           icon: () => <FaCogs />,
+        },
+        {
+          text: 'Company',
+          link: COMPANY_PATH,
+          icon: () => <FaBuilding />,
+        },
+        {
+          text: 'Projects',
+          link: PROJECTS_PATH,
+          icon: () => <FaCode />,
         },
       ],
     },
@@ -33,6 +45,16 @@ const navbarData = {
           text: 'Настройки',
           link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
           icon: () => <FaCogs />,
+        },
+        {
+          text: 'Компании',
+          link: COMPANY_PATH,
+          icon: () => <FaBuilding />,
+        },
+        {
+          text: 'Проекты',
+          link: PROJECTS_PATH,
+          icon: () => <FaCode />,
         },
       ],
     },
