@@ -8,6 +8,7 @@ import ProfileSocial from '../components/profile-social';
 import './profile.scss';
 import NavbarContainer from '../containers/navbar-container';
 import { stagesSelectors } from '../ducks/stages';
+import { BIOGRAPHY_DATA } from '../constants/translation-keys';
 
 const Profile = ({
   socialTranslation,
@@ -54,11 +55,11 @@ const Profile = ({
 // eslint-disable-next-line no-unused-vars
 function mapStateToProps(state) {
   return {
-    socialTranslation: ['biographyData.social', { returnObjects: true }],
-    greetingTranslation: 'biographyData.greeting',
-    nameTranslation: 'biographyData.name',
-    positionTranslation: 'biographyData.position',
-    aboutTranslation: 'biographyData.about',
+    socialTranslation: [BIOGRAPHY_DATA.SOCIAL, { returnObjects: true }],
+    greetingTranslation: BIOGRAPHY_DATA.GREETING,
+    nameTranslation: BIOGRAPHY_DATA.NAME,
+    positionTranslation: BIOGRAPHY_DATA.POSITION,
+    aboutTranslation: BIOGRAPHY_DATA.ABOUT,
     selectPreset: stagesSelectors.selectPreset(state),
   };
 }

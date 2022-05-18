@@ -15,6 +15,7 @@ const initialState = {
     particles: '',
   },
   animationStart: '',
+  step: 'first',
 };
 
 export const sliceStage = createSlice({
@@ -25,6 +26,7 @@ export const sliceStage = createSlice({
     setSettings: (state, action) => actions.setSettings(state, action),
     setPreset: (state, action) => actions.setPreset(state, action),
     setAnimationStart: (state, action) => actions.setAnimationStart(state, action),
+    setStep: (state, action) => actions.setStep(state, action),
   },
 });
 

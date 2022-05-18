@@ -9,39 +9,6 @@
     }
 }
 
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
 @keyframes rainbow {
     0%, 100% {
         transform: translatey(var(--axis-y));

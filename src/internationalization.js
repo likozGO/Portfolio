@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import biographyData from './constants/biography-data';
-import stagesData from './constants/stages-data';
-import navbarData from './constants/navbar-data';
+import biographyData from './constants/translation-biography-data';
+import stagesData from './constants/translation-stages-data';
+import navbarData from './constants/translation-navbar-data';
 
 const resources = {
   en: {

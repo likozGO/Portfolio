@@ -5,7 +5,7 @@ import Tooltip from './tooltip';
 const ProfileSocial = ({
   social, greeting, name, position,
 }) => {
-  const ExprDownload = 'Download CV';
+  const DOWNLOAD_CV = 'Download CV';
 
   return (
     <>
@@ -21,11 +21,11 @@ const ProfileSocial = ({
           <li key={i}>
             {/* eslint-disable eqeqeq */}
             <Tooltip
-              text={a.text === ExprDownload ? a.text : a.link}
-              delayHide={a.text !== ExprDownload ? 150 : 0}
-              clickable={a.text !== ExprDownload}
+              text={a.text === DOWNLOAD_CV ? a.text : a.link}
+              delayHide={a.text !== DOWNLOAD_CV ? 150 : 0}
+              clickable={a.text !== DOWNLOAD_CV}
               Elem={
-                (a.text === ExprDownload
+                (a.text === DOWNLOAD_CV
                   ? (
                     <a download href={a.link}>
                       <IconContext.Provider value={{ className: 'social-icon' }}>

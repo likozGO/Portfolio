@@ -5,6 +5,7 @@ export const selectSettings = (state) => state.stage.settings;
 export const selectPreset = (state) => state.stage.preset;
 export const isPresetEnabled = (state) => state.stage.preset.particles !== 'disabled';
 export const selectAnimationStart = (state) => state.stage.animationStart;
+export const selectStep = (state) => state.stage.step;
 
 export default {
   selectHello,
@@ -12,4 +13,5 @@ export default {
   selectPreset,
   selectAnimationStart,
   isPresetEnabled,
+  selectStep,
 };

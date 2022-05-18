@@ -11,12 +11,12 @@ import 'normalize.css';
 import './stylesheets/index.scss';
 import './stylesheets/fonts.css';
 
-const persistor = persistStore(store);
+const persist = persistStore(store);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persist}>
         <Scrollbars
           style={{ display: 'flex' }}
           autoHide

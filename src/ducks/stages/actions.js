@@ -11,10 +11,14 @@ const setPreset = (state, action) => {
 const setAnimationStart = (state, action) => {
   state.animationStart = action.payload;
 };
+const setStep = (state, action) => {
+  state.step = action.payload;
+};
 
 export default {
   setHello,
   setSettings,
   setPreset,
   setAnimationStart,
+  setStep,
 };

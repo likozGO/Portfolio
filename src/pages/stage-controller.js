@@ -12,7 +12,7 @@ const StageController = ({ setHello, isHelloStage }) => {
 
   // При первом рендере запускаем хелло
   const isFirstVisit = isHelloStage !== false && !history.location.state.fromHome;
-  console.log(isHelloStage);
+
   useEffect(() => {
     if (isFirstVisit) setHello();
   }, []);
