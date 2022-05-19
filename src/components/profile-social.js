@@ -18,8 +18,8 @@ const ProfileSocial = ({
   };
 
   const socialBuilder = (type, data) => {
-    if (!socialTypes.includes(type) || type === CV) return;
-    if (type === TELEGRAM) {
+    if (!socialTypes.includes(type)) return;
+    if (type === TELEGRAM || type === CV) {
       navigateToLink(data);
       return;
     }
@@ -44,24 +44,13 @@ const ProfileSocial = ({
               text={icon.key === CV ? icon.text : icon.link}
               delayHide={icon.key !== CV ? 150 : 0}
               clickable
-              Elem={
-                (icon.key === CV
-                  ? (
-                    <a download href={icon.link}>
-                      <IconContext.Provider value={{ className: 'social-icon copied' }}>
-                        {icon.icon()}
-                      </IconContext.Provider>
-                    </a>
-                  )
-                  : (
-                    <span href={icon.link}>
-                      <IconContext.Provider value={{ className: 'social-icon copied' }}>
-                        {icon.icon()}
-                      </IconContext.Provider>
-                    </span>
-                  )
-                )
-              }
+              Elem={(
+                <span href={icon.link}>
+                  <IconContext.Provider value={{ className: 'social-icon copied' }}>
+                    {icon.icon()}
+                  </IconContext.Provider>
+                </span>
+                  )}
             />
           </li>
         ))

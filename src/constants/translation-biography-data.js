@@ -3,7 +3,6 @@ import {
   FaDownload, FaMailBulk, FaTelegram, FaSkype, FaCogs,
 } from 'react-icons/fa';
 
-import CvPDF from '../assets/documents/CV.pdf';
 import { SETTINGS_PATH } from './router-urls';
 
 export const CV = 'cv';
@@ -22,8 +21,8 @@ const biographyData = {
     social: [
       {
         key: CV,
-        text: 'Download CV',
-        link: CvPDF,
+        text: 'CV',
+        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
         icon: () => <FaDownload />,
       },
       {
@@ -63,8 +62,8 @@ const biographyData = {
     social: [
       {
         key: CV,
-        text: 'Скачать CV',
-        link: CvPDF,
+        text: 'CV',
+        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
         icon: () => <FaDownload />,
       },
       {
