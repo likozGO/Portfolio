@@ -20,9 +20,16 @@ $themes: (
                 'social-icon-highlight': rgba(114,0,165, 0.15),
                 'profile-about': rgba(114,0,165,.7),
                 'profile-about-border': #fff,
+
                 'navbar-bg': rgba(114,0,165,.7),
                 'navbar-color': #fff,
                 'navbar-border': #fff,
+
+                'toast_color': #fff,
+                'toast_bg': #7200a5,
+                'toast_close': #fff,
+                'toast_progress': #fff,
+                'toast_icon': #fff,
         ),
         'white': (
                 'body_bg': #fff,
@@ -45,9 +52,16 @@ $themes: (
                 'social-icon-highlight': rgba(0, 0, 0, 0.15),
                 'profile-about': rgba(255,255,255,.7),
                 'profile-about-border': #000,
+
                 'navbar-bg': rgba(255,255,255,.7),
                 'navbar-color': #000,
                 'navbar-border': #000,
+
+                'toast_color': #000,
+                'toast_bg': #fff,
+                'toast_close': #000,
+                'toast_progress': #000,
+                'toast_icon': #000,
         ),
         'dark': (
                 'body_bg': #000,
@@ -70,8 +84,15 @@ $themes: (
                 'social-icon-highlight': rgba(255, 255, 255, 0.15),
                 'profile-about': rgba(0,0,0,.7),
                 'profile-about-border': #fff,
+
                 'navbar-bg': #000,
                 'navbar-color': #fff,
                 'navbar-border': #fff,
+
+                'toast_color': #fff,
+                'toast_bg': #000,
+                'toast_close': #fff,
+                'toast_progress': #fff,
+                'toast_icon': #fff,
         )
 ) !default;

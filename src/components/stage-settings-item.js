@@ -33,7 +33,7 @@ const StageSettingsItem = ({
       role="button"
       tabIndex={0}
       className="card"
-      onClick={() => clickOnCard()}
+      onClick={clickOnCard}
     >
       <IconSuccess active={stepExpr ? 'active' : false} />
       <div className="card__image-container" style={{ display: !image && 'none' }}>

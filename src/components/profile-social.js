@@ -1,11 +1,31 @@
 import React from 'react';
 import { IconContext } from 'react-icons';
+import { toast } from 'react-toastify';
 import Tooltip from './tooltip';
+
+import {
+  socialTypes, CV, TELEGRAM,
+} from '../constants/translation-biography-data';
 
 const ProfileSocial = ({
   social, greeting, name, position,
 }) => {
-  const DOWNLOAD_CV = 'Download CV';
+  const navigateToLink = (location) => {
+    window.open(location, '_blank');
+  };
+  const copyToClipboard = (e) => {
+    navigator.clipboard.writeText(e);
+  };
+
+  const socialBuilder = (type, data) => {
+    if (!socialTypes.includes(type) || type === CV) return;
+    if (type === TELEGRAM) {
+      navigateToLink(data);
+      return;
+    }
+    copyToClipboard(data);
+    toast.info(`Copied: ${data}`, { autoClose: 1000 });
+  };
 
   return (
     <>
@@ -16,27 +36,27 @@ const ProfileSocial = ({
       </div>
       <ul className="profile-social-links">
         {
-        social.map((a, i) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <li key={i}>
+        social.map((icon, ind) => (
+          // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
+          <li key={ind} onClick={() => socialBuilder(icon.key, icon.link)}>
             {/* eslint-disable eqeqeq */}
             <Tooltip
-              text={a.text === DOWNLOAD_CV ? a.text : a.link}
-              delayHide={a.text !== DOWNLOAD_CV ? 150 : 0}
-              clickable={a.text !== DOWNLOAD_CV}
+              text={icon.key === CV ? icon.text : icon.link}
+              delayHide={icon.key !== CV ? 150 : 0}
+              clickable
               Elem={
-                (a.text === DOWNLOAD_CV
+                (icon.key === CV
                   ? (
-                    <a download href={a.link}>
-                      <IconContext.Provider value={{ className: 'social-icon' }}>
-                        {a.icon()}
+                    <a download href={icon.link}>
+                      <IconContext.Provider value={{ className: 'social-icon copied' }}>
+                        {icon.icon()}
                       </IconContext.Provider>
                     </a>
                   )
                   : (
-                    <span href={a.link}>
-                      <IconContext.Provider value={{ className: 'social-icon' }}>
-                        {a.icon()}
+                    <span href={icon.link}>
+                      <IconContext.Provider value={{ className: 'social-icon copied' }}>
+                        {icon.icon()}
                       </IconContext.Provider>
                     </span>
                   )

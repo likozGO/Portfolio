@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -13,9 +15,11 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(selectTheme.lang);
   }, []);
+
   return (
     <Router>
       <div className={`theme-picker theme-${selectTheme.theme}`}>
+        <ToastContainer limit={3} toastClassName="toast" />
         <ParticlesBgContainer />
         {routes.map((route) => (
           <RouterComponent

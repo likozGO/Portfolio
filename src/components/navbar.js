@@ -15,9 +15,11 @@ const Navbar = ({
   const [isAnimationReady, setAnimationReady] = useState(false);
   const { t } = useTranslation();
   const navbarI18n = t(...navbarTranslation);
+
   useEffect(() => {
     if (!selectVisibleModifier) toggleVisible(selectVisible);
   }, []);
+
   return (
     <>
       <div
@@ -31,9 +33,9 @@ const Navbar = ({
         </IconContext.Provider>
         <div className="navbar-icons">
           {/* eslint-disable react/no-array-index-key */}
-          {navbarI18n.map((item, indx) => (
+          {navbarI18n.map((item, ind) => (
             <Tooltip
-              key={indx}
+              key={ind}
               text={item.text}
               delayHide={0}
               clickable

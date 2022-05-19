@@ -46,6 +46,19 @@ body {
   @include background-image('body_bg_image');
 }
 
+.toast {
+  @include color('toast_color');
+  @include background-color('toast_bg');
+  svg {
+    @include fill('toast_icon');
+  }
+  [aria-label="close"] {
+    @include color('toast_close');
+  }
+  [aria-label="notification timer"] {
+    @include background-color('toast_progress');
+  }
+}
 
 .theme-picker {
   @include color('body_color');
