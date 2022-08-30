@@ -2,35 +2,9 @@ import React from 'react';
 import './projects.scss';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Div from '../components/Div';
 import ListingPage from '../components/projects-page-listing';
 import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
 import { projectsSelectors, projectsOperations } from '../ducks/projects';
-
-// TODO
-// 1. Убрать import Div from '../components/Div'; везде
-// 2. Убрать отовсюду модули, переделать в scss
-// 3. Проверить z-index при смене роута
-// 4. Убрать стейты (возможно оставить там где анимация, нужно подумать)
-// 5. Проверить как работает на моб устройствах
-// 6. Проверить что будет если открыть без кэша
-// 7. Изменить анимацию если открывается не через /projects
-// а просто переходом на данную страницу или рефреш
-
-const AbsoluteDiv = ({ children, style }) => (
-  <Div
-    style={{
-      ...style,
-      height: '100%',
-      width: '100%',
-      left: 0,
-      top: 0,
-      position: 'absolute',
-    }}
-  >
-    {children}
-  </Div>
-);
 
 const Projects = ({ setProject }) => {
   const history = useHistory();
@@ -65,14 +39,23 @@ const Projects = ({ setProject }) => {
       position: 'absolute', top: 0, right: 0, left: 0, bottom: 0,
     }}
     >
-      <Div
-        fillParent
-        style={{ height: '100%', width: '100%', position: 'relative' }}
+      <div
+        style={{
+          height: '100%', width: '100%', position: 'relative', flex: 1, alignSelf: 'stretch',
+        }}
       >
-        <AbsoluteDiv style={{ zIndex: 99999 }}>
+        <div style={{
+          zIndex: 9999,
+          height: '100%',
+          width: '100%',
+          left: 0,
+          top: 0,
+          position: 'absolute',
+        }}
+        >
           <ListingPage onItemSelected={onItemSelected} />
-        </AbsoluteDiv>
-      </Div>
+        </div>
+      </div>
     </div>
   );
 };

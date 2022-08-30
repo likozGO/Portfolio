@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Div from './Div';
 import reactBackgroundImage from '../assets/images/Images/react-background-image.png';
 import reactNativeBackgroundImage from '../assets/images/photo-black.png';
 import androidBackgroundImage from '../assets/images/Images/404-peter.png';
@@ -18,27 +17,49 @@ const ListingPage = ({ onItemSelected }) => {
   ];
 
   return (
-    <Div column fillParent align className={styles.page_container}>
+    <div style={{
+      color: 'white',
+      alignItems: 'center',
+      flex: 1,
+      alignSelf: 'stretch',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+    >
       <h1 className={styles.page_title}>Page Transition Example</h1>
       <h3> Click on any one of the below items </h3>
-      <Div fillParent row align justify="space_evenly" className={styles.page_container}>
+      <div
+        style={{
+          flex: 1,
+          alignSelf: 'stretch',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          color: 'white',
+        }}
+      >
         {images.map((image, index) => (
           // Adds different color class to different items
-          <Div
-            align
-            justify
+          <button
+            type="button"
+            key={`${image}123`}
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
             onClick={(event) => onItemSelected(event, { image, index })}
             className={`${styles.image_container} ${styles[`color_${index + 1}`]}`}
           >
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <img
               className={styles.tech_image}
+              alt="Project"
               src={image}
             />
-          </Div>
+          </button>
         ))}
-      </Div>
-    </Div>
+      </div>
+    </div>
   );
 };
 

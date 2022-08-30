@@ -1,38 +1,36 @@
 import React from 'react';
 import './projects.scss';
 import { connect } from 'react-redux';
-import Div from '../components/Div';
 import DescriptionPage from '../components/projects-page-description';
 import { projectsSelectors } from '../ducks/projects';
-
-const AbsoluteDiv = ({ children, style }) => (
-  <Div
-    style={{
-      ...style,
-      height: '100%',
-      width: '100%',
-      left: 0,
-      top: 0,
-      position: 'absolute',
-    }}
-  >
-    {children}
-  </Div>
-);
 
 const ProjectsDescription = ({ currentProject }) => {
   const { containerPosition, imagePosition, selectedItemDetails } = currentProject;
   console.log(selectedItemDetails);
   return (
     <div style={{
-      position: 'absolute', top: 0, right: 0, left: 0, bottom: 0,
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      left: 0,
+      bottom: 0,
+      zIndex: 10001,
     }}
     >
-      <Div
-        fillParent
-        style={{ height: '100%', width: '100%', position: 'relative' }}
+      <div
+        style={{
+          height: '100%', width: '100%', position: 'relative', flex: 1, alignSelf: 'stretch',
+        }}
       >
-        <AbsoluteDiv style={{ zIndex: 99999 }}>
+        <div style={{
+          zIndex: 10000,
+          height: '100%',
+          width: '100%',
+          left: 0,
+          top: 0,
+          position: 'absolute',
+        }}
+        >
           <DescriptionPage
             itemPosition={{
               containerPosition,
@@ -40,9 +38,8 @@ const ProjectsDescription = ({ currentProject }) => {
             }}
             selectedItemDetails={selectedItemDetails}
           />
-        </AbsoluteDiv>
-
-      </Div>
+        </div>
+      </div>
     </div>
   );
 };

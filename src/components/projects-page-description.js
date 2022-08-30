@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
 
-import Div from './Div';
 import TransitionLayer from './projects-transition-layer';
 import styles from './projects-page-description.module.scss';
 import { PROJECTS_PATH } from '../constants/router-urls';
@@ -31,17 +30,24 @@ const DescriptionPage = ({ itemPosition, selectedItemDetails, history: { replace
   };
 
   return (
-    <Div column align className={`${styles.page_container} ${showDescription ? styles[`color_${selectedItemDetails.index + 1}`] : ''}`}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+      className={`${styles.page_container} ${showDescription ? styles[`color_${selectedItemDetails.index + 1}`] : ''}`}
+    >
       {
-        (!isEmpty(imagePosition) && !isEmpty(itemPosition) && !showDescription) && (
-          <TransitionLayer
-            selectedItemDetails={selectedItemDetails}
-            itemPosition={itemPosition}
-            imageToPosition={imagePosition}
-            onAnimationEnd={onAnimationEnd}
-          />
-        )
-      }
+          (!isEmpty(imagePosition) && !isEmpty(itemPosition) && !showDescription) && (
+            <TransitionLayer
+              selectedItemDetails={selectedItemDetails}
+              itemPosition={itemPosition}
+              imageToPosition={imagePosition}
+              onAnimationEnd={onAnimationEnd}
+            />
+          )
+        }
 
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img
@@ -56,7 +62,7 @@ const DescriptionPage = ({ itemPosition, selectedItemDetails, history: { replace
         <p>Pellentesque eros elit, ornare eu consequat ac, pharetra et tortor. Nullam efficitur nisi sed consequat efficitur. Praesent malesuada, enim vitae mollis porttitor, turpis lectus tincidunt sapien, eu condimentum dui tellus rutrum urna. Mauris ullamcorper massa risus, vel rutrum risus maximus sit amet. Cras condimentum nibh id ligula convallis vehicula. Nam vehicula facilisis dui a vehicula. Mauris porta sed nibh non cursus. In auctor id orci sed euismod. Vestibulum libero quam, faucibus eu feugiat vitae, convallis a tellus. Nulla venenatis eget quam at sagittis. Maecenas lacus enim, luctus sed facilisis fermentum, aliquam sit amet mi. Nullam scelerisque condimentum fringilla. Mauris rutrum enim orci, nec vestibulum ex sollicitudin in. Cras vestibulum facilisis magna, et ullamcorper ex molestie vel. Aenean felis felis, vehicula vitae eleifend a, laoreet at sapien.</p>
         <p>Duis fermentum id augue ac congue. Curabitur diam orci, auctor non leo a, euismod lobortis velit. Vivamus sodales nulla a diam tempor mattis. Suspendisse sit amet egestas velit. Vivamus sit amet metus tellus. Fusce blandit lectus vitae enim posuere, ac tristique dui maximus. Nullam rhoncus elementum mi. Nulla tempor felis ut metus scelerisque, ut porttitor odio pretium. Cras porttitor vestibulum nisi. Maecenas eu lacus posuere arcu euismod cursus.</p>
       </div>
-    </Div>
+    </div>
   );
 };
 
