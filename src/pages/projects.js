@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
-import { withRouter, Route } from 'react-router-dom';
+import React from 'react';
 import './projects.scss';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Div from '../components/Div';
-import DescriptionPage from '../components/projects-page-description';
 import ListingPage from '../components/projects-page-listing';
+import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
+import { projectsSelectors, projectsOperations } from '../ducks/projects';
+
+// TODO
+// 1. Убрать import Div from '../components/Div'; везде
+// 2. Убрать отовсюду модули, переделать в scss
+// 3. Проверить z-index при смене роута
+// 4. Убрать стейты (возможно оставить там где анимация, нужно подумать)
+// 5. Проверить как работает на моб устройствах
+// 6. Проверить что будет если открыть без кэша
+// 7. Изменить анимацию если открывается не через /projects
+// а просто переходом на данную страницу или рефреш
 
 const AbsoluteDiv = ({ children, style }) => (
   <Div
@@ -20,10 +32,8 @@ const AbsoluteDiv = ({ children, style }) => (
   </Div>
 );
 
-const Projects = ({ history: { push } }) => {
-  const [selectedItemDetails, setSelectedItemDetails] = useState({});
-  const [containerPosition, setContainerPosition] = useState({});
-  const [imagePosition, setImagePosition] = useState({});
+const Projects = ({ setProject }) => {
+  const history = useHistory();
 
   const onItemSelected = (event, item) => {
     const containerTarget = event.currentTarget;
@@ -32,22 +42,23 @@ const Projects = ({ history: { push } }) => {
     const containerDimensions = containerTarget.getBoundingClientRect();
     const imageDimensions = imageTarget.getBoundingClientRect();
 
-    // DOMRect object not iterable, so can't destructure
-    setContainerPosition({
-      width: containerDimensions.width,
-      height: containerDimensions.height,
-      top: containerDimensions.top,
-      left: containerDimensions.left,
+    setProject({
+      containerPosition: {
+        width: containerDimensions.width,
+        height: containerDimensions.height,
+        top: containerDimensions.top,
+        left: containerDimensions.left,
+      },
+      imagePosition: {
+        width: imageDimensions.width,
+        height: imageDimensions.height,
+        top: imageDimensions.top,
+        left: imageDimensions.left,
+      },
+      selectedItemDetails: item,
     });
 
-    setImagePosition({
-      width: imageDimensions.width,
-      height: imageDimensions.height,
-      top: imageDimensions.top,
-      left: imageDimensions.left,
-    });
-    setSelectedItemDetails(item);
-    push('projects-123');
+    history.push(PROJECTS_DESCRIPTION_PATH);
   };
   return (
     <div style={{
@@ -58,27 +69,29 @@ const Projects = ({ history: { push } }) => {
         fillParent
         style={{ height: '100%', width: '100%', position: 'relative' }}
       >
-        <Route exact path="/projects/">
-          <AbsoluteDiv style={{ zIndex: 99999 }}>
-            <ListingPage onItemSelected={onItemSelected} />
-          </AbsoluteDiv>
-        </Route>
-
-        <Route exact path="/projects-123/">
-          <AbsoluteDiv style={{ zIndex: 99999 }}>
-            <DescriptionPage
-              itemPosition={{
-                containerPosition,
-                imagePosition,
-              }}
-              selectedItemDetails={selectedItemDetails}
-            />
-          </AbsoluteDiv>
-        </Route>
-
+        <AbsoluteDiv style={{ zIndex: 99999 }}>
+          <ListingPage onItemSelected={onItemSelected} />
+        </AbsoluteDiv>
       </Div>
     </div>
   );
 };
 
-export default withRouter(Projects);
+function mapStateToProps(state) {
+  return {
+    currentProject: projectsSelectors.selectCurrentProject(state),
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setProject: (projectProps) => {
+      dispatch(projectsOperations.setProject(projectProps));
+    },
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Projects);

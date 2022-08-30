@@ -10,10 +10,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import counterReducer from './ducks/profile/reducer';
+import profileReducer from './ducks/profile/reducer';
 import stageReducer from './ducks/stages/reducer';
 import navbarReducer from './ducks/navbar/reducer';
 import errorsReducer from './ducks/errors/reducer';
+import projectsReducer from './ducks/projects/reducer';
 
 const persistConfig = {
   key: 'root',
@@ -22,10 +23,11 @@ const persistConfig = {
 };
 
 const rootReducer = persistCombineReducers(persistConfig, {
-  counter: counterReducer,
+  profile: profileReducer,
   stage: stageReducer,
   navbar: navbarReducer,
   errors: errorsReducer,
+  projects: projectsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

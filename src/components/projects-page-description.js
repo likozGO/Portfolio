@@ -5,6 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import Div from './Div';
 import TransitionLayer from './projects-transition-layer';
 import styles from './projects-page-description.module.scss';
+import { PROJECTS_PATH } from '../constants/router-urls';
 
 const DescriptionPage = ({ itemPosition, selectedItemDetails, history: { replace } }) => {
   const imageRef = useRef(null);
@@ -13,7 +14,7 @@ const DescriptionPage = ({ itemPosition, selectedItemDetails, history: { replace
 
   useEffect(() => {
     if (isEmpty(selectedItemDetails)) {
-      replace('/projects');
+      replace(PROJECTS_PATH);
     }
     const imageDimensions = imageRef.current.getBoundingClientRect();
 
