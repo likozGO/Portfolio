@@ -1,0 +1,212 @@
+@import '../stylesheets/mixin';
+
+
+.no-found {
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid: repeat(4,25%) / repeat(4,25%);
+  .page-404 {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1 / 5;
+    text-align: center;
+    .interesting-fact {
+      background: none;
+      appearance: none;
+      border: 0;
+      line-height: 1;
+      display: inline;
+      border-bottom: 4px dashed;
+      font-weight: 500;
+      cursor: pointer;
+      @include color('no_found_interesting_fact_text');
+      &:hover,
+      &.hover {
+        @include color('no_found_interesting_fact_text_hover');
+        border-bottom: 4px solid;
+      }
+    }
+    .button {
+      text-decoration: none;
+      max-width: 20em;
+      display: block;
+      margin: 1em auto;
+      position: relative;
+      z-index: 20;
+      outline: none;
+      width: 100%;
+      text-align: center;
+      border: none;
+      font: 900 16px sans-serif;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      text-transform: uppercase;
+      @include color('no_found_button_text');
+      @include background-color('no_found_button_bg');
+      top: 0;
+      &:hover,
+      &.hover {
+        top: -3px;
+        @include box-shadow('no_found_button_shadow');
+      }
+      &:active,
+      &.active {
+        @include background-color('no_found_button_active_bg');
+        outline: none;
+        @include box-shadow('no_found_button_active_shadow');
+        top: 0;
+      }
+    }
+    img {
+      width: 100%;
+      height: 50%;
+      max-width: 40em;
+      object-fit: contain;
+      padding-left: 75px;
+    }
+    h1 {
+      position: absolute;
+      left: 50%;
+      margin: auto auto auto -2.5em;
+      top: 0;
+      z-index: 3;
+      font-size: 8em;
+      @include color('no_found_h1_text');
+    }
+    h3 {
+      position: relative;
+      z-index: 5;
+      margin: 0;
+      @include background-color('no_found_h3_bg');
+      padding: 30px;
+      top: -15px;
+    }
+    .info {
+      margin-bottom: 10px;
+      @include color('no_found_info_text');
+    }
+    .notice {
+      @include background-color('no_found_notice_bg');
+      @include color('no_found_notice_text');
+    }
+    .random-fact {
+      padding: 7px;
+    }
+
+    @include respond(_420_min_height) {
+      img {
+        padding-left: 0;
+        height: auto;
+        max-width: 300px;
+      }
+    }
+    @include respond(_768_min) {
+      h1 {
+        position: relative;
+        left: auto;
+        top: auto;
+        z-index: unset;
+        margin: 0;
+        padding: 10px;
+      }
+      h3 {
+        padding: 10px;
+      }
+      img {
+        padding-left: 0;
+        height: auto;
+        max-width: 400px;
+      }
+    }
+  }
+  .spinner {
+    @include fill('no_found_spinner_fill');
+    animation: spin infinite .9s linear;
+  }
+}
+
+
+//Animation
+.no-found {
+  &.css-transition {
+    &-enter {
+      img {
+        opacity: 0;
+      }
+      h1 {
+        transform: translateY(-100%);
+      }
+      h3 {
+        transform: translateX(-100%);
+      }
+      .button.primary {
+        opacity: 0;
+      }
+    }
+
+    &-enter-active {
+      img {
+        opacity: 1;
+        transition: 1s linear;
+      }
+      h1 {
+        transform: translateY(0);
+        transition: transform .3s;
+      }
+      h3 {
+        transform: translateX(0);
+        transition: transform .7s linear;
+      }
+      .button.primary {
+        opacity: 1;
+        transition: .4s linear;
+      }
+    }
+
+    &-exit {
+      img {
+        opacity: 0;
+      }
+      h1 {
+        transform: translateY(0);
+      }
+      h3 {
+        transform: translateX(0);
+      }
+      .button.primary {
+        opacity: 0;
+      }
+    }
+
+    &-exit-active {
+      img {
+        opacity: 0;
+      }
+      h1 {
+        transform: translateY(0);
+      }
+      h3 {
+        transform: translateX(0);
+      }
+      .button.primary {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -36,103 +36,102 @@
       padding-top: 135px;
     }
   }
-}
-
-.awssld {
-  &__wrapper{
-    overflow: initial;
-  }
-  &__content {
-    --content-background-color: transparent;
-    overflow: initial;
-  }
-  &__bullets {
-    bottom: 0;
-    position: fixed;
-    @include background-color('slider_bg');
-    padding: 20px 0;
-    @include box-shadow('slider_nav_shadow');
-
-    button {
-      @include background-color('slider_bullet_color')
+  .awssld {
+    &__wrapper{
+      overflow: initial;
     }
-
-    &--active {
-      @include background-color('slider_bullet_color_active')
+    &__content {
+      --content-background-color: transparent;
+      overflow: initial;
     }
-  }
-}
+    &__bullets {
+      bottom: 0;
+      position: fixed;
+      @include background-color('slider_bg');
+      padding: 20px 0;
+      @include box-shadow('slider_nav_shadow');
 
-.c-rainbow {
-  user-select: none;
-  z-index: 1;
-  width: 100%;
-  max-width: 280px;
-  top: 20px;
-  left: 50px;
-  position: absolute;
-  counter-reset: rainbow;
-  display: block;
+      button {
+        @include background-color('slider_bullet_color')
+      }
 
-  list-style: none;
-
-  padding: 0;
-  margin: 0;
-  animation: fadein 4s;
-  -moz-animation: fadein 4s; /* Firefox */
-  -webkit-animation: fadein 4s; /* Safari and Chrome */
-  -o-animation: fadein 4s; /* Opera */
-  &__layer {
-    --text-color: var(--color-foreground);
-    counter-increment: rainbow;
-    font-size: .7rem;
-    color: var(--text-color);
-
-    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
-    -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black),
-    4px 4px 0 rgba(0, 0, 0, 0.2);
-
-    animation: rainbow 1.5s ease-in-out infinite;
-
-    @for $i from 1 through 7 {
-      &:nth-child(#{$i}) {
-        animation-delay: calc(#{$i} / var(--delay) * 1s);
-        left: calc(var(--axis-x) * #{$i});
-        z-index: -#{$i * 10};
+      &--active {
+        @include background-color('slider_bullet_color_active')
       }
     }
-
-    &:not(:first-child) {
-      position: absolute;
-      top: 0;
-    }
-
-    &--white {
-      --text-color: var(--color-white);
-    }
-    &--orange {
-      --text-color: var(--color-orange);
-    }
-    &--red {
-      --text-color: var(--color-red);
-    }
-    &--violet {
-      --text-color: var(--color-violet);
-    }
-    &--blue {
-      --text-color: var(--color-blue);
-    }
-    &--green {
-      --text-color: var(--color-green);
-    }
-    &--yellow {
-      --text-color: var(--color-yellow);
-    }
   }
-  @include respond(_768_min) {
-    max-width: 160px;
-  }
-  @include respond(_768_min) {
-    top: 100px;
+
+  .c-rainbow {
+    user-select: none;
+    z-index: 1;
+    width: 100%;
+    max-width: 280px;
+    top: 20px;
+    left: 50px;
+    position: absolute;
+    counter-reset: rainbow;
+    display: block;
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
+    &__layer {
+      --text-color: var(--color-foreground);
+      counter-increment: rainbow;
+      font-size: .7rem;
+      color: var(--text-color);
+
+      text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black),
+      4px 4px 0 rgba(0, 0, 0, 0.2);
+
+      animation: rainbow 1.5s ease-in-out infinite;
+
+      @for $i from 1 through 7 {
+        &:nth-child(#{$i}) {
+          animation-delay: calc(#{$i} / var(--delay) * 1s);
+          left: calc(var(--axis-x) * #{$i});
+          z-index: -#{$i * 10};
+        }
+      }
+
+      &:not(:first-child) {
+        position: absolute;
+        top: 0;
+      }
+
+      &--white {
+        --text-color: var(--color-white);
+      }
+      &--orange {
+        --text-color: var(--color-orange);
+      }
+      &--red {
+        --text-color: var(--color-red);
+      }
+      &--violet {
+        --text-color: var(--color-violet);
+      }
+      &--blue {
+        --text-color: var(--color-blue);
+      }
+      &--green {
+        --text-color: var(--color-green);
+      }
+      &--yellow {
+        --text-color: var(--color-yellow);
+      }
+    }
+    @include respond(_768_min) {
+      max-width: 160px;
+    }
+    @include respond(_768_min) {
+      top: 100px;
+    }
   }
 }

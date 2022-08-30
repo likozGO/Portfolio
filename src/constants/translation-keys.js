@@ -1,3 +1,29 @@
+export const APP_DATA = {
+  TITLE: 'appData.title',
+};
+
+export const COMPANIES_DATA = {
+  AIVIX_TITLE: 'companiesData.aivix.title',
+  AIVIX_SUMMARY: 'companiesData.aivix.summary',
+  AIVIX_RESPONSIBILITIES: 'companiesData.aivix.responsibilities',
+  AIVIX_LINK: 'companiesData.aivix.companyLink',
+
+  N_IX_TITLE: 'companiesData.n_ix.title',
+  N_IX_SUMMARY: 'companiesData.n_ix.summary',
+  N_IX_RESPONSIBILITIES: 'companiesData.n_ix.responsibilities',
+  N_IX_LINK: 'companiesData.n_ix.companyLink',
+};
+
+export const ERRORS_DATA = {
+  ERROR: 'errorsData.noFound.error',
+  INFO: 'errorsData.noFound.info',
+  BUTTON_FACT: 'errorsData.noFound.button_fact',
+  TO_GET: 'errorsData.noFound.to_get',
+  INTERESTING_INFORMATION: 'errorsData.noFound.interesting_information',
+  OR: 'errorsData.noFound.or',
+  COMEBACK_TO_HOME: 'errorsData.noFound.comebackToHome',
+};
+
 export const BIOGRAPHY_DATA = {
   SOCIAL: 'biographyData.social',
   GREETING: 'biographyData.greeting',
@@ -32,6 +58,9 @@ export const NAVBAR_DATA = {
 };
 
 export default {
+  APP_DATA,
+  COMPANIES_DATA,
+  ERRORS_DATA,
   BIOGRAPHY_DATA,
   STAGES_DATA,
   NAVBAR_DATA,

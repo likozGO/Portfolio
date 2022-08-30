@@ -8,13 +8,20 @@ import ParticlesBgContainer from './containers/particles-bg-container';
 import { stagesSelectors } from './ducks/stages/index';
 import RouterComponent from './components/router-component';
 import routes from './routes';
+import { APP_DATA } from './constants/translation-keys';
 
 function App() {
   const selectTheme = useSelector(stagesSelectors.selectPreset);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const titleI18n = t(APP_DATA.TITLE);
+
   useEffect(() => {
     i18n.changeLanguage(selectTheme.lang);
   }, []);
+
+  useEffect(() => {
+    document.title = titleI18n;
+  });
 
   return (
     <Router>

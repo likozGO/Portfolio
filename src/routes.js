@@ -2,7 +2,7 @@ import ViewSettings from './pages/stage-controller';
 import ViewHome from './pages/profile';
 import ViewCompany from './pages/company';
 import ViewProjects from './pages/projects';
-import ViewNoFound from './pages/no-found';
+import ViewNoFound from './pages/error-no-found';
 
 import {
   HOME_PATH,
@@ -44,6 +44,14 @@ export const PROJECTS = {
   isRestricted: false,
 };
 
+export const PROJECTS_TEST = {
+  component: ViewProjects,
+  exact: false,
+  path: '/projects-123',
+  isPrivate: false,
+  isRestricted: false,
+};
+
 export const NO_FOUND = {
   component: ViewNoFound,
   exact: false,
@@ -58,4 +66,5 @@ export default [
   NO_FOUND,
   COMPANY,
   PROJECTS,
+  PROJECTS_TEST,
 ];

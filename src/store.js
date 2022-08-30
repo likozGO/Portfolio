@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import counterReducer from './ducks/profile/reducer';
 import stageReducer from './ducks/stages/reducer';
 import navbarReducer from './ducks/navbar/reducer';
+import errorsReducer from './ducks/errors/reducer';
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +25,7 @@ const rootReducer = persistCombineReducers(persistConfig, {
   counter: counterReducer,
   stage: stageReducer,
   navbar: navbarReducer,
+  errors: errorsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

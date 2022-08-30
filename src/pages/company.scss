@@ -1,10 +1,248 @@
+@import "../stylesheets/animation.css";
+@import "../stylesheets/mixin";
+
+
 .company {
   z-index: 999;
+  min-height: 100vh;
   height: 100%;
-  color: red;
+  @include color('company_color');
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: absolute;
-  justify-content: center;
+  .navbar {
+    z-index: 2;
+  }
+
+  @include respond(_1320_min) {
+    padding-right: 63px;
+  }
+  @include respond(_420_min) {
+    padding-right: 0;
+    padding-top: 63px;
+  }
+
+  .company-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include respond(_1024_min) {
+      flex-direction: column;
+      padding: 45px 45px;
+    }
+
+    @include respond(_420_min) {
+      padding: 0 25px;
+    }
+    .company-interactive {
+      width: 100%;
+      max-width: 550px;
+      min-width: 2px;
+      position: relative;
+      display: block;
+      height: auto;
+      overflow: hidden;
+      @include box-shadow('company_interactive_shadow');
+      border-radius: 6px;
+      margin: 0 auto;
+      @include respond(_1024_min) {
+        max-width: 300px;
+      }
+    }
+    .company-details {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin-left: 30px;
+      @include respond(_1024_min) {
+        margin-left: 0;
+      }
+    }
+    .company-title {
+      margin: 5px 0 0 0;
+      font-size: 38px;
+      font-weight: 900;
+    }
+    .company-tags {
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include respond(_768_min) {
+        margin: 3px 0;
+      }
+
+      button {
+        margin: 2px 0.3em 2px 2px;
+        transition: opacity .3s ease-out, background .3s ease-out, color .3s ease-out;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: center;
+        @include color('company_tags_button_color');
+        padding: 5px 6px 5px 6px;
+        line-height: normal;
+        appearance: none;
+        border: 0;
+        opacity: 0.7;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        min-height: 35px;
+        justify-content: center;
+        &:hover {
+          @include background-color('company_tags_button_hover_bg');
+          @include color('company_tags_button_hover_color');
+          opacity: 1;
+        }
+        svg {
+          margin-right: 3px;
+        }
+        @include respond(_768_min) {
+          padding: 2px 3px 2px 3px;
+          margin: 1px 0.2em 1px 1px;
+          font-size: 10px;
+          min-height: 25px;
+        }
+      }
+    }
+    .company-summary {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: 400;
+      @include respond(_768_min) {
+        font-size: 12px;
+      }
+    }
+    .company-responsibilities {
+      margin: 0 0 10px 0;
+      @include respond(_768_min) {
+        margin: 0 0 5px 0;
+      }
+      li {
+        font-weight: 500;
+        margin: 4px 0;
+        @include respond(_768_min) {
+          font-size: 12px;
+          margin: 2px 0;
+        }
+      }
+    }
+    .company-link {
+      font-size: 20px;
+      @include color('company_link_color');
+      text-decoration-style: dotted;
+      &:visited {
+        @include color('company_link_visited_color');
+      }
+      &:hover {
+        @include color('company_link_hover_color');
+      }
+      @include respond(_768_min) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .awssld {
+    height: 100%;
+    --slider-height-percentage: 50%;
+
+    &__wrapper{
+      overflow: initial;
+    }
+    &__content {
+      --content-background-color: transparent;
+      overflow: initial;
+      @include respond(_1024_min) {
+        align-items: baseline;
+      }
+      @include respond(_768_min) {
+        align-items: flex-start;
+      }
+      @include respond(_420_min) {
+        padding-top: 0;
+        align-items: center;
+      }
+    }
+    &__controls {
+      @include respond(_768_min) {
+        visibility: hidden;
+        opacity: 0;
+      }
+      --organic-arrow-height: 25px;
+      --organic-arrow-width: 25px;
+      &__arrow-left:before, &__arrow-left:after,
+      &__arrow-right:before, &__arrow-right:after {
+        @include background-color('company_awsld_controls_arrows_bg');
+      }
+    }
+    &__bullets {
+      position: fixed;
+      bottom: 15px;
+      z-index: 2;
+      width: calc(100% - 63px);
+      @include respond(_420_min) {
+        width: 100%;
+      }
+
+      .awssld__bullets--active {
+        @include background-color('company_awsld_bullets_active_bg');
+        filter: grayscale(0) !important;
+      }
+
+      button {
+        margin: 0 25px 0 0;
+        border-radius: 10px;
+        width: 35px;
+        height: 35px;
+        -webkit-background-size: contain!important;
+        background-size: contain!important;
+        background-repeat: no-repeat!important;
+        background-position: center center!important;
+        filter: grayscale(100%);
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &[data-index="0"] {
+          background-image: url('../assets/images/company-aivix-logo.png');
+
+        }
+        &[data-index="1"] {
+          background-image: url('../assets/images/company-n_ix-logo.png');
+        }
+      }
+    }
+
+
+
+    &.aivix .awssld__bullets button[data-index="0"],
+    &.n_ix .awssld__bullets button[data-index="1"] {
+      animation: ContentScale 1s infinite linear;
+    }
+  }
+
 }
+
+
+//Animation
+.company {
+  &.css-transition {
+    &-enter-active {
+      & {
+        transform: translateX(-100%);
+        transition: transform .3s;
+      }
+    }
+    &-enter-done {
+      & {
+        transform: translateX(0);
+        transition: transform .3s;
+      }
+    }
+  }
+}
+
