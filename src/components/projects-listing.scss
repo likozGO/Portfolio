@@ -1,11 +1,3 @@
-$color-blue: #1E88E5;
-$color-purple: #8E24AA;
-$color-teal: #00897B;
-$color-blue-grey: #546E7A;
-$color-cyan: #00ACC1;
-
-$color-list: ($color-teal, $color-blue, $color-purple, $color-blue-grey, $color-teal);
-
 .page_container {
   color: white;
 
@@ -50,15 +42,5 @@ $color-list: ($color-teal, $color-blue, $color-purple, $color-blue-grey, $color-
   .tech_image {
     width: 150px;
     z-index: 1;
-  }
-}
-
-// Looping through color list and creating color class with appending index to the class ex: - .class_2
-// and applying background color from the color array
-@for $index from 1 through length($color-list) {
-  .color_#{$index} {
-    &::before {
-      background: nth($color-list, $index);
-    }
   }
 }

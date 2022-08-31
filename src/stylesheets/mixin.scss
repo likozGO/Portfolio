@@ -18,6 +18,26 @@
   }
 }
 
+$color-list: (#1E88E5, #8E24AA, #00897B, #546E7A, #00ACC1);
+
+
+@for $index from 1 through length($color-list) {
+  .projects, .projects-description {
+    .color_#{$index} {
+      background: nth($color-list, $index);
+    }
+  }
+}
+
+@for $index from 1 through length($color-list) {
+  .projects, .projects-description {
+    .color_#{$index} {
+      &::before {
+        background: nth($color-list, $index);
+      }
+    }
+  }
+}
 
 
 @mixin respond ($breakpoint) {

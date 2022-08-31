@@ -5,7 +5,7 @@ import reactNativeBackgroundImage from '../assets/images/photo-black.png';
 import androidBackgroundImage from '../assets/images/Images/404-peter.png';
 import laravelBackgroundImage from '../assets/images/Images/laravel-background-image.png';
 import electronBackgroundImage from '../assets/images/Images/electron-background-image.png';
-import styles from './projects-page-listing.module.scss';
+import './projects-listing.scss';
 
 const ListingPage = ({ onItemSelected }) => {
   const images = [
@@ -26,8 +26,14 @@ const ListingPage = ({ onItemSelected }) => {
       flexDirection: 'column',
     }}
     >
-      <h1 className={styles.page_title}>Page Transition Example</h1>
-      <h3> Click on any one of the below items </h3>
+      <h1
+        className="page_title"
+      >
+        Page Transition Example
+      </h1>
+      <h3>
+        Click on any one of the below items
+      </h3>
       <div
         style={{
           flex: 1,
@@ -43,16 +49,16 @@ const ListingPage = ({ onItemSelected }) => {
           // Adds different color class to different items
           <button
             type="button"
-            key={`${image}123`}
+            key={`${image}-123`}
             style={{
               alignItems: 'center',
               justifyContent: 'center',
             }}
             onClick={(event) => onItemSelected(event, { image, index })}
-            className={`${styles.image_container} ${styles[`color_${index + 1}`]}`}
+            className={`image_container color_${index + 1}`}
           >
             <img
-              className={styles.tech_image}
+              className="tech_image"
               alt="Project"
               src={image}
             />

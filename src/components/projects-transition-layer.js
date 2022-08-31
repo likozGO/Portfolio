@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
-import styles from './projects-transition-layer.module.scss';
+import './projects-transition-layer.scss';
 
 const TransitionLayer = ({
   itemPosition, imageToPosition, selectedItemDetails, onAnimationEnd,
@@ -41,7 +41,7 @@ const TransitionLayer = ({
           ...containerAnimation,
           zIndex: -1,
         }}
-        className={`${styles.absolute_layer} ${styles[`color_${selectedItemDetails.index + 1}`]}`}
+        className={`absolute_layer color_${selectedItemDetails.index + 1}`}
       />
 
       <animated.img
@@ -50,7 +50,7 @@ const TransitionLayer = ({
           ...imageAnimation,
           zIndex: 0,
         }}
-        className={styles.absolute_layer}
+        className="absolute_layer"
       />
     </>
   );

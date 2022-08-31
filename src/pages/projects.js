@@ -2,7 +2,7 @@ import React from 'react';
 import './projects.scss';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import ListingPage from '../components/projects-page-listing';
+import ListingPage from '../components/projects-listing';
 import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
 import { projectsSelectors, projectsOperations } from '../ducks/projects';
 
@@ -35,9 +35,11 @@ const Projects = ({ setProject }) => {
     history.push(PROJECTS_DESCRIPTION_PATH);
   };
   return (
-    <div style={{
-      position: 'absolute', top: 0, right: 0, left: 0, bottom: 0,
-    }}
+    <div
+      style={{
+        position: 'absolute', top: 0, right: 0, left: 0, bottom: 0,
+      }}
+      className="projects"
     >
       <div
         style={{

@@ -1,21 +1,22 @@
 import React from 'react';
 import './projects.scss';
 import { connect } from 'react-redux';
-import DescriptionPage from '../components/projects-page-description';
+import DescriptionPage from '../components/projects-description-details';
 import { projectsSelectors } from '../ducks/projects';
 
 const ProjectsDescription = ({ currentProject }) => {
   const { containerPosition, imagePosition, selectedItemDetails } = currentProject;
-  console.log(selectedItemDetails);
   return (
-    <div style={{
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      left: 0,
-      bottom: 0,
-      zIndex: 10001,
-    }}
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
+        zIndex: 10001,
+      }}
+      className="projects-description"
     >
       <div
         style={{
