@@ -2,7 +2,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import './projects-transition-layer.scss';
 
-const TransitionLayer = ({
+const ProjectsTransitionLayer = ({
   itemPosition, imageToPosition, selectedItemDetails, onAnimationEnd,
 }) => {
   const imageAnimation = useSpring({
@@ -41,7 +41,7 @@ const TransitionLayer = ({
           ...containerAnimation,
           zIndex: -1,
         }}
-        className={`absolute_layer color_${selectedItemDetails.index + 1}`}
+        className="projects-absolute-layer"
       />
 
       <animated.img
@@ -50,10 +50,10 @@ const TransitionLayer = ({
           ...imageAnimation,
           zIndex: 0,
         }}
-        className="absolute_layer"
+        className="projects-absolute-layer"
       />
     </>
   );
 };
 
-export default TransitionLayer;
+export default ProjectsTransitionLayer;

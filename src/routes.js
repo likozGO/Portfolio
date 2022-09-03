@@ -40,7 +40,7 @@ export const COMPANY = {
 
 export const PROJECTS = {
   component: ViewProjects,
-  exact: false,
+  exact: true,
   path: PROJECTS_PATH,
   isPrivate: false,
   isRestricted: false,

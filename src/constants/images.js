@@ -25,6 +25,8 @@ import COMPANY_AIVIX_RU from '../assets/images/company-aivix-ru.webp';
 import COMPANY_AIVIX_EN from '../assets/images/company-aivix-en.webp';
 import COMPANY_N_IX_EN from '../assets/images/company-n_ix-en.webp';
 
+import PORTFOLIO_LOGO from '../assets/images/portfolio-logo.svg';
+
 export default {
   NO_PARTICLES,
   STARS_PARTICLES,
@@ -47,4 +49,5 @@ export default {
   COMPANY_AIVIX_RU,
   COMPANY_AIVIX_EN,
   COMPANY_N_IX_EN,
+  PORTFOLIO_LOGO,
 };

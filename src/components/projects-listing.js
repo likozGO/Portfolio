@@ -1,72 +1,113 @@
 import React from 'react';
-
-import reactBackgroundImage from '../assets/images/Images/react-background-image.png';
-import reactNativeBackgroundImage from '../assets/images/photo-black.png';
-import androidBackgroundImage from '../assets/images/Images/404-peter.png';
-import laravelBackgroundImage from '../assets/images/Images/laravel-background-image.png';
-import electronBackgroundImage from '../assets/images/Images/electron-background-image.png';
+import moment from 'moment';
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { FiArrowRightCircle } from 'react-icons/fi';
+import laravelBackgroundImage from '../assets/images/company-n_ix-en.webp';
+import electronBackgroundImage from '../assets/images/company-aivix-ru.webp';
 import './projects-listing.scss';
 
-const ListingPage = ({ onItemSelected }) => {
-  const images = [
-    reactBackgroundImage,
-    reactNativeBackgroundImage,
-    androidBackgroundImage,
-    laravelBackgroundImage,
-    electronBackgroundImage,
+const ProjectsListing = ({ onItemSelected }) => {
+  const projects = [
+    {
+      isCreated: '1999-08-09',
+      title: 'First example',
+      tag: ['React', 'Material UI', 'Docker'],
+      details: 'Forj is a blockchain technology company specialising in NFTs. This design combines maximalism and brutalism to create an intense space inspired by neon lights in the streets of Tokyo. The target audience are teenage boys so this high octane aesthetic resonates with teenage angst and the fast pace digital landscapes these type of personas are synonymous.',
+      image: laravelBackgroundImage,
+    },
+    {
+      isCreated: '2014-08-09',
+      title: 'Second example',
+      tag: ['JQuery', 'Bootstrap 4', 'Moment JS'],
+      details: 'Als Designer ist es meine Aufgabe, die Werte einer Marke im Medium einer Website visuell darzustellen. In diesem Fall ist es das Ziel der Organisation, die Kreativität im Berlin zu verstärken. Das Kreativzentrum vereint alle kreativen Medien an einem Ort; Aufbau einer Plattform für Film, Musik, Grafik + mehr, um unsere Arbeit zu präsentieren und Kontakte zu knüpfen.',
+      image: electronBackgroundImage,
+    },
+    {
+      isCreated: '2016-08-09',
+      title: 'First example',
+      tag: ['React', 'Material UI', 'Docker'],
+      details: 'Forj is a blockchain technology company specialising in NFTs. This design combines maximalism and brutalism to create an intense space inspired by neon lights in the streets of Tokyo. The target audience are teenage boys so this high octane aesthetic resonates with teenage angst and the fast pace digital landscapes these type of personas are synonymous.',
+      image: laravelBackgroundImage,
+    },
+    {
+      isCreated: '2019-08-09',
+      title: 'Second example',
+      tag: ['JQuery', 'Bootstrap 4', 'Moment JS'],
+      details: 'Als Designer ist es meine Aufgabe, die Werte einer Marke im Medium einer Website visuell darzustellen. In diesem Fall ist es das Ziel der Organisation, die Kreativität im Berlin zu verstärken. Das Kreativzentrum vereint alle kreativen Medien an einem Ort; Aufbau einer Plattform für Film, Musik, Grafik + mehr, um unsere Arbeit zu präsentieren und Kontakte zu knüpfen.',
+      image: electronBackgroundImage,
+    },
+    {
+      isCreated: '2020-08-09',
+      title: 'Second example',
+      tag: ['JQuery', 'Bootstrap 4', 'Moment JS'],
+      details: 'Als Designer ist es meine Aufgabe, die Werte einer Marke im Medium einer Website visuell darzustellen. In diesem Fall ist es das Ziel der Organisation, die Kreativität im Berlin zu verstärken. Das Kreativzentrum vereint alle kreativen Medien an einem Ort; Aufbau einer Plattform für Film, Musik, Grafik + mehr, um unsere Arbeit zu präsentieren und Kontakte zu knüpfen.',
+      image: electronBackgroundImage,
+    },
   ];
 
   return (
-    <div style={{
-      color: 'white',
-      alignItems: 'center',
-      flex: 1,
-      alignSelf: 'stretch',
-      display: 'flex',
-      flexDirection: 'column',
-    }}
+    <div
+      className="projects-listing-container"
     >
-      <h1
-        className="page_title"
-      >
-        Page Transition Example
-      </h1>
-      <h3>
-        Click on any one of the below items
-      </h3>
-      <div
-        style={{
-          flex: 1,
-          alignSelf: 'stretch',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
-          color: 'white',
-        }}
-      >
-        {images.map((image, index) => (
-          // Adds different color class to different items
+      <section className="container">
+        {projects.map((project, index) => (
           <button
             type="button"
-            key={`${image}-123`}
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            onClick={(event) => onItemSelected(event, { image, index })}
-            className={`image_container color_${index + 1}`}
+            onClick={(event) => onItemSelected(event, { ...project, index, description: project.details })}
+            className="projects-listing-item"
           >
-            <img
-              className="tech_image"
-              alt="Project"
-              src={image}
-            />
+            <div className="projects-laptop">
+              <div className="projects-laptop__screen">
+                <img
+                  src={project.image}
+                  width="1600"
+                  height="1000"
+                  alt="Screen"
+                />
+              </div>
+              <div className="projects-laptop__bottom">
+                <div className="projects-laptop__under" />
+              </div>
+              <div className="projects-laptop__shadow" />
+            </div>
+            <div className="item-description">
+              <span className="date">
+                <AiOutlineClockCircle />
+                {moment(project.isCreated, 'YYYYMMDD').fromNow()}
+                {` (${moment(project.isCreated, 'YYYYMMDD').calendar()})`}
+              </span>
+              <h1 className="title">
+                {project.title}
+              </h1>
+              <div className="tags">
+                {project.tag.map((tag) => (
+                  <button type="button">{tag}</button>
+                ))}
+              </div>
+              <p className="details">
+                {project.details}
+              </p>
+              <FiArrowRightCircle className="arrow-enter" />
+            </div>
           </button>
         ))}
+      </section>
+      <div className="get-in-touch">
+        <h1>
+          Anything is possible,
+        </h1>
+        <span>
+          Let&apos;s make dreams a reality
+        </span>
+        <button
+          type="button"
+          className="button"
+        >
+          Get in touch
+        </button>
       </div>
     </div>
   );
 };
 
-export default ListingPage;
+export default ProjectsListing;
