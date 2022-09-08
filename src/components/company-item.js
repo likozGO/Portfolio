@@ -1,4 +1,5 @@
 import React from 'react';
+import ScreenImageWrapper from './screen-image-wrapper';
 
 const CompanyItem = ({
   companyImage,
@@ -11,7 +12,10 @@ const CompanyItem = ({
   unHighlightProjects,
 }) => (
   <div className="company-container">
-    <div><img src={companyImage} alt="company" className="company-interactive" /></div>
+    <ScreenImageWrapper
+      image={companyImage}
+      imageClassName="company-interactive"
+    />
     <div className="company-details">
       <h2 className="company-title">
         {companyTitle}

@@ -1,15 +1,6 @@
+@import "../stylesheets/mixin";
+
 .button {
-  --color-primary-light: #030086;
-  --color-secondary-light: #0804b8;
-  --color-disabled-light: #9b9b9b;
-
-  --color-primary-dark: #fff;
-  --color-secondary-dark: #dfdeff;
-  --color-text-dark: var(--color-primary-light);
-  --color-disabled-dark: #d9d8d9;
-  --color-disabled-text-dark: #4a4a4a;
-
-  --color-white: #fff;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
@@ -77,126 +68,63 @@
 
 /* Light Theme Button Styles */
 
-.button--light.button--primary {
-  background-color: var(--color-primary-light);
-  color: var(--color-white);
+.button.button--primary {
+  @include background-color('button_primary_bg');
+  @include color('button_primary_color');
 }
 
-.button--light .button__icon > path {
-  fill: var(--color-white);
+.button .button__icon > path {
+  @include fill('button_primary_color');
 }
 
-.button--light.button--primary:hover,
-.button--light.button--primary:focus {
-  background-color: var(--color-secondary-light);
+.button.button--primary:hover,
+.button.button--primary:focus {
+  @include background-color('button_primary_bg_hover');
 }
 
-.button--light.button--primary:focus,
-.button--light.button--secondary:focus {
-  outline: 2px solid var(--color-secondary-light);
+.button.button--primary:focus,
+.button.button--secondary:focus {
+  @include outline('button_primary_outline_focus');
+
   outline-offset: 4px;
 }
 
-.button--light.button--secondary {
-  color: var(--color-primary-light);
-  border: 2px solid var(--color-primary-light);
+.button.button--secondary {
+  border: 2px solid;
+  @include border-color('button_secondary_color');
+  @include color('button_secondary_color');
 }
 
-.button--light.button--secondary:hover,
-.button--light.button--secondary:focus {
-  color: var(--color-white);
-  border: 2px solid var(--color-secondary-light);
-  background: var(--color-secondary-light);
+.button.button--secondary:hover,
+.button.button--secondary:focus {
+  @include color('button_secondary_color_hover');
+  @include background-color('button_secondary_bg_hover');
+  @include border-color('button_secondary_color_hover');
+
+  border: 2px solid;
 }
 
-.button--light.button--tertiary {
-  color: var(--color-primary-light);
+.button.button--tertiary {
+  @include color('button_tertiary_color');
 }
 
-.button--light.button--tertiary:hover,
-.button--light.button--tertiary:focus {
-  border-bottom: 2px solid var(--color-primary-light);
+.button.button--tertiary:hover,
+.button.button--tertiary:focus {
+  @include border-color('button_tertiary_color');
+  border-bottom: 2px solid;
 }
 
-.button--light.button--primary:disabled,
-.button--light.button--primary:disabled:hover,
-.button--light.button--primary:disabled:focus {
-  background-color: var(--color-disabled-light);
-}
-
-.button--light.button--secondary:disabled,
-.button--light.button--secondary:disabled:hover,
-.button--light.button--secondary:disabled:focus {
-  border: 2px solid var(--color-disabled-light);
-  color: var(--color-disabled-light);
-}
-
-.button--light.button--tertiary:disabled,
-.button--light.button--tertiary:disabled:hover,
-.button--light.button--tertiary:disabled:focus {
-  color: var(--color-disabled-light);
-}
-
-/* Dark Theme Button Styles */
-
-.button--dark.button--primary {
-  background-color: var(--color-primary-dark);
-  color: var(--color-text-dark);
-}
-
-.button--dark.button--primary:hover,
-.button--dark.button--primary:focus {
-  background-color: var(--color-secondary-dark);
-}
-
-.button--dark.button--secondary {
-  color: var(--color-primary-dark);
-  border: 2px solid var(--color-primary-dark);
-}
-
-.button--dark.button--secondary:hover,
-.button--dark.button--secondary:focus {
-  color: var(--color-text-dark);
-  border: 2px solid var(--color-secondary-dark);
-  background: var(--color-secondary-dark);
-}
-
-.button--dark.button--primary:focus,
-.button--dark.button--secondary:focus {
-  outline: 2px solid var(--color-secondary-dark);
-  outline-offset: 4px;
-}
-
-.button--dark.button--tertiary {
-  color: var(--color-primary-dark);
-}
-
-.button--dark.button--tertiary:hover,
-.button--dark.button--tertiary:focus {
-  border-bottom: 2px solid var(--color-primary-dark);
-}
-
-.button--dark.button--primary:disabled,
-.button--dark.button--primary:disabled:hover,
-.button--dark.button--primary:disabled:focus {
-  background-color: var(--color-disabled-dark);
-}
-
-.button--dark.button--secondary:disabled,
-.button--dark.button--secondary:disabled:hover,
-.button--dark.button--secondary:disabled:focus {
-  border: 2px solid var(--color-disabled-dark);
-  color: var(--color-disabled-dark);
-}
-
-.button--dark.button--tertiary:disabled,
-.button--dark.button--tertiary:disabled:hover,
-.button--dark.button--tertiary:disabled:focus {
-  color: var(--color-disabled-dark);
-}
-
-.button--dark .button__icon > path {
-  fill: var(--color-text-dark);
+.button.button--primary:disabled,
+.button.button--primary:disabled:hover,
+.button.button--primary:disabled:focus,
+.button.button--secondary:disabled,
+.button.button--secondary:disabled:hover,
+.button.button--secondary:disabled:focus,
+.button.button--tertiary:disabled,
+.button.button--tertiary:disabled:hover,
+.button.button--tertiary:disabled:focus {
+  cursor: not-allowed;
+  opacity: .7;
 }
 
 /* Button Size Styles */

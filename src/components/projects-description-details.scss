@@ -40,6 +40,7 @@
           @include respond(_768_min) {
             display: none;
           }
+
           &-image {
             z-index: 3;
             transition: opacity 0.3s ease-in-out;
@@ -57,7 +58,7 @@
         flex-direction: column;
         margin: 40px auto 60px auto;
 
-        color: white;
+        @include color('projects_description_details_color');
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
 
@@ -187,8 +188,9 @@
               button {
                 margin: 0 5px 3px 0;
                 opacity: .7;
-                border: 1px solid #fff;
-                color: #fff;
+                @include border-color('projects_description_details_tags_border_color');
+                border: 1px solid;
+                @include color('projects_description_details_tags_color');
                 border-radius: 100px;
                 padding: 3px 7px 5px;
                 background: none;
@@ -233,7 +235,8 @@
 
             a {
               transition: opacity 0.3s ease-in-out;
-              color: #fff;
+              @include color('projects_description_details_links_color');
+              @include fill('projects_description_details_links_fill');
               display: block;
 
               &:hover {

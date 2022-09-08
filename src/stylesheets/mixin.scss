@@ -19,7 +19,7 @@
 }
 
 
-@mixin respond ($breakpoint) {
+@mixin respond($breakpoint) {
 
   @if $breakpoint==_1521_plus {
     @media only screen and (min-width: 1521px) {
@@ -132,51 +132,42 @@
 }
 
 
-/// Темизация цвета шрифта с помощью миксина `themify`
+/// Темизация с помощью миксина `themify`
 /// @access public
 /// @see {mixin} themify
+
 @mixin color($arguments...) {
   @include themify('color', $arguments...);
 }
 
-/// Темизация цвета границы элемента с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin border-color($arguments...) {
   @include themify('border-color', $arguments...);
 }
 
-/// Темизация цвета фона элемента с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin background-color($arguments...) {
   @include themify('background-color', $arguments...);
 }
 
-/// Темизация цвета фона элемента с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin background-image($arguments...) {
   @include themify('background-image', $arguments...);
 }
 
-/// Темизация тени с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin box-shadow($arguments...) {
   @include themify('box-shadow', $arguments...);
 }
 
-/// Темизация fill с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin fill($arguments...) {
   @include themify('fill', $arguments...);
 }
 
-/// Темизация stroke с помощью миксина `themify`
-/// @access public
-/// @see {mixin} themify
 @mixin stroke($arguments...) {
   @include themify('stroke', $arguments...);
+}
+
+@mixin stroke($arguments...) {
+  @include themify('stroke', $arguments...);
+}
+
+@mixin outline($arguments...) {
+  @include themify('outline', $arguments...);
 }

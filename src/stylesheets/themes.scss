@@ -55,6 +55,27 @@ $themes: (
                 'company_link_hover_color': #fff,
                 'company_awsld_bullets_active_bg': #fff,
                 'company_awsld_controls_arrows_bg': #fff,
+
+                'button_primary_bg': #fff,
+                'button_primary_color': #000,
+                'button_primary_bg_hover': #bcbcbc,
+                'button_primary_outline_focus': 2px solid #333,
+                'button_secondary_bg': none,
+                'button_secondary_color': #fff,
+                'button_secondary_bg_hover': #000,
+                'button_secondary_color_hover': #fff,
+                'button_secondary_outline_focus': 2px solid #333,
+                'button_tertiary_color': #fff,
+
+                'projects_description_details_color': #fff,
+                'projects_description_details_tags_border_color': #fff,
+                'projects_description_details_tags_color': #fff,
+                'projects_description_details_links_color': #fff,
+                'projects_description_details_links_fill': #fff,
+
+                'projects_listing_bg': #fff,
+                'projects_listing_color': #000,
+                'projects_listing_tags_border': #000,
         ),
         'white': (
                 'body_bg': #fff,
@@ -112,6 +133,27 @@ $themes: (
                 'company_link_hover_color': #000,
                 'company_awsld_bullets_active_bg': #00000012,
                 'company_awsld_controls_arrows_bg': #000,
+
+                'button_primary_bg': #000,
+                'button_primary_color': #fff,
+                'button_primary_bg_hover': #484848,
+                'button_primary_outline_focus': 2px solid #484848,
+                'button_secondary_bg': none,
+                'button_secondary_color': #000,
+                'button_secondary_bg_hover': #000,
+                'button_secondary_color_hover': #fff,
+                'button_secondary_outline_focus': 2px solid #484848,
+                'button_tertiary_color': #000,
+
+                'projects_description_details_color': #000,
+                'projects_description_details_tags_border_color': #000,
+                'projects_description_details_tags_color': #000,
+                'projects_description_details_links_color': #000,
+                'projects_description_details_links_fill': #000,
+
+                'projects_listing_bg': #fff,
+                'projects_listing_color': #000,
+                'projects_listing_tags_border': #000,
         ),
         'dark': (
                 'body_bg': #000,
@@ -169,5 +211,26 @@ $themes: (
                 'company_link_hover_color': #fff,
                 'company_awsld_bullets_active_bg': #fff,
                 'company_awsld_controls_arrows_bg': #fff,
+
+                'button_primary_bg': #fff,
+                'button_primary_color': #000,
+                'button_primary_bg_hover': #bcbcbc,
+                'button_primary_outline_focus': 2px solid #333,
+                'button_secondary_bg': none,
+                'button_secondary_color': #fff,
+                'button_secondary_bg_hover': #000,
+                'button_secondary_color_hover': #fff,
+                'button_secondary_outline_focus': 2px solid #333,
+                'button_tertiary_color': #fff,
+
+                'projects_description_details_color': #fff,
+                'projects_description_details_tags_border_color': #fff,
+                'projects_description_details_tags_color': #fff,
+                'projects_description_details_links_color': #fff,
+                'projects_description_details_links_fill': #fff,
+
+                'projects_listing_bg': #333,
+                'projects_listing_color': #fff,
+                'projects_listing_tags_border': #fff,
         )
 ) !default;
