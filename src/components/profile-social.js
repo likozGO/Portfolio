@@ -8,7 +8,7 @@ import {
 } from '../constants/translation-biography-data';
 
 const ProfileSocial = ({
-  social, greeting, name, position,
+  social, greeting, name, position, toastCopy,
 }) => {
   const navigateToLink = (location) => {
     window.open(location, '_blank');
@@ -24,7 +24,7 @@ const ProfileSocial = ({
       return;
     }
     copyToClipboard(data);
-    toast.info(`Copied: ${data}`, { autoClose: 1000 });
+    toast.info(`${toastCopy}${data}`, { autoClose: 1000 });
   };
 
   return (

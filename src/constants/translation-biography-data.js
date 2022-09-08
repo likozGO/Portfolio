@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  FaDownload, FaMailBulk, FaTelegram, FaSkype, FaCogs,
+  FaDownload, FaMailBulk, FaTelegram, FaSkype,
 } from 'react-icons/fa';
-
-import { SETTINGS_PATH } from './router-urls';
 
 export const CV = 'cv';
 export const EMAIL = 'email';
@@ -44,15 +42,7 @@ const biographyData = {
         icon: () => <FaSkype />,
       },
     ],
-    header: {
-      links: [
-        {
-          text: 'Settings',
-          link: SETTINGS_PATH,
-          icon: () => <FaCogs />,
-        },
-      ],
-    },
+    toastCopy: 'Copied: ',
   },
   ru: {
     greeting: 'Привет комрад! Я',
@@ -85,15 +75,7 @@ const biographyData = {
         icon: () => <FaSkype />,
       },
     ],
-    header: {
-      links: [
-        {
-          text: 'Настройки',
-          link: SETTINGS_PATH,
-          icon: () => <FaCogs />,
-        },
-      ],
-    },
+    toastCopy: 'Скопровано: ',
   },
 };
 

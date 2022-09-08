@@ -35,6 +35,7 @@ export const BIOGRAPHY_DATA = {
   NAME: 'biographyData.name',
   POSITION: 'biographyData.position',
   ABOUT: 'biographyData.about',
+  TOAST_COPY: 'biographyData.toastCopy',
 };
 
 export const STAGES_DATA = {

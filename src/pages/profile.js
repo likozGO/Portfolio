@@ -16,6 +16,7 @@ const Profile = ({
   nameTranslation,
   positionTranslation,
   aboutTranslation,
+  toastCopy,
   selectPreset,
 }) => {
   const { t } = useTranslation();
@@ -25,6 +26,7 @@ const Profile = ({
   const nameI18n = t(nameTranslation);
   const positionI18n = t(positionTranslation);
   const aboutI18n = t(aboutTranslation);
+  const toastCopyI18n = t(toastCopy);
 
   const history = useHistory();
   useEffect(() => {
@@ -43,6 +45,7 @@ const Profile = ({
             name={nameI18n}
             position={positionI18n}
             greeting={greetingI18n}
+            toastCopy={toastCopyI18n}
           />
           <ProfileMain about={aboutI18n} />
         </div>
@@ -60,6 +63,7 @@ function mapStateToProps(state) {
     nameTranslation: BIOGRAPHY_DATA.NAME,
     positionTranslation: BIOGRAPHY_DATA.POSITION,
     aboutTranslation: BIOGRAPHY_DATA.ABOUT,
+    toastCopy: BIOGRAPHY_DATA.TOAST_COPY,
     selectPreset: stagesSelectors.selectPreset(state),
   };
 }
