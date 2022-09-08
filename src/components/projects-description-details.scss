@@ -66,8 +66,9 @@
           left: 125px;
           max-width: 420px;
           @include respond(_768_min) {
-            margin: 0 auto;
+            margin: 0 auto 30px auto;
             left: unset;
+            max-width: 100%;
           }
         }
 

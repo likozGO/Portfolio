@@ -2,6 +2,11 @@ export const APP_DATA = {
   TITLE: 'appData.title',
 };
 
+export const PROJECTS_DATA = {
+  PROJECTS: 'projectsData.projects',
+  PROJECTS_DESCRIPTION_LABELS: 'projectsData.labels',
+};
+
 export const COMPANIES_DATA = {
   AIVIX_TITLE: 'companiesData.aivix.title',
   AIVIX_SUMMARY: 'companiesData.aivix.summary',
@@ -60,6 +65,7 @@ export const NAVBAR_DATA = {
 export default {
   APP_DATA,
   COMPANIES_DATA,
+  PROJECTS_DATA,
   ERRORS_DATA,
   BIOGRAPHY_DATA,
   STAGES_DATA,

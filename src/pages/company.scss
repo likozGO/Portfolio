@@ -243,6 +243,13 @@
         transition: transform .3s;
       }
     }
+    &-exit {
+      & {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+      }
+    }
   }
 }
 

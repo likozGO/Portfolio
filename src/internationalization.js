@@ -6,6 +6,7 @@ import stagesData from './constants/translation-stages-data';
 import navbarData from './constants/translation-navbar-data';
 import errorsData from './constants/translation-errors-data';
 import companiesData from './constants/translation-companies-data';
+import projectsData from './constants/translation-projects-data';
 
 const resources = {
   en: {
@@ -16,6 +17,7 @@ const resources = {
       navbarData: { ...navbarData.en },
       errorsData: { ...errorsData.en },
       companiesData: { ...companiesData.en },
+      projectsData: { ...projectsData.en },
     },
   },
   ru: {
@@ -26,6 +28,7 @@ const resources = {
       navbarData: { ...navbarData.ru },
       errorsData: { ...errorsData.ru },
       companiesData: { ...companiesData.ru },
+      projectsData: { ...projectsData.ru },
     },
   },
 };

@@ -1,13 +1,31 @@
 import React from 'react';
-import './projects.scss';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ProjectsListing from '../components/projects-listing';
 import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
 import { projectsSelectors, projectsOperations } from '../ducks/projects';
+import { PROJECTS_DATA } from '../constants/translation-keys';
+import './projects.scss';
 
-const Projects = ({ setProject }) => {
+const Projects = ({
+  projects,
+
+  setProject,
+}) => {
   const history = useHistory();
+  const { t } = useTranslation();
+  const [isCatAnimated, setCatAnimated] = React.useState(false);
+  const timerRef = React.useRef(null);
+
+  const projectsI18n = t(...projects);
+
+  const handleCatAnimation = (animationFlag) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    setCatAnimated(() => animationFlag);
+    timerRef.current = setTimeout(() => setCatAnimated(() => false), 500);
+  };
 
   const onItemSelected = (event, item) => {
     const containerTarget = event.currentTarget.firstElementChild;
@@ -34,11 +52,17 @@ const Projects = ({ setProject }) => {
 
     history.push(PROJECTS_DESCRIPTION_PATH);
   };
+
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
     <div
-      className="projects"
+      className={`projects ${isCatAnimated ? 'projects__cat__animation' : ''}`}
+      onClick={() => handleCatAnimation(true)}
     >
-      <ProjectsListing onItemSelected={onItemSelected} />
+      <ProjectsListing
+        onItemSelected={onItemSelected}
+        projects={projectsI18n}
+      />
     </div>
   );
 };
@@ -46,6 +70,7 @@ const Projects = ({ setProject }) => {
 function mapStateToProps(state) {
   return {
     currentProject: projectsSelectors.selectCurrentProject(state),
+    projects: [PROJECTS_DATA.PROJECTS, { returnObjects: true }],
   };
 }
 

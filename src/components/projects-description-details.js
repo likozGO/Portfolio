@@ -17,7 +17,12 @@ import { PROJECTS_PATH } from '../constants/router-urls';
 import ScreenImageWrapper from './screen-image-wrapper';
 import Button from './button';
 
-const ProjectsDescriptionDetails = ({ itemPosition, selectedItemDetails }) => {
+const ProjectsDescriptionDetails = ({
+  itemPosition,
+  selectedItemDetails,
+  projectLanguage = 'en',
+  projectLabels,
+}) => {
   const history = useHistory();
   const imageRef = createRef();
   const [imagePosition, setImagePosition] = useState({});
@@ -84,17 +89,17 @@ const ProjectsDescriptionDetails = ({ itemPosition, selectedItemDetails }) => {
           <div className="features-container">
             <span className="features-container__date">
               <span className="features-container__description">
-                Date of release:
+                {projectLabels.release}
               </span>
               <div className="features-container__content">
                 <AiOutlineClockCircle />
-                {moment(selectedItemDetails?.isCreated, 'YYYYMMDD').fromNow()}
-                {` (${moment(selectedItemDetails?.isCreated, 'YYYYMMDD').calendar()})`}
+                {moment(selectedItemDetails?.isCreated, 'YYYYMMDD').locale(projectLanguage).fromNow()}
+                {` (${moment(selectedItemDetails?.isCreated, 'YYYYMMDD').locale(projectLanguage).calendar()})`}
               </div>
             </span>
             <div className="features-container__tags">
               <span className="features-container__description">
-                Tools that i used:
+                {projectLabels.tools}
               </span>
               <div className="features-container__content">
                 {selectedItemDetails?.tag.map((tag) => (
@@ -106,7 +111,7 @@ const ProjectsDescriptionDetails = ({ itemPosition, selectedItemDetails }) => {
             </div>
             <div className="features-container__role">
               <span className="features-container__description">
-                My role:
+                {projectLabels.role}
               </span>
               <div className="features-container__content">
                 <HiOutlineIdentification />
@@ -116,7 +121,7 @@ const ProjectsDescriptionDetails = ({ itemPosition, selectedItemDetails }) => {
           </div>
           <div className="features-container">
             <Button
-              label="Project demo"
+              label={projectLabels.visitProjectButton}
               onClickHandler={() => window.open(selectedItemDetails?.links?.demo, '_blank')}
             />
             <div className="features-container__links">
