@@ -26,6 +26,7 @@ import COMPANY_AIVIX_EN from '../assets/images/company-aivix-en.webp';
 import COMPANY_N_IX_EN from '../assets/images/company-n_ix-en.webp';
 
 import PORTFOLIO_LOGO from '../assets/images/portfolio-logo.svg';
+import MOBILE_TEMP from '../assets/images/projects-example-mobile.webp';
 
 export default {
   NO_PARTICLES,
@@ -50,4 +51,5 @@ export default {
   COMPANY_AIVIX_EN,
   COMPANY_N_IX_EN,
   PORTFOLIO_LOGO,
+  MOBILE_TEMP,
 };

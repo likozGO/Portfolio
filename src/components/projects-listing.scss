@@ -1,7 +1,6 @@
 @import "../stylesheets/mixin";
 
 .projects .projects-listing-container {
-  margin-top: 100px;
   background: #fff;
   border-radius: 100px 100px 0 0;
   display: flex;
@@ -11,7 +10,6 @@
   flex-wrap: wrap;
   min-height: calc(100vh - 50px);
   @include respond(_600_min) {
-    margin-top: 0;
     border-radius: 0;
   }
   .container {
@@ -52,7 +50,7 @@
         .arrow-enter {
           transform: translateX(15px);
         }
-        .projects-laptop {
+        .screen-image {
           transform: translateY(-15px);
         }
       }
@@ -74,17 +72,6 @@
           @include respond(_600_min) {
             font-size: 26px;
             line-height: 28px;
-          }
-        }
-        .date {
-          display: flex;
-          align-items: center;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 26px;
-          text-transform: uppercase;
-          svg {
-            margin: 0 5px 0 0;
           }
         }
         .details {
@@ -117,107 +104,6 @@
           line-height: 11px;
         }
       }
-      .projects-laptop {
-        position: relative;
-        margin: auto;
-        max-width: 600px;
-        transition: .4s ease;
-        @include respond(_1199_min) {
-          max-width: 450px;
-        }
-
-        @include respond(_600_min) {
-          max-width: 350px;
-        }
-
-        &__screen {
-          position: relative;
-          z-index: 1;
-          padding: 3%;
-          border-radius: 2rem;
-          background: #ecf1f7;
-          background-image: linear-gradient(to bottom, #333, #111);
-          box-shadow: 0 .1rem 0 #cfcfcf;
-          border: 2px solid #ccc;
-
-          img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            aspect-ratio: attr(width) / attr(height);
-            background: #000;
-          }
-        }
-
-        &__bottom {
-          position: relative;
-          z-index: 1;
-          margin-right: -7%;
-          margin-left: -7%;
-          height: .7rem;
-          background: #e9eff5;
-          background-image: linear-gradient(to right, #d2dde9 0%, #f9fcff 15%, #e5ebf2 40%, #e5ebf2 60%, #f9fcff 85%, #d2dde9 100%);
-
-          @include respond(_600_min) {
-            display: none;
-          }
-
-          &::before {
-            display: block;
-            margin: 0 auto;
-            width: 20%;
-            height: .7rem;
-            border-radius: 0 0 .2rem .2rem;
-            background: #f6f9fc;
-            background-image: linear-gradient(to right, #c3cfdb 0%, #f6f9fc 10%, #f6f9fc 90%, #c3cfdb 100%);
-            content: " ";
-          }
-        }
-
-        &__under {
-          position: absolute;
-          top: 100%;
-          left: 25%;
-          display: block;
-          width: 50%;
-          height: 1.5rem;
-          background: #e2e8f0;
-          background-image: linear-gradient(to bottom, #e2e8f0, #bec7d1);
-
-          &::after, &::before {
-            position: absolute;
-            top: 0%;
-            right: 100%;
-            bottom: 0;
-            display: block;
-            width: 50%;
-            border-bottom-left-radius: 100%;
-            background: inherit;
-            content: " ";
-          }
-
-          &::after {
-            right: auto;
-            left: 100%;
-            border-bottom-right-radius: 100%;
-            border-bottom-left-radius: 0;
-          }
-        }
-
-        &__shadow {
-          position: absolute;
-          right: -10%;
-          bottom: -2.5rem;
-          left: -10%;
-          z-index: 0;
-          height: 2rem;
-          background: radial-gradient(ellipse closest-side,#000,transparent);
-          opacity: 0.5;
-          @include respond(_600_min) {
-            display: none;
-          }
-        }
-      }
 
       @include respond(_1199_min) {
         padding: 0 10px 10px 10px;
@@ -248,78 +134,6 @@
           }
         }
       }
-    }
-  }
-
-  .get-in-touch {
-    margin: 20px 0 0 0;
-    position: relative;
-    top: 190px;
-    border-radius: 100px 100px 0 0;
-    width: 100%;
-    display: flex;
-    padding: 75px;
-    flex-direction: column;
-    align-items: flex-start;
-    background:
-            url('../assets/images/get-in-touch-dance.gif') no-repeat 100%/500px,
-            linear-gradient(to top, #7200a5 20%, #27273c 80%, #7200a5 100%) center;
-    color: #fff;
-    animation: scroll 70s linear infinite;
-    h1, span {
-      margin: 0;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 32px;
-      display: inline-block;
-    }
-    h1 {
-      margin-bottom: 50px;
-    }
-    span {
-      margin-bottom: 30px;
-      font-weight: 100;
-    }
-    button {
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: .4s ease-in-out;
-      text-decoration: none!important;
-      color: #fff;
-      display: inline-block;
-      padding: 3px 0;
-      position: relative;
-      font-weight: 600;
-      max-width: 500px;
-      width: 100%;
-      font-size: 24px;
-      min-height: 80px;
-      background: none;
-      border: 5px black solid;
-      border-radius: 100px;
-      &:hover {
-        color: #fff;
-        background: #000;
-      }
-      @include respond(_1199_min) {
-        background: #000;
-        border-radius: 0;
-        color: white;
-        &:hover {
-          opacity: .6;
-        }
-      }
-    }
-
-    @include respond(_1199_min) {
-      top: 70px;
-    }
-    @include respond(_768_min) {
-      background: linear-gradient(to top, #7200a5 20%, #27273c 80%, #7200a5 100%) center;
-    }
-    @include respond(_600_min) {
-      border-radius: 0;
-      padding: 20px;
     }
   }
 }
