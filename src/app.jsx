@@ -10,6 +10,7 @@ import { stagesSelectors } from './ducks/stages/index';
 import RouterComponent from './components/router-component';
 import routes from './routes';
 import { APP_DATA } from './constants/translation-keys';
+import NavbarContainer from './containers/navbar-container';
 
 function App() {
   const selectTheme = useSelector(stagesSelectors.selectPreset);
@@ -39,6 +40,7 @@ function App() {
             exact={route.exact}
           />
         ))}
+        <NavbarContainer />
       </div>
     </Router>
   );

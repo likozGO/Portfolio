@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import AwesomeSlider from 'react-awesome-slider';
 import './company.scss';
 import { connect } from 'react-redux';
-import NavbarContainer from '../containers/navbar-container';
 import CompanyItem from '../components/company-item';
 import images from '../constants/images';
 import { tags } from '../constants/company-tags';
@@ -79,7 +78,6 @@ const Company = ({
           />
         </>
       </AwesomeSlider>
-      <NavbarContainer />
     </div>
   );
 };

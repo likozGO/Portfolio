@@ -6,7 +6,6 @@ import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
 import './profile.scss';
-import NavbarContainer from '../containers/navbar-container';
 import { stagesSelectors } from '../ducks/stages';
 import { BIOGRAPHY_DATA } from '../constants/translation-keys';
 
@@ -49,7 +48,6 @@ const Profile = ({
           />
           <ProfileMain about={aboutI18n} />
         </div>
-        <NavbarContainer />
       </div>
     </section>
   );

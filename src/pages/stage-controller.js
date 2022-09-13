@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import StageHelloContainer from '../containers/stage-hello-container';
 import StageSettingsContainer from '../containers/stage-settings-container';
 import { stagesSelectors, stagesOperations } from '../ducks/stages';
-import NavbarContainer from '../containers/navbar-container';
 
 const StageController = ({ setHello, isHelloStage }) => {
   const history = useHistory();
@@ -21,7 +20,6 @@ const StageController = ({ setHello, isHelloStage }) => {
     <section className="stage-controller">
       <StageHelloContainer />
       <StageSettingsContainer />
-      <NavbarContainer />
     </section>
   );
 };
