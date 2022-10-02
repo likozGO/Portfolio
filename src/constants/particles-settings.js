@@ -7,15 +7,15 @@ const ParticlesSetting = {
       emitters: {
         direction: 'random',
         size: {
-          width: 100,
-          height: 100,
+          width: 40,
+          height: 40,
         },
         position: {
           x: 50,
           y: 50,
         },
         rate: {
-          delay: 0.1,
+          delay: 0.5,
           quantity: 2,
         },
       },
@@ -25,15 +25,10 @@ const ParticlesSetting = {
         },
         color: {
           value: [
-            '#3998D0',
-            '#2EB6AF',
-            '#A9BD33',
-            '#FEC73B',
-            '#F89930',
-            '#F45623',
-            '#D62E32',
-            '#EB586E',
-            '#9952CF',
+            '#ffe800',
+            '#ffe236',
+            '#ffec7a',
+            '#947d00',
           ],
         },
         shape: {
@@ -248,7 +243,7 @@ const ParticlesSetting = {
           y: 50,
         },
         rate: {
-          delay: 0.1,
+          delay: 0.5,
           quantity: 2,
         },
       },
@@ -481,8 +476,8 @@ const ParticlesSetting = {
           y: 50,
         },
         rate: {
-          delay: 0.7,
-          quantity: 1,
+          delay: 0.5,
+          quantity: 2,
         },
       },
       particles: {
@@ -492,15 +487,15 @@ const ParticlesSetting = {
         },
         color: {
           value: [
-            '#7ba9c4',
-            '#a1c4c3',
+            '#a5c0d2',
+            '#bbd9d8',
             '#adb388',
-            '#cabd9d',
-            '#d6c3af',
-            '#c35431',
-            '#cf797b',
-            '#c3707c',
-            '#a690b7',
+            '#e5d1a2',
+            '#e3c4a5',
+            '#d6ab97',
+            '#d9b8b9',
+            '#e2cacd',
+            '#d1c1de',
           ],
         },
         shape: {

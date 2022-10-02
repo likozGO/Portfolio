@@ -7,21 +7,16 @@
   min-height: 100vh;
   height: 100%;
   @include color('company_color');
-  width: 100%;
+  width: calc(100% - 63px);
+  @include respond(_768_min) {
+    width: 100%;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   .navbar {
     z-index: 2;
-  }
-
-  @include respond(_1320_min) {
-    padding-right: 63px;
-  }
-  @include respond(_420_min) {
-    padding-right: 0;
-    padding-top: 63px;
   }
 
   .company-container {
@@ -39,7 +34,7 @@
     .company-interactive {
       width: 100%;
       max-width: 500px;
-      min-width: 2px;
+      min-width: 200px;
       position: relative;
       display: block;
       height: auto;
@@ -58,6 +53,9 @@
       margin-left: 50px;
       @include respond(_1024_min) {
         margin-left: 0;
+      }
+      @include respond(_420_min) {
+        padding-bottom: 70px;
       }
     }
     .company-title {
@@ -151,7 +149,7 @@
     --slider-height-percentage: 50%;
 
     &__wrapper{
-      overflow: initial;
+      overflow: scroll;
     }
     &__content {
       --content-background-color: transparent;
@@ -163,8 +161,8 @@
         align-items: flex-start;
       }
       @include respond(_420_min) {
-        padding-top: 0;
-        align-items: center;
+        padding-top: 30px;
+        align-items: baseline;
       }
     }
     &__controls {
@@ -181,9 +179,9 @@
     }
     &__bullets {
       position: fixed;
-      bottom: 15px;
+      bottom: 10px;
       z-index: 2;
-      width: calc(100% - 63px);
+      width: 100%;
       @include respond(_420_min) {
         width: 100%;
       }
@@ -225,31 +223,5 @@
     }
   }
 
-}
-
-
-//Animation
-.company {
-  &.css-transition {
-    &-enter-active {
-      & {
-        transform: translateX(-100%);
-        transition: transform .3s;
-      }
-    }
-    &-enter-done {
-      & {
-        transform: translateX(0);
-        transition: transform .3s;
-      }
-    }
-    &-exit {
-      & {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-      }
-    }
-  }
 }
 

@@ -12,23 +12,21 @@
     min-height: 100%;
     @include respond(_1320_min) {
       flex-direction: column-reverse;
-      padding-right: 150px;
     }
     @include respond(_768_min) {
-      padding: 0 65px 0 0;
+      padding: 0;
     }
     @include respond(_420_min) {
       height: auto;
-      padding: 0;
-      padding-top: 100px;
+      padding-top: 80px;
     }
   }
   .component-group {
     padding: 20px;
     justify-content: center;
-    margin: 0 10px 0 -220px;
+    margin: 0 0 0 -220px;
     @include respond(_1321_plus) {
-      margin: 0 10px 0 -140px;
+      margin: 0 0 0 -140px;
     }
     @include respond(_1320_min) {
       margin: 0;
@@ -56,7 +54,6 @@
         display: none;
       }
       @include respond(_1320_min) {
-        //bottom: -220px;
         position: relative;
         max-width: 490px;
         height: 100%;
@@ -128,52 +125,6 @@
     font-size: 22px;
     @include respond(_420_min) {
       font-size: 18px;
-    }
-  }
-}
-
-//ProfileSocial
-.profile-social-links {
-  padding: 0;
-  margin: 10px 0 0 0;
-  display: flex;
-  list-style: none;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  li {
-    cursor: pointer;
-    position: relative;
-    margin-right: 30px;
-    &:last-child {
-      margin-right: 0;
-    }
-    &:hover .social-icon {
-      @include color('profile-social-icon-hover');
-    }
-    .social-icon {
-      transition: color linear .15s;
-      @include color('profile-social-icon');
-    }
-    a, span {
-      &:before {
-        content: "";
-        position: absolute;
-        left: -9px;
-        top: -9px;
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        @include background-color('social-icon-highlight');
-        opacity: 0;
-        transition: opacity 0.15s linear;
-        user-select: none;
-      }
-      &:hover:before {
-        opacity: 1;
-      }
-      z-index: 1;
-      -webkit-tap-highlight-color: transparent;
     }
   }
 }

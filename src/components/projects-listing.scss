@@ -3,14 +3,16 @@
 .projects .projects-listing-container {
   border-radius: 100px 100px 0 0;
   display: flex;
+  border: 2px solid;
   flex-direction: column;
   align-items: center;
   @include background-color('projects_listing_bg');
   @include color('projects_listing_color');
   flex-wrap: wrap;
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
   @include respond(_600_min) {
     border-radius: 0;
+    border: 0;
   }
 
   .container {

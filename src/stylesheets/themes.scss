@@ -21,9 +21,11 @@ $themes: (
                 'profile-about': rgba(114,0,165,.7),
                 'profile-about-border': #fff,
 
-                'navbar-bg': rgba(114,0,165,.7),
+                'navbar-bg': rgba(114,0,165,1),
                 'navbar-color': #fff,
                 'navbar-border': #fff,
+                'navbar-underlay': rgba(0, 0, 0, 0.8),
+                'navbar-underlay-mobile': rgba(114, 0, 165, 1),
 
                 'toast_color': #fff,
                 'toast_bg': #7200a5,
@@ -73,9 +75,9 @@ $themes: (
                 'projects_description_details_links_color': #fff,
                 'projects_description_details_links_fill': #fff,
 
-                'projects_listing_bg': #fff,
-                'projects_listing_color': #000,
-                'projects_listing_tags_border': #000,
+                'projects_listing_bg': #7200a5,
+                'projects_listing_color': #fff,
+                'projects_listing_tags_border': #fff,
         ),
         'white': (
                 'body_bg': #fff,
@@ -99,9 +101,11 @@ $themes: (
                 'profile-about': rgba(255,255,255,.7),
                 'profile-about-border': #000,
 
-                'navbar-bg': rgba(255,255,255,.7),
+                'navbar-bg': rgba(255,255,255,1),
                 'navbar-color': #000,
                 'navbar-border': #000,
+                'navbar-underlay': rgba(255, 255, 255, 0.8),
+                'navbar-underlay-mobile': rgba(255, 255, 255, 1),
 
                 'toast_color': #000,
                 'toast_bg': #fff,
@@ -180,6 +184,8 @@ $themes: (
                 'navbar-bg': #000,
                 'navbar-color': #fff,
                 'navbar-border': #fff,
+                'navbar-underlay': rgba(0, 0, 0, 0.8),
+                'navbar-underlay-mobile': rgba(0, 0, 0, 1),
 
                 'toast_color': #fff,
                 'toast_bg': #000,

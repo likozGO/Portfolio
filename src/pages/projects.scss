@@ -22,28 +22,3 @@
   100% { background-position: center -81px; }
 }
 
-//Animation
-.projects {
-  &.css-transition {
-    &-enter-active {
-      & {
-        transform: translateX(-100%);
-        transition: transform .3s;
-      }
-    }
-    &-enter-done {
-      & {
-        transform: translateX(0);
-        transition: transform .3s;
-      }
-    }
-    &-exit {
-     & {
-       opacity: 0;
-       visibility: hidden;
-       position: absolute;
-     }
-    }
-  }
-}
-

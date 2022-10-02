@@ -1,7 +1,14 @@
 import React from 'react';
 import {
-  FaCogs, FaUserNinja, FaCode, FaBuilding,
+  FaRegBuilding,
 } from 'react-icons/fa';
+import {
+  GrContactInfo,
+  GrCode,
+} from 'react-icons/gr';
+import {
+  RiSettings2Line,
+} from 'react-icons/ri';
 import {
   COMPANY_PATH, HOME_PATH, SETTINGS_PATH, PROJECTS_PATH,
 } from './router-urls';
@@ -13,22 +20,22 @@ const navbarData = {
         {
           text: 'About me',
           link: HOME_PATH,
-          icon: () => <FaUserNinja />,
+          icon: () => <GrContactInfo />,
         },
         {
           text: 'Settings',
           link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
-          icon: () => <FaCogs />,
+          icon: () => <RiSettings2Line />,
         },
         {
           text: 'Company',
           link: COMPANY_PATH,
-          icon: () => <FaBuilding />,
+          icon: () => <FaRegBuilding />,
         },
         {
           text: 'Projects',
           link: PROJECTS_PATH,
-          icon: () => <FaCode />,
+          icon: () => <GrCode />,
         },
       ],
     },
@@ -39,22 +46,22 @@ const navbarData = {
         {
           text: 'О мне',
           link: HOME_PATH,
-          icon: () => <FaUserNinja />,
+          icon: () => <GrContactInfo />,
         },
         {
           text: 'Настройки',
           link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
-          icon: () => <FaCogs />,
+          icon: () => <RiSettings2Line />,
         },
         {
           text: 'Компании',
           link: COMPANY_PATH,
-          icon: () => <FaBuilding />,
+          icon: () => <FaRegBuilding />,
         },
         {
           text: 'Проекты',
           link: PROJECTS_PATH,
-          icon: () => <FaCode />,
+          icon: () => <GrCode />,
         },
       ],
     },

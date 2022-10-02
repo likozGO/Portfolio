@@ -18,7 +18,7 @@ const ProjectsDescription = ({
   const projectsDescriptionLabelsI18n = t(...projectsDescriptionLabels);
 
   return (
-    <div
+    <section
       className="projects-description"
     >
       <ProjectsDescriptionDetails
@@ -30,7 +30,7 @@ const ProjectsDescription = ({
         projectLanguage={projectLanguage}
         projectLabels={projectsDescriptionLabelsI18n}
       />
-    </div>
+    </section>
   );
 };
 

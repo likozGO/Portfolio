@@ -1,79 +1,23 @@
 @import '../stylesheets/mixin';
+@import "../stylesheets/global-variables";
 
 .navbar {
-  z-index: 1;
+  user-select: none;
+  z-index: 1000;
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  transition: opacity .5s;
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 100vh;
   @include background-color('navbar-bg');
-  border-left: 3px solid;
+  border-right: 3px solid;
   @include border-color('navbar-border');
   @include color('navbar-color');
 
-  &.loading {
-    opacity: 0;
-    width: 0;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-  }
-  .navbar-btn {
-    cursor: pointer;
-    z-index: 1;
-    width: 60px;
-    height: 30px;
-  }
-  .navbar-icons {
-    overflow-x: hidden;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    @include respond(_420_min) {
-      flex-direction: row;
-      width: 100%!important;
-      justify-content: space-evenly;
-    }
-    p {
-      margin-bottom: 30px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-      a:visited {
-        color: inherit;
-      }
-      @include respond(_420_min) {
-        margin-bottom: unset;
-      }
-      svg {
-        opacity: 0.8;
-        padding: 5px;
-        &:hover {
-          border: 1px solid;
-        }
-      }
-      .active-link svg {
-        opacity: 1;
-        border: 3px solid;
-      }
-    }
-    .navbar-icon-item {
-      width: 48px;
-      height: 48px;
-    }
-  }
-
-  @include respond(_1320_min) {
+  @include respond(_768_min) {
     position: fixed;
-    right: 0;
-    top: 0;
-  }
-
-  @include respond(_420_min) {
-    position: absolute;
     right: unset;
     height: 60px;
     width: 100%;
@@ -82,18 +26,281 @@
     border-bottom: 3px solid;
   }
 
+  &.loading {
+    opacity: 0;
+    width: 0;
+  }
+  & > .navbar-logo {
+    transition: .2s ease;
+    opacity: 1;
+    visibility: visible;
+    border-bottom: 3px solid;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: flex;
+    z-index: 1;
+
+    &:visited {
+      color: unset;
+    }
+    &:hover svg {
+      transform: scale(.7);
+    }
+    svg {
+      @include color('navbar-color');
+      transition: .2s ease;
+      padding: 3px 3px 5px 3px;
+      width: 63px;
+      height: 63px;
+      path {
+        @include stroke('navbar-color');
+      }
+      @include respond(_768_min) {
+        width: 58px;
+        height: 58px;
+        left: 0;
+      }
+    }
+    @include respond(_768_min) {
+      border: 0;
+      top: 0;
+    }
+  }
+  &.show-navbar > .navbar-logo {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+  .navbar-btn {
+    cursor: pointer;
+    z-index: 1;
+    width: 60px;
+    height: 30px;
+    @include respond(_768_min) {
+      position: absolute;
+      right: 0;
+    }
+  }
+  .navbar-container {
+    display: flex;
+    border-left: 3px solid;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+  @include respond(_768_min) {
+    min-height: 100vh;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    //z-index: 123123;
+    height: 100%;
+    border-left: 0;
+    border-right: 0;
+  }
+
+    .navbar-logo {
+      padding: 10px 0;
+      border-bottom: 3px solid;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include fill('navbar-color');
+      @include respond(_420_min_height) {
+        margin-bottom: 20px;
+      }
+      @include respond(_768_min) {
+        max-width: 300px;
+      }
+      @include respond(_420_min) {
+        max-width: 200px;
+      }
+      &:visited {
+        color: unset;
+      }
+      &:hover svg {
+        transform: scale(.7);
+      }
+      svg {
+        @include color('navbar-color');
+        transition: .2s ease;
+        height: 80px;
+        width: 80px;
+        path {
+          @include stroke('navbar-color');
+        }
+        @include respond(_420_min) {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+    .navbar-icons {
+      overflow-x: hidden;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      @include respond(_420_min_height) {
+        margin-bottom: 20px;
+      }
+      a {
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid transparent;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-left: 0;
+        border-right: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:visited {
+          color: inherit;
+        }
+        svg {
+          @include color('navbar-color');
+          opacity: 0.8;
+          padding: 5px;
+          margin-right: 10px;
+          path {
+            @include stroke('navbar-color');
+          }
+        }
+        &.active-link {
+          opacity: 1;
+          border: 3px solid;
+          border-left: 0;
+          border-right: 0;
+        }
+        &:hover {
+          border: 3px dotted;
+          border-left: 0;
+          border-right: 0;
+        }
+      }
+      .navbar-icon-item {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    .navbar-social-links {
+      border-top: 3px solid;
+      margin: 0;
+      padding: 10px 0 10px 0;
+      display: flex;
+      list-style: none;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      li {
+        cursor: pointer;
+        position: relative;
+        margin-right: 30px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover .social-icon {
+          @include color('profile-social-icon-hover');
+        }
+        .social-icon {
+          transition: color linear .15s;
+          @include color('profile-social-icon');
+        }
+        a, span {
+          &:before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: -9px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            @include background-color('social-icon-highlight');
+            opacity: 0;
+            transition: opacity 0.15s linear;
+            user-select: none;
+          }
+          &:hover:before {
+            opacity: 1;
+          }
+          z-index: 1;
+          -webkit-tap-highlight-color: transparent;
+        }
+      }
+    }
+  }
+  .navbar-underlay {
+    transition: .2s ease-in-out;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @include background-color('navbar-underlay');
+    visibility: hidden;
+    opacity: 0;
+    @include respond(_768_min) {
+      z-index: -352;
+      @include background-color('navbar-underlay-mobile');
+      transform: none!important;
+    }
+  }
+
+}
+
+.navbar + section {
+  transition: .3s ease-in-out;
 }
 
 
 
 .navbar.show-navbar {
-  .navbar-icons {
-    animation: fadeInNavbar .5s ease-in-out both;
+  .navbar-icons,
+  .navbar-container {
+    animation: fadeInNavbar .3s ease-in-out both;
+  }
+  & + section {
+    transform: translateX($navbar-with-items-width) scale(.8);
+  }
+  .navbar-underlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX($navbar-with-items-width);
   }
 }
+
 .navbar.hide-navbar {
-  .navbar-icons {
-    animation: fadeOutNavbar .5s ease-in-out both;
+  .navbar-icons,
+  .navbar-container {
+    animation: fadeOutNavbar .3s ease-in-out both;
+  }
+  .navbar-container {
+    @include respond(_768_min) {
+      visibility: hidden;
+    }
+  }
+  & + section {
+    transform: translateX(0) scale(1);
+  }
+  .navbar-underlay {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -104,11 +311,11 @@
   }
   50% {
     opacity: 0;
-    width: 90px;
+    width: $navbar-without-items-width;
   }
   100% {
     opacity: 1;
-    width: 90px;
+    width: $navbar-without-items-width;
   }
 }
 
@@ -116,11 +323,11 @@
 @keyframes fadeOutNavbar {
   0% {
     opacity: 1;
-    width: 90px;
+    width: $navbar-without-items-width;
   }
   50% {
     opacity: 0;
-    width: 90px;
+    width: $navbar-without-items-width;
   }
   100% {
     width: 0;

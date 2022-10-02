@@ -1,4 +1,5 @@
 @import "mixin";
+@import "../stylesheets/global-variables";
 
 html, body {
   padding: 0;
@@ -9,6 +10,14 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+main > .hide-navbar + section {
+  margin-left: $navbar-closed-width;
+  @include respond(_768_min) {
+    margin-left: 0;
+    padding-top: 60px;
+  }
 }
 
 
@@ -131,18 +140,18 @@ body {
 
 
 .css-transition {
-    &-enter {
-      opacity: 0;
-    }
-    &-enter-active {
-      opacity: 1;
-      transition: opacity .3s linear;
-    }
-    &-exit {
-      opacity: 1;
-    }
-    &-exit-active {
-      opacity: 0;
-      transition: opacity .3s linear;
-    }
+  &-enter {
+    opacity: 0;
   }
+  &-enter-active {
+    opacity: 1;
+    transition: opacity .3s linear;
+  }
+  &-exit {
+    opacity: 1;
+  }
+  &-exit-active {
+    opacity: 0;
+    transition: opacity .3s linear;
+  }
+}

@@ -55,7 +55,7 @@ const Projects = ({
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-    <div
+    <section
       className={`projects ${isCatAnimated ? 'projects__cat__animation' : ''}`}
       onClick={() => handleCatAnimation(true)}
     >
@@ -63,7 +63,7 @@ const Projects = ({
         onItemSelected={onItemSelected}
         projects={projectsI18n}
       />
-    </div>
+    </section>
   );
 };
 

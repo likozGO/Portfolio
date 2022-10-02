@@ -19,25 +19,25 @@ const biographyData = {
     social: [
       {
         key: CV,
-        text: 'CV',
+        text: 'Open CV',
         link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
         icon: () => <FaDownload />,
       },
       {
         key: EMAIL,
-        text: 'Email',
+        text: 'Copy email address',
         link: 'porshnev.work@gmail.com',
         icon: () => <FaMailBulk />,
       },
       {
         key: TELEGRAM,
-        text: 'Telegram',
+        text: 'Go to telegram',
         link: 'https://t.me/LikozGO',
         icon: () => <FaTelegram />,
       },
       {
         key: SKYPE,
-        text: 'Skype',
+        text: 'Copy Skype ID',
         link: 'ikoneon',
         icon: () => <FaSkype />,
       },
@@ -52,25 +52,25 @@ const biographyData = {
     social: [
       {
         key: CV,
-        text: 'CV',
+        text: 'Открыть CV',
         link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
         icon: () => <FaDownload />,
       },
       {
         key: EMAIL,
-        text: 'Емейл',
+        text: 'Скопировать емейл адрес',
         link: 'porshnev.work@gmail.com',
         icon: () => <FaMailBulk />,
       },
       {
         key: TELEGRAM,
-        text: 'Телеграм',
+        text: 'Перейти в телеграм',
         link: 'https://t.me/LikozGO',
         icon: () => <FaTelegram />,
       },
       {
         key: SKYPE,
-        text: 'Скайп',
+        text: 'Скопировать Skype ID',
         link: 'ikoneon',
         icon: () => <FaSkype />,
       },

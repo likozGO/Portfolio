@@ -48,7 +48,7 @@ const Company = ({
   };
 
   return (
-    <div className="company">
+    <section className="company">
       <AwesomeSlider
         animation="cubeAnimation"
         className={activeBullets}
@@ -78,7 +78,7 @@ const Company = ({
           />
         </>
       </AwesomeSlider>
-    </div>
+    </section>
   );
 };
 
