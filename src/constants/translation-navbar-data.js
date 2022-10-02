@@ -66,6 +66,32 @@ const navbarData = {
       ],
     },
   },
+  ua: {
+    navbar: {
+      links: [
+        {
+          text: 'Про мене',
+          link: HOME_PATH,
+          icon: () => <GrContactInfo />,
+        },
+        {
+          text: 'Налаштування',
+          link: { pathname: SETTINGS_PATH, state: { fromHome: true } },
+          icon: () => <RiSettings2Line />,
+        },
+        {
+          text: 'Компанії',
+          link: COMPANY_PATH,
+          icon: () => <FaRegBuilding />,
+        },
+        {
+          text: 'Проекти',
+          link: PROJECTS_PATH,
+          icon: () => <GrCode />,
+        },
+      ],
+    },
+  },
 };
 
 export default navbarData;

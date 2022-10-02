@@ -21,6 +21,7 @@ const StageSettings = ({
   setStep,
   firstStepTitleRuI18n,
   firstStepTitleEnI18n,
+  firstStepTitleUaI18n,
   secondStepTitleDefaultI18n,
   secondStepTitleWhiteI18n,
   secondStepTitleDarkI18n,
@@ -64,6 +65,12 @@ const StageSettings = ({
         title: t(firstStepTitleRuI18n),
         preset: ['lang', 'ru'],
         changeLang: () => i18n.changeLanguage('ru'),
+      },
+      {
+        image: images.UA_FLAG,
+        title: t(firstStepTitleUaI18n),
+        preset: ['lang', 'ua'],
+        changeLang: () => i18n.changeLanguage('ua'),
       },
     ],
     [

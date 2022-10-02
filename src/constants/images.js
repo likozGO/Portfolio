@@ -3,8 +3,9 @@ import STARS_PARTICLES from '../assets/images/particles-stars.jpg';
 import SNOW_PARTICLES from '../assets/images/particles-snow.jpg';
 import BUBBLES_PARTICLES from '../assets/images/particles-bubbles.jpg';
 
-import RU_FLAG from '../assets/images/russianFlag.svg';
+import RU_FLAG from '../assets/images/russianFlag.jpeg';
 import EN_FLAG from '../assets/images/englishFlag.svg';
+import UA_FLAG from '../assets/images/ukrainianFlag.svg';
 
 import DEFAULT_PALETTE from '../assets/images/palette-default.jpg';
 import DARK_PALETTE from '../assets/images/palette-dark.jpg';
@@ -35,6 +36,7 @@ export default {
   BUBBLES_PARTICLES,
   RU_FLAG,
   EN_FLAG,
+  UA_FLAG,
   DEFAULT_PALETTE,
   DARK_PALETTE,
   WHITE_PALETTE,

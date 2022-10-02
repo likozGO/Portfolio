@@ -5,6 +5,9 @@ const appData = {
   ru: {
     title: 'Поршнев Денис 🇺🇦',
   },
+  ua: {
+    title: 'Поршнєв Денис 🇺🇦',
+  },
 };
 
 export default appData;

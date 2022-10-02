@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
 import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
@@ -23,11 +22,6 @@ const Profile = ({
   const positionI18n = t(positionTranslation);
   const aboutI18n = t(aboutTranslation);
 
-  const history = useHistory();
-  useEffect(() => {
-    console.log(history);
-    // history.push('/settings');
-  }, []);
   return (
     <section className="profile-card">
       <div className="container">

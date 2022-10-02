@@ -8,7 +8,7 @@ const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
   const hello = new Array(40).fill(helloFriendI18n);
   return (
     <div
-      className={`stage-hello ${!selectHello && 'hide'}`}
+      className={`stage-hello ${!selectHello ? 'hide' : 'visible'}`}
       onAnimationStart={() => !selectHello && setHello(true)}
       onAnimationEnd={() => selectHello && setHello(false)}
     >

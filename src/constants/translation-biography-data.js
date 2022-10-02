@@ -12,10 +12,10 @@ export const socialTypes = [CV, EMAIL, TELEGRAM, SKYPE];
 
 const biographyData = {
   en: {
-    greeting: 'Hello there! IM',
-    name: 'Porshnev Denis',
+    greeting: 'Hello, I’M',
+    name: 'Porshniev Denis',
     position: 'Frontend Developer',
-    about: 'Web developer with experience in the office and remotely. Experienced in dealing with people. Purposeful, proactive and responsible. I have experience working with back-end developers. Specializes in React JS and responsive design.',
+    about: 'I’m a software engineer specializing in building web applications. Currently, I’m focused on building accessible, human-centered products at N-IX, also I help designers and businesses bring their ideas to life using computer and coffee.',
     social: [
       {
         key: CV,
@@ -45,10 +45,10 @@ const biographyData = {
     toastCopy: 'Copied: ',
   },
   ru: {
-    greeting: 'Привет комрад! Я',
+    greeting: 'Привет! Я',
     name: 'Поршнев Денис',
-    position: 'ФронтЕнд разработчик',
-    about: 'Веб-разработчик с опытом работы в офисе и удаленно. Опытный в общении с людьми. Целеустремленный, инициативный и ответственный. Имею опыт работы с БекЕнд разработчиками. Специализируюсь на React\'е и отзывчивом дизайне.',
+    position: 'Фронт-енд разработчик',
+    about: 'Я инженер-программист, специализирующийся на создании веб-приложений. В настоящее время я сосредоточен на создании качественных продуктов в N-IX, также помогаю дизайнерам и компаниям воплощать их идеи в жизнь используя компьютер и кофе.',
     social: [
       {
         key: CV,
@@ -76,6 +76,39 @@ const biographyData = {
       },
     ],
     toastCopy: 'Скопровано: ',
+  },
+  ua: {
+    greeting: 'Привіт! Я',
+    name: 'Поршнєв Денис',
+    position: 'Фронт-енд розробник',
+    about: 'Я інженер програміст, що спеціалізується на створенні веб-додатків. В даний час я зосереджений на створенні якісних продуктів у N-IX, також допомагаю дизайнерам та компаніям втілювати їхні ідеї в життя, використовуючи комп\'ютер та каву.',
+    social: [
+      {
+        key: CV,
+        text: 'Відкрити CV',
+        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
+        icon: () => <FaDownload />,
+      },
+      {
+        key: EMAIL,
+        text: 'Скопіювати емейл адресу',
+        link: 'porshnev.work@gmail.com',
+        icon: () => <FaMailBulk />,
+      },
+      {
+        key: TELEGRAM,
+        text: 'Перейти в телеграм',
+        link: 'https://t.me/LikozGO',
+        icon: () => <FaTelegram />,
+      },
+      {
+        key: SKYPE,
+        text: 'Скопіювати Skype ID',
+        link: 'ikoneon',
+        icon: () => <FaSkype />,
+      },
+    ],
+    toastCopy: 'Скопійовано: ',
   },
 };
 

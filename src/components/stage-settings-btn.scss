@@ -1,6 +1,7 @@
 @import "../stylesheets/mixin";
 
 .settings-btn {
+  animation: intro 1.6s;
   position: relative;
   text-decoration: none;
   @include color('settings-btn-collor');

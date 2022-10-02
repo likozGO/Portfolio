@@ -1,8 +1,10 @@
 import React from 'react';
 import { Redirect, Route, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { HOME_PATH, NO_FOUND_PATH } from '../constants/router-urls';
+import { useSelector } from 'react-redux';
+import { HOME_PATH, NO_FOUND_PATH, SETTINGS_PATH } from '../constants/router-urls';
 import routes from '../routes';
+import { stagesSelectors } from '../ducks/stages';
 
 const HandleAuth = () => {
   const checkKey = true;
@@ -20,6 +22,7 @@ export default function RouterComponent({
 }) {
   const location = useLocation();
   const pageFound = routes.find((page) => page.path === location.pathname);
+  const isHelloStage = useSelector(stagesSelectors.selectHello);
 
   if (!pageFound) {
     return <Redirect to={NO_FOUND_PATH} />;
@@ -43,6 +46,18 @@ export default function RouterComponent({
       <Route
         path={path}
         render={() => <Redirect to={HOME_PATH} />}
+        {...props}
+      />
+    );
+  }
+
+  if (location.pathname !== SETTINGS_PATH && isHelloStage) {
+    // Path restricted, exmaple: page login restricted, its public but
+    // if you login you cant go to this page
+    return (
+      <Route
+        path={path}
+        render={() => <Redirect to={SETTINGS_PATH} />}
         {...props}
       />
     );

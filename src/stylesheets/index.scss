@@ -148,10 +148,9 @@ main > .hide-navbar + section {
     transition: opacity .3s linear;
   }
   &-exit {
-    opacity: 1;
+    opacity: 0;
   }
   &-exit-active {
     opacity: 0;
-    transition: opacity .3s linear;
   }
 }

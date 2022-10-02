@@ -43,6 +43,7 @@ export const STAGES_DATA = {
 
   STEPS__FIRST__TITLE__EN: 'stagesData.steps.first.title.en',
   STEPS__FIRST__TITLE__RU: 'stagesData.steps.first.title.ru',
+  STEPS__FIRST__TITLE__UA: 'stagesData.steps.first.title.ua',
 
   STEPS__SECOND__TITLE__DEFAULT: 'stagesData.steps.second.title.default',
   STEPS__SECOND__TITLE__WHITE: 'stagesData.steps.second.title.white',

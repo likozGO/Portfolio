@@ -4,6 +4,7 @@ export const IMAGE_COMPARE = {
   first: {
     en: images.EN_FLAG,
     ru: images.RU_FLAG,
+    ua: images.UA_FLAG,
   },
   second: {
     default: images.DEFAULT_PALETTE,

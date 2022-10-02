@@ -31,6 +31,17 @@ const resources = {
       projectsData: { ...projectsData.ru },
     },
   },
+  ua: {
+    translation: {
+      appData: { ...appData.ua },
+      biographyData: { ...biographyData.ua },
+      stagesData: { ...stagesData.ua },
+      navbarData: { ...navbarData.ua },
+      errorsData: { ...errorsData.ua },
+      companiesData: { ...companiesData.ua },
+      projectsData: { ...projectsData.ua },
+    },
+  },
 };
 
 i18n

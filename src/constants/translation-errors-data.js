@@ -21,6 +21,17 @@ const errorsData = {
       comebackToHome: 'Вернуться на главную страницу',
     },
   },
+  ua: {
+    noFound: {
+      error: '404󠁧󠁢󠁥󠁮󠁧󠁿',
+      info: 'О ні, здається ви загубилися!',
+      button_fact: 'Натисніть тут',
+      to_get: 'для отримання',
+      interesting_information: 'цікавої інформації',
+      or: 'або...',
+      comebackToHome: 'Повернутися на головну сторінку',
+    },
+  },
 };
 
 export default errorsData;

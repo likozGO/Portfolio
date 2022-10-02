@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     selectStep: stagesSelectors.selectStep(state),
     firstStepTitleRuI18n: STAGES_DATA.STEPS__FIRST__TITLE__RU,
     firstStepTitleEnI18n: STAGES_DATA.STEPS__FIRST__TITLE__EN,
+    firstStepTitleUaI18n: STAGES_DATA.STEPS__FIRST__TITLE__UA,
 
     secondStepTitleDefaultI18n: STAGES_DATA.STEPS__SECOND__TITLE__DEFAULT,
     secondStepTitleWhiteI18n: STAGES_DATA.STEPS__SECOND__TITLE__WHITE,
