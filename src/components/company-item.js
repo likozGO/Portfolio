@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ScreenImageWrapper from './screen-image-wrapper';
 
 const CompanyItem = ({

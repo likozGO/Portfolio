@@ -1,5 +1,6 @@
-import { sliceErrors } from './reducer';
 import { getRandomFact } from '../../services/api.service';
+
+import { sliceErrors } from './reducer';
 
 const { actions } = sliceErrors;
 

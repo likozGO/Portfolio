@@ -1,11 +1,13 @@
 import React from 'react';
-import './projects-description.scss';
-import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+
 import ProjectsDescriptionDetails from '../components/projects-description-details';
 import { projectsSelectors } from '../ducks/projects';
 import { stagesSelectors } from '../ducks/stages';
 import { PROJECTS_DATA } from '../translations/translation-keys';
+
+import './projects-description.scss';
 
 const ProjectsDescription = ({
   currentProject,

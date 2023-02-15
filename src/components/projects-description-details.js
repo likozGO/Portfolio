@@ -1,21 +1,22 @@
-import React, { useEffect, createRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import moment from 'moment';
-import isEmpty from 'lodash/isEmpty';
+import React, { createRef, useEffect, useState } from 'react';
 import {
+  AiFillGithub,
   AiOutlineClockCircle,
   AiOutlineYoutube,
-  AiFillGithub,
 } from 'react-icons/ai';
 import { FaFigma } from 'react-icons/fa';
 import { HiOutlineIdentification } from 'react-icons/hi';
-
-import ProjectsTransitionLayer from './projects-transition-layer';
-import './projects-description-details.scss';
+import { useHistory } from 'react-router-dom';
+import isEmpty from 'lodash/isEmpty';
+import moment from 'moment';
 
 import { PROJECTS_PATH } from '../constants/router-urls';
-import ScreenImageWrapper from './screen-image-wrapper';
+
 import Button from './button';
+import ProjectsTransitionLayer from './projects-transition-layer';
+import ScreenImageWrapper from './screen-image-wrapper';
+
+import './projects-description-details.scss';
 
 const ProjectsDescriptionDetails = ({
   itemPosition,

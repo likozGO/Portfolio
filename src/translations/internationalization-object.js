@@ -1,10 +1,10 @@
 import appData from './translation-app-data';
 import biographyData from './translation-biography-data';
-import stagesData from './translation-stages-data';
-import navbarData from './translation-navbar-data';
-import errorsData from './translation-errors-data';
 import companiesData from './translation-companies-data';
+import errorsData from './translation-errors-data';
+import navbarData from './translation-navbar-data';
 import projectsData from './translation-projects-data';
+import stagesData from './translation-stages-data';
 
 const internationalizationObject = {
   en: {

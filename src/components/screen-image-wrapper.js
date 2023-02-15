@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './screen-image-wrapper.scss';
 
 const ScreenImageWrapper = React.forwardRef(

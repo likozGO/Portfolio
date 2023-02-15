@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { stagesSelectors, stagesOperations } from '../ducks/stages/index';
+
 import ParticlesBg from '../components/particles-bg';
+import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 
 function mapStateToProps(state) {
   return {

@@ -1,16 +1,18 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import AwesomeSlider from 'react-awesome-slider';
-import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
+import { useTranslation } from 'react-i18next';
+
 import AnimationStyles
   from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
-import './stage-settings.scss';
+import images from '../constants/images';
+import { IMAGE_COMPARE } from '../constants/settings-image-mapping';
+
+import RainbowText from './rainbow-text';
+import StageSettingsBtn from './stage-settings-btn';
 import StageSettingsItem from './stage-settings-item';
 
-import StageSettingsBtn from './stage-settings-btn';
-import RainbowText from './rainbow-text';
-import { IMAGE_COMPARE } from '../constants/settings-image-mapping';
-import images from '../constants/images';
+import './stage-settings.scss';
+import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 
 const StageSettings = ({
   selectPreset,

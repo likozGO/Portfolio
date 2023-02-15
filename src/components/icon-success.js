@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './icon-success.scss';
 
 const STYLE_TOP_RIGHT = {

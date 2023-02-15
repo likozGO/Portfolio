@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import AwesomeSlider from 'react-awesome-slider';
-import './company.scss';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+
 import CompanyItem from '../components/company-item';
-import images from '../constants/images';
 import { tags } from '../constants/company-tags';
+import images from '../constants/images';
 import { COMPANIES_DATA } from '../translations/translation-keys';
+
+import './company.scss';
 
 const Company = ({
   aivixTitle,

@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import store from './store';
+
 import './internationalization';
+import 'moment/locale/ru';
+
 import App from './app';
+import store from './store';
+
 import 'normalize.css';
 import './stylesheets/index.scss';
 import './stylesheets/fonts.css';
-import 'moment/locale/ru';
 import 'react-toastify/dist/ReactToastify.css';
 
 const persist = persistStore(store);

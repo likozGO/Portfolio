@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { stagesSelectors, stagesOperations } from '../ducks/stages/index';
+
 import StageHello from '../components/stage-hello';
+import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 import { STAGES_DATA } from '../translations/translation-keys';
 
 function mapStateToProps(state) {

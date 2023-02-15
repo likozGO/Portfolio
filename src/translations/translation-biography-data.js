@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  FaDownload, FaMailBulk, FaTelegram, FaSkype,
+  FaDownload, FaMailBulk, FaSkype,
+  FaTelegram,
 } from 'react-icons/fa';
 
 export const CV = 'cv';

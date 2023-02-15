@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-// eslint-disable-next-line no-unused-vars
-import { stagesSelectors, stagesOperations } from '../ducks/stages/index';
+
 import StageSettings from '../components/stage-settings';
+// eslint-disable-next-line no-unused-vars
+import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 import { STAGES_DATA } from '../translations/translation-keys';
 
 function mapStateToProps(state) {

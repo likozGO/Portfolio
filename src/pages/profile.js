@@ -1,12 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+
 import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
-import './profile.scss';
 import { stagesSelectors } from '../ducks/stages';
 import { BIOGRAPHY_DATA } from '../translations/translation-keys';
+
+import './profile.scss';
 
 const Profile = ({
   greetingTranslation,

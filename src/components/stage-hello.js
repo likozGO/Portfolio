@@ -1,6 +1,7 @@
 import React from 'react';
-import './stage-hello.scss';
 import { useTranslation } from 'react-i18next';
+
+import './stage-hello.scss';
 
 const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
   const { t } = useTranslation();

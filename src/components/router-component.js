@@ -1,10 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, Route, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { useSelector } from 'react-redux';
+
 import { HOME_PATH, NO_FOUND_PATH, SETTINGS_PATH } from '../constants/router-urls';
-import routes from '../routes';
 import { stagesSelectors } from '../ducks/stages';
+import routes from '../routes';
 
 const HandleAuth = () => {
   const checkKey = true;

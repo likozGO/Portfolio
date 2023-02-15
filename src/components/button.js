@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { BiSave } from 'react-icons/bi';
+import PropTypes from 'prop-types';
+
 import { BUTTON_SIZES, BUTTON_STYLE, BUTTON_TYPES } from '../constants/button-types';
+
 import './button.scss';
 
 const Icon = ({ icon }) => {

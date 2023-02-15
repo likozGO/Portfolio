@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import './stage-controller.scss';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
 import StageHelloContainer from '../containers/stage-hello-container';
 import StageSettingsContainer from '../containers/stage-settings-container';
-import { stagesSelectors, stagesOperations } from '../ducks/stages';
+import { stagesOperations, stagesSelectors } from '../ducks/stages';
+
+import './stage-controller.scss';
 
 const StageController = ({ setHello, isHelloStage }) => {
   const history = useHistory();

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
 import { FaSpinner } from 'react-icons/fa';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+
 import images from '../constants/images';
-import './error-no-found.scss';
-import { stagesSelectors } from '../ducks/stages';
-import operations from '../ducks/errors/operations';
 import { errorsSelectors } from '../ducks/errors';
+import operations from '../ducks/errors/operations';
+import { stagesSelectors } from '../ducks/stages';
 import { ERRORS_DATA } from '../translations/translation-keys';
+
+import './error-no-found.scss';
 
 const ErrorNoFound = ({
   generateRandomFact, selectFact, selectIsLoading, selectLanguage,

@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './navbar.scss';
+import { useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
 import {
-  FaBars, FaTimes, FaCreativeCommonsPdAlt,
+  FaBars, FaCreativeCommonsPdAlt,
+  FaTimes,
 } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 import { HOME_PATH } from '../constants/router-urls';
-import Tooltip from './tooltip';
 import { CV, socialTypes, TELEGRAM } from '../translations/translation-biography-data';
+
+import Tooltip from './tooltip';
+
+import './navbar.scss';
 
 const Navbar = ({
   toggleVisible,

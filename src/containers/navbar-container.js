@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
+
 import Navbar from '../components/navbar';
-import { navbarSelectors, navbarOperations } from '../ducks/navbar';
+import { navbarOperations, navbarSelectors } from '../ducks/navbar';
 import { BIOGRAPHY_DATA, NAVBAR_DATA } from '../translations/translation-keys';
 
 function mapStateToProps(state) {

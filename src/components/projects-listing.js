@@ -1,7 +1,9 @@
 import React from 'react';
 import { FiArrowRightCircle } from 'react-icons/fi';
-import './projects-listing.scss';
+
 import ScreenImageWrapper from './screen-image-wrapper';
+
+import './projects-listing.scss';
 
 const ProjectsListing = ({ onItemSelected, projects }) => {
   console.log(123);

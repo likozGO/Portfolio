@@ -1,20 +1,20 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
-  persistReducer,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
+  persistCombineReducers,
+  persistReducer,
   PURGE,
-  REGISTER, persistCombineReducers,
+  REGISTER, REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import profileReducer from './ducks/profile/reducer';
-import stageReducer from './ducks/stages/reducer';
-import navbarReducer from './ducks/navbar/reducer';
 import errorsReducer from './ducks/errors/reducer';
+import navbarReducer from './ducks/navbar/reducer';
+import profileReducer from './ducks/profile/reducer';
 import projectsReducer from './ducks/projects/reducer';
+import stageReducer from './ducks/stages/reducer';
 
 const persistConfig = {
   key: 'root',

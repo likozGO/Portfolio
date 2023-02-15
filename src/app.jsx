@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { ToastContainer } from 'react-toastify';
+
+import RouterComponent from './components/router-component';
 import NavbarContainer from './containers/navbar-container';
 import ParticlesBgContainer from './containers/particles-bg-container';
-import RouterComponent from './components/router-component';
 import { stagesSelectors } from './ducks/stages/index';
-import routes from './routes';
 import { APP_DATA } from './translations/translation-keys';
+import routes from './routes';
 
 function App() {
   const { lang, theme } = useSelector(stagesSelectors.selectPreset);

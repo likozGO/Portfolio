@@ -8,13 +8,13 @@ import {
   FaReact,
 } from 'react-icons/fa';
 import {
-  VscChecklist,
-} from 'react-icons/vsc';
-import {
-  SiSocketdotio,
   SiJquery,
   SiMaterialui,
+  SiSocketdotio,
 } from 'react-icons/si';
+import {
+  VscChecklist,
+} from 'react-icons/vsc';
 
 export const categories = {
   crypto: {

@@ -1,6 +1,7 @@
 import React from 'react';
-import './stage-settings-btn.scss';
 import { Link } from 'react-router-dom';
+
+import './stage-settings-btn.scss';
 
 const StageSettingsBtn = () => (
   <Link

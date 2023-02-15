@@ -1,18 +1,17 @@
-import ViewSettings from './pages/stage-controller';
-import ViewHome from './pages/profile';
+import {
+  COMPANY_PATH,
+  HOME_PATH,
+  NO_FOUND_PATH,
+  PROJECTS_DESCRIPTION_PATH,
+  PROJECTS_PATH,
+  SETTINGS_PATH,
+} from './constants/router-urls';
 import ViewCompany from './pages/company';
+import ViewNoFound from './pages/error-no-found';
+import ViewHome from './pages/profile';
 import ViewProjects from './pages/projects';
 import ViewProjectsDescription from './pages/projects-description';
-import ViewNoFound from './pages/error-no-found';
-
-import {
-  HOME_PATH,
-  SETTINGS_PATH,
-  NO_FOUND_PATH,
-  COMPANY_PATH,
-  PROJECTS_PATH,
-  PROJECTS_DESCRIPTION_PATH,
-} from './constants/router-urls';
+import ViewSettings from './pages/stage-controller';
 
 export const HOME = {
   component: ViewHome,

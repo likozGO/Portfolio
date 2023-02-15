@@ -1,6 +1,8 @@
 import React from 'react';
-import './stage-settings-item.scss';
+
 import IconSuccess from './icon-success';
+
+import './stage-settings-item.scss';
 
 const StageSettingsItem = ({
   image, title, text, preset, changeLang,
