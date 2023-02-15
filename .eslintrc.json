@@ -1,11 +1,12 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es2021": true
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:unicorn/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -15,7 +16,7 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 11,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
@@ -28,6 +29,7 @@
         "react/prop-types": 0,
         "max-len": "warn",
         "no-plusplus": "off",
+        "unicorn/no-null": "off",
         "react/jsx-props-no-spreading": "warn",
         "camelcase": "off",
         "no-param-reassign": ["error", { "props": false }],
