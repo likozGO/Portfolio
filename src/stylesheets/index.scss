@@ -1,6 +1,10 @@
 @import "mixin";
 @import "../stylesheets/global-variables";
 
+a {
+  color: inherit;
+}
+
 html, body {
   padding: 0;
   margin: 0;
