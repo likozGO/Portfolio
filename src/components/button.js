@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { BiSave } from 'react-icons/bi';
-import { BUTTON_TYPES } from '../constants/button-types';
+import { BUTTON_SIZES, BUTTON_STYLE, BUTTON_TYPES } from '../constants/button-types';
 import './button.scss';
-
-export const ButtonTypes = Object.freeze({
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-});
-
-export const ButtonSizes = Object.freeze({
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-});
 
 const Icon = ({ icon }) => {
   switch (icon) {
@@ -69,17 +57,17 @@ Icon.defaultProps = {
 };
 
 Button.propTypes = {
-  type: PropTypes.oneOf(Object.values(ButtonTypes)),
+  type: PropTypes.oneOf(Object.values(BUTTON_STYLE)),
   disabled: PropTypes.bool,
   onClickHandler: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(Object.values(ButtonSizes)),
+  size: PropTypes.oneOf(Object.values(BUTTON_SIZES)),
   icon: PropTypes.oneOf(Object.values(BUTTON_TYPES)),
 };
 
 Button.defaultProps = {
-  type: ButtonTypes.PRIMARY,
+  type: BUTTON_STYLE.PRIMARY,
   disabled: false,
-  size: ButtonSizes.MEDIUM,
+  size: BUTTON_SIZES.MEDIUM,
   icon: BUTTON_TYPES.NONE,
 };

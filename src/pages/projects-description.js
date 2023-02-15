@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import ProjectsDescriptionDetails from '../components/projects-description-details';
 import { projectsSelectors } from '../ducks/projects';
 import { stagesSelectors } from '../ducks/stages';
-import { PROJECTS_DATA } from '../constants/translation-keys';
+import { PROJECTS_DATA } from '../translations/translation-keys';
 
 const ProjectsDescription = ({
   currentProject,

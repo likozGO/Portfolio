@@ -10,6 +10,8 @@ import App from './app';
 import 'normalize.css';
 import './stylesheets/index.scss';
 import './stylesheets/fonts.css';
+import 'moment/locale/ru';
+import 'react-toastify/dist/ReactToastify.css';
 
 const persist = persistStore(store);
 

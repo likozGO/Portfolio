@@ -11,7 +11,6 @@ const ProfilePhoto = ({ selectPreset }) => {
     <div className="profile-photo">
       <div className="image-wrapper">
         <img alt="Profile" src={CURRENT_PHOTO[selectPreset.theme]} className="image-personal" />
-        <img alt="Mr Cartman" src={images.CARTMAN_GIF} className="image-cartoon" />
       </div>
     </div>
   );

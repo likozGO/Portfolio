@@ -14,7 +14,6 @@ import WHITE_PALETTE from '../assets/images/palette-white.jpg';
 import PERSONAL_PHOTO_BLACK from '../assets/images/photo-black.png';
 import PERSONAL_PHOTO_PURPLE from '../assets/images/photo-purple.png';
 import PERSONAL_PHOTO_WHITE from '../assets/images/photo-white.png';
-import CARTMAN_GIF from '../assets/images/cartman.webp';
 
 import JOHN_404_GIF from '../assets/images/404-travolta.gif';
 import CARTMAN_404_GIF from '../assets/images/404-cartman.gif';
@@ -43,7 +42,6 @@ export default {
   PERSONAL_PHOTO_BLACK,
   PERSONAL_PHOTO_PURPLE,
   PERSONAL_PHOTO_WHITE,
-  CARTMAN_GIF,
   JOHN_404_GIF,
   CARTMAN_404_GIF,
   PATRICK_404_GIF,

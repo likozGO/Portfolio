@@ -8,18 +8,15 @@ import ParticlesBgContainer from './containers/particles-bg-container';
 import RouterComponent from './components/router-component';
 import { stagesSelectors } from './ducks/stages/index';
 import routes from './routes';
-import { APP_DATA } from './constants/translation-keys';
-
-import 'moment/locale/ru';
-import 'react-toastify/dist/ReactToastify.css';
+import { APP_DATA } from './translations/translation-keys';
 
 function App() {
-  const selectTheme = useSelector(stagesSelectors.selectPreset);
+  const { lang, theme } = useSelector(stagesSelectors.selectPreset);
   const { t, i18n } = useTranslation();
   const titleI18n = t(APP_DATA.TITLE);
 
   useEffect(() => {
-    i18n.changeLanguage(selectTheme.lang);
+    i18n.changeLanguage(lang);
   }, []);
 
   useEffect(() => {
@@ -28,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <div className={`theme-picker theme-${selectTheme.theme}`}>
+      <div className={`theme-picker theme-${theme}`}>
         <ToastContainer limit={3} toastClassName="toast" />
         <ParticlesBgContainer />
         <main>

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import ProjectsListing from '../components/projects-listing';
 import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
 import { projectsSelectors, projectsOperations } from '../ducks/projects';
-import { PROJECTS_DATA } from '../constants/translation-keys';
+import { PROJECTS_DATA } from '../translations/translation-keys';
 import './projects.scss';
 
 const Projects = ({

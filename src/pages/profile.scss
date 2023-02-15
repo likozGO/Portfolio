@@ -49,20 +49,6 @@
       width: 100%;
       align-items: flex-end;
     }
-    .image-cartoon {
-      @include respond(_1321_plus) {
-        display: none;
-      }
-      @include respond(_1320_min) {
-        position: relative;
-        max-width: 490px;
-        height: 100%;
-      }
-      @include respond(_1100_min) {
-        display: none;
-      }
-      width: 100%;
-    }
     .image-personal {
       width: 80vh;
       height: auto;

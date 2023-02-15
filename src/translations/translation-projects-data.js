@@ -1,4 +1,4 @@
-import images from './images';
+import images from '../constants/images';
 
 const projectsData = {
   en: {

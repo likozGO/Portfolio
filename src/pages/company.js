@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import CompanyItem from '../components/company-item';
 import images from '../constants/images';
 import { tags } from '../constants/company-tags';
-import { COMPANIES_DATA } from '../constants/translation-keys';
+import { COMPANIES_DATA } from '../translations/translation-keys';
 
 const Company = ({
   aivixTitle,

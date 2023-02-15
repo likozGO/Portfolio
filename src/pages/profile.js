@@ -6,7 +6,7 @@ import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
 import './profile.scss';
 import { stagesSelectors } from '../ducks/stages';
-import { BIOGRAPHY_DATA } from '../constants/translation-keys';
+import { BIOGRAPHY_DATA } from '../translations/translation-keys';
 
 const Profile = ({
   greetingTranslation,

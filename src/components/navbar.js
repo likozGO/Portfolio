@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { HOME_PATH } from '../constants/router-urls';
 import Tooltip from './tooltip';
-import { CV, socialTypes, TELEGRAM } from '../constants/translation-biography-data';
+import { CV, socialTypes, TELEGRAM } from '../translations/translation-biography-data';
 
 const Navbar = ({
   toggleVisible,
@@ -45,6 +45,8 @@ const Navbar = ({
     copyToClipboard(data);
     toast.info(`${toastCopyI18n}${data}`, { autoClose: 1000 });
   };
+
+  console.log(navbarI18n);
 
   return (
     <nav

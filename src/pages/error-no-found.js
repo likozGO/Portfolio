@@ -9,7 +9,7 @@ import './error-no-found.scss';
 import { stagesSelectors } from '../ducks/stages';
 import operations from '../ducks/errors/operations';
 import { errorsSelectors } from '../ducks/errors';
-import { ERRORS_DATA } from '../constants/translation-keys';
+import { ERRORS_DATA } from '../translations/translation-keys';
 
 const ErrorNoFound = ({
   generateRandomFact, selectFact, selectIsLoading, selectLanguage,

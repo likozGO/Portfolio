@@ -11,7 +11,7 @@ import {
 } from 'react-icons/ri';
 import {
   COMPANY_PATH, HOME_PATH, SETTINGS_PATH, PROJECTS_PATH,
-} from './router-urls';
+} from '../constants/router-urls';
 
 const navbarData = {
   en: {
