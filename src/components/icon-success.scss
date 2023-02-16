@@ -1,7 +1,7 @@
 $circle-length: 151px;
 $check-length: 36px;
 
-#successAnimation {
+#success-animation {
   position: absolute;
   z-index: 1;
 }
@@ -53,35 +53,35 @@ $check-length: 36px;
   }
 }
 
-#successAnimationCircle {
+#success-animation-circle {
   stroke-dasharray: $circle-length $circle-length;
   stroke: green;
 }
 
-#successAnimationCheck {
+#success-animation-check {
   stroke-dasharray: $check-length $check-length;
   stroke: green;
 }
 
-#successAnimationResult {
+#success-animation-result {
   fill: green;
   opacity: 0;
 }
 
-#successAnimation.animated {
+#success-animation.animated {
   animation: 1s ease-out 0s 1 both scale-animation;
 
-  #successAnimationCircle {
+  #success-animation-circle {
     animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both draw-circle,
       0.3s linear 0.9s 1 both fade-out;
   }
 
-  #successAnimationCheck {
+  #success-animation-check {
     animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both draw-check,
       0.3s linear 0.9s 1 both fade-out;
   }
 
-  #successAnimationResult {
+  #success-animation-result {
     animation: 2s linear 0.9s both fade-in;
   }
 }

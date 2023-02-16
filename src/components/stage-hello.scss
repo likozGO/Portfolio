@@ -17,8 +17,8 @@ $fontSizeMobile: 4rem;
   perspective: 800px;
 }
 
-#ui {
-  .text {
+#stage-hello-wrapper {
+  .stage-hello-word {
     position: absolute;
     user-select: none;
     font-size: $fontSize;

@@ -53,6 +53,8 @@ const StageSettings = ({
     fourth: 3,
   };
 
+  const ANIMATION_TYPE = 'foldOutAnimation';
+
   const stepsI18n = t(`stagesData.steps.${selectStep}.headline`);
 
   const stages = [
@@ -153,7 +155,7 @@ const StageSettings = ({
         }`}
       >
         <AwesomeSlider
-          animation="foldOutAnimation"
+          animation={ANIMATION_TYPE}
           fillParent
           buttons={false}
           mobileTouch={false}

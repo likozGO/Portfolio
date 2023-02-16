@@ -13,10 +13,10 @@ const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
       onAnimationStart={() => !selectHello && setHello(true)}
       onAnimationEnd={() => selectHello && setHello(false)}
     >
-      <div id="ui">
+      <div id="stage-hello-wrapper">
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {hello.map((a) => (
-          <span className="text">{a}</span>
+        {hello.map((text) => (
+          <span className="stage-hello-word">{text}</span>
         ))}
       </div>
     </div>
