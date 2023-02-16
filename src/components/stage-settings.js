@@ -2,17 +2,19 @@ import React from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import { useTranslation } from 'react-i18next';
 
-import AnimationStyles
-  from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 import images from '../constants/images';
 import { IMAGE_COMPARE } from '../constants/settings-image-mapping';
 
 import RainbowText from './rainbow-text';
-import StageSettingsBtn from './stage-settings-btn';
+import StageSettingsButton from './stage-settings-button';
 import StageSettingsItem from './stage-settings-item';
 
 import './stage-settings.scss';
+// eslint-disable-next-line import/order
 import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
+// eslint-disable-next-line import/order
+import AnimationStyles
+  from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 
 const StageSettings = ({
   selectPreset,
@@ -185,8 +187,8 @@ const StageSettings = ({
                   }
                   {selectStep === 'fourth'
                     ? (
-                      <div className="settings-btn-wrapper">
-                        <StageSettingsBtn />
+                      <div className="settings-button-wrapper">
+                        <StageSettingsButton />
                       </div>
                     ) : null}
                 </div>

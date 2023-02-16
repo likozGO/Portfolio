@@ -4,15 +4,16 @@ import { loadFull } from 'tsparticles';
 
 import ParticlesSetting from '../constants/particles-settings';
 
+const particlesInit = async (main) => {
+  await loadFull(main);
+};
+
 const ParticlesBg = ({
   selectAnimationStart,
   selectPreset,
   setAnimationStart,
   isEnabled,
 }) => {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
   if (isEnabled) {
     return (
       <Particles

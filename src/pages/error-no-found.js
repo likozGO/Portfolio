@@ -22,12 +22,14 @@ const ErrorNoFound = ({
   const [inProperty, setInProperty] = useState(false);
   const { t } = useTranslation();
   const errorImages = [
-    images.JOHN_404_GIF, images.CARTMAN_404_GIF,
-    images.PETER_404_GIF, images.PATRICK_404_GIF,
+    images.JOHN_404_GIF,
+    images.CARTMAN_404_GIF,
+    images.PETER_404_GIF,
+    images.PATRICK_404_GIF,
     images.RALPH_404_GIF,
   ];
-  // eslint-disable-next-line no-bitwise
-  const randomImage = errorImages[(Math.random() * errorImages.length) | 0];
+
+  const randomImage = errorImages[Math.trunc(Math.random() * errorImages.length)];
 
   const buttonFactI18n = t(buttonFactTranslation);
   const errorI18n = t(errorTranslation);

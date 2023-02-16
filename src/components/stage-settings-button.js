@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './stage-settings-btn.scss';
+import './stage-settings-button.scss';
 
 const StageSettingsButton = () => (
   <Link
     to="/"
-    className="settings-btn"
+    className="settings-button"
   >
     <div className="dots-container">
       <div className="dot" />

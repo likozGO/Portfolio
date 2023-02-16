@@ -6,7 +6,8 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "plugin:unicorn/recommended"
+        "plugin:unicorn/recommended",
+        "plugin:react-hooks/recommended"
     ],
     "globals": {
         "Atomics": "readonly",

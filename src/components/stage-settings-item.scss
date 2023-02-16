@@ -94,7 +94,7 @@
   }
 
 
-  .settings-btn-wrapper {
+  .settings-button-wrapper {
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
@@ -103,7 +103,7 @@
     width: 100%;
     visibility: hidden;
   }
-  &.step-4 .settings-btn-wrapper {
+  &.step-4 .settings-button-wrapper {
     visibility: visible;
   }
   .container {
