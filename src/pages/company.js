@@ -37,13 +37,13 @@ const Company = ({
   const highlightProjects = (tag) => {
     const result = Object.entries(tags).flatMap(([company, data]) => {
       const final = [];
-      // eslint-disable-next-line no-restricted-syntax
-      for (const dataItem of data) {
+      // eslint-disable-next-line unicorn/no-array-for-each
+      data.forEach((dataItem) => {
         if (dataItem.text === tag.text) {
           return final.push(company);
         }
         return null;
-      }
+      });
       return final;
     });
 
