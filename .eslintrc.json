@@ -26,17 +26,21 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
         "linebreak-style": 0,
         "react/prop-types": 0,
+
         "max-len": "warn",
+        "react/jsx-props-no-spreading": "warn",
+
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "no-param-reassign": ["error", { "props": false }],
+
         "no-plusplus": "off",
         "unicorn/no-null": "off",
-        "react/jsx-props-no-spreading": "warn",
-        "camelcase": "off",
-        "no-param-reassign": ["error", { "props": false }],
-        // increase the severity of rules so they are auto-fixable
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error"
+        "react-redux/connect-prefer-named-arguments": "off",
+        "camelcase": "off"
     },
     "overrides": [
         // override "simple-import-sort" config
