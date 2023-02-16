@@ -67,7 +67,7 @@ const stagesData = {
           disabled: 'Отключить',
           stars: 'Звёзды',
           snow: 'Снег',
-          bubbles: 'Эффект "Бульбашкы"',
+          bubbles: 'Эффект "Пузыри"',
         },
       },
       fourth: {

@@ -4,12 +4,16 @@ import {
   FaTelegram,
 } from 'react-icons/fa';
 
-export const CV = 'cv';
-export const EMAIL = 'email';
-export const TELEGRAM = 'telegram';
-export const SKYPE = 'skype';
-
-export const socialTypes = [CV, EMAIL, TELEGRAM, SKYPE];
+import {
+  CV,
+  CV_LINK,
+  EMAIL,
+  EMAIL_ADDRESS,
+  SKYPE,
+  SKYPE_ID,
+  TELEGRAM,
+  TELEGRAM_LINK,
+} from '../constants/contacts';
 
 const biographyData = {
   en: {
@@ -21,25 +25,25 @@ const biographyData = {
       {
         key: CV,
         text: 'Open CV',
-        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
+        link: CV_LINK,
         icon: () => <FaDownload />,
       },
       {
         key: EMAIL,
         text: 'Copy email address',
-        link: 'porshnev.work@gmail.com',
+        link: EMAIL_ADDRESS,
         icon: () => <FaMailBulk />,
       },
       {
         key: TELEGRAM,
         text: 'Go to telegram',
-        link: 'https://t.me/LikozGO',
+        link: TELEGRAM_LINK,
         icon: () => <FaTelegram />,
       },
       {
         key: SKYPE,
         text: 'Copy Skype ID',
-        link: 'ikoneon',
+        link: SKYPE_ID,
         icon: () => <FaSkype />,
       },
     ],
@@ -54,25 +58,25 @@ const biographyData = {
       {
         key: CV,
         text: 'Открыть CV',
-        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
+        link: CV_LINK,
         icon: () => <FaDownload />,
       },
       {
         key: EMAIL,
         text: 'Скопировать емейл адрес',
-        link: 'porshnev.work@gmail.com',
+        link: EMAIL_ADDRESS,
         icon: () => <FaMailBulk />,
       },
       {
         key: TELEGRAM,
         text: 'Перейти в телеграм',
-        link: 'https://t.me/LikozGO',
+        link: TELEGRAM_LINK,
         icon: () => <FaTelegram />,
       },
       {
         key: SKYPE,
         text: 'Скопировать Skype ID',
-        link: 'ikoneon',
+        link: SKYPE_ID,
         icon: () => <FaSkype />,
       },
     ],
@@ -87,25 +91,25 @@ const biographyData = {
       {
         key: CV,
         text: 'Відкрити CV',
-        link: 'https://docs.google.com/document/d/1NF053cUUUXmXEvlOQuAx5uaxn0xR5FjyOFpKF8oWmgI',
+        link: CV_LINK,
         icon: () => <FaDownload />,
       },
       {
         key: EMAIL,
         text: 'Скопіювати емейл адресу',
-        link: 'porshnev.work@gmail.com',
+        link: EMAIL_ADDRESS,
         icon: () => <FaMailBulk />,
       },
       {
         key: TELEGRAM,
         text: 'Перейти в телеграм',
-        link: 'https://t.me/LikozGO',
+        link: TELEGRAM_LINK,
         icon: () => <FaTelegram />,
       },
       {
         key: SKYPE,
         text: 'Скопіювати Skype ID',
-        link: 'ikoneon',
+        link: SKYPE_ID,
         icon: () => <FaSkype />,
       },
     ],

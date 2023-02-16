@@ -9,13 +9,27 @@ import {
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import {
+  CV,
+  SOCIAL_TYPES,
+  TELEGRAM,
+} from '../constants/contacts';
 import { HOME_PATH } from '../constants/router-urls';
-import { CV, socialTypes, TELEGRAM } from '../translations/translation-biography-data';
 import { copyToClipboard, navigateToLink } from '../utilities';
 
 import Tooltip from './tooltip';
 
 import './navbar.scss';
+
+const socialBuilder = (type, data, toastText) => {
+  if (!SOCIAL_TYPES.includes(type)) return;
+  if (type === TELEGRAM || type === CV) {
+    navigateToLink(data);
+    return;
+  }
+  copyToClipboard(data);
+  toast.info(`${toastText}${data}`, { autoClose: 1000 });
+};
 
 const Navbar = ({
   toggleVisible,
@@ -35,24 +49,21 @@ const Navbar = ({
     if (!selectVisibleModifier) toggleVisible(selectVisible);
   }, []);
 
-  const socialBuilder = (type, data) => {
-    if (!socialTypes.includes(type)) return;
-    if (type === TELEGRAM || type === CV) {
-      navigateToLink(data);
-      return;
-    }
-    copyToClipboard(data);
-    toast.info(`${toastCopyI18n}${data}`, { autoClose: 1000 });
-  };
-
   return (
     <nav
       className={`navbar ${!isAnimationReady ? 'loading' : ''} ${selectVisibleModifier}`}
       onAnimationEnd={() => setAnimationReady(true)}
     >
-      <IconContext.Provider value={{ className: 'btn navbar-btn' }} type="button">
+      <IconContext.Provider
+        value={{ className: 'btn navbar-btn' }}
+        type="button"
+      >
         <>
-          <NavLink onClick={toggleVisible} to={HOME_PATH} className="navbar-logo">
+          <NavLink
+            onClick={toggleVisible}
+            to={HOME_PATH}
+            className="navbar-logo"
+          >
             <FaCreativeCommonsPdAlt />
           </NavLink>
           {selectVisible
@@ -61,14 +72,25 @@ const Navbar = ({
         </>
       </IconContext.Provider>
       <div className="navbar-container">
-        <NavLink onClick={toggleVisible} to={HOME_PATH} className="navbar-logo">
+        <NavLink
+          onClick={toggleVisible}
+          to={HOME_PATH}
+          className="navbar-logo"
+        >
           <FaCreativeCommonsPdAlt />
         </NavLink>
         <div className="navbar-icons">
           {/* eslint-disable react/no-array-index-key */}
           {navbarI18n.map((item) => (
-            <NavLink onClick={toggleVisible} to={item.link} activeClassName="active-link" exact={item.link === HOME_PATH}>
-              <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
+            <NavLink
+              onClick={toggleVisible}
+              to={item.link}
+              activeClassName="active-link"
+              exact={item.link === HOME_PATH}
+            >
+              <IconContext.Provider
+                value={{ className: 'navbar-icon-item' }}
+              >
                 {item.icon()}
               </IconContext.Provider>
               {item.text}
@@ -79,7 +101,7 @@ const Navbar = ({
           {
               socialI18n.map((icon, ind) => (
                 // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
-                <li key={ind} onClick={() => socialBuilder(icon.key, icon.link)}>
+                <li key={ind} onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}>
                   {/* eslint-disable eqeqeq */}
                   <Tooltip
                     text={icon.text}
