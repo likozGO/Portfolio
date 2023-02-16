@@ -37,7 +37,8 @@
     "lint": "eslint . --quiet",
     "prettier": "prettier --write .",
     "prettify": "prettier --write . & eslint . --fix",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -66,7 +67,13 @@
     "eslint-plugin-react-redux": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unicorn": "^40.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
     "npm-check-updates": "^12.5.9",
     "prettier": "2.8.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.{js,jsx,css,scss,md}": "prettier --write . & eslint . --fix"
   }
 }
