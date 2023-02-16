@@ -24,6 +24,8 @@ function App() {
     document.title = titleI18n;
   });
 
+  console.log('test husky');
+
   return (
     <Router>
       <div className={`theme-picker theme-${theme}`}>
