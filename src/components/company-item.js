@@ -41,7 +41,7 @@ const CompanyItem = ({
       </span>
       <ul className="company-responsibilities">
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {companyResponsibilities.map((responsibility, i) => <li key={i}>{responsibility}</li>)}
+        {companyResponsibilities.map((responsibility, index) => <li key={index}>{responsibility}</li>)}
       </ul>
       <div>
         <a href={companyLink} className="company-link" target="_blank" rel="noreferrer">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './stage-settings-btn.scss';
 
-const StageSettingsBtn = () => (
+const StageSettingsButton = () => (
   <Link
     to="/"
     className="settings-btn"
@@ -18,4 +18,4 @@ const StageSettingsBtn = () => (
   </Link>
 );
 
-export default StageSettingsBtn;
+export default StageSettingsButton;

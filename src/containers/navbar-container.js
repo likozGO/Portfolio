@@ -4,7 +4,7 @@ import Navbar from '../components/navbar';
 import { navbarOperations, navbarSelectors } from '../ducks/navbar';
 import { BIOGRAPHY_DATA, NAVBAR_DATA } from '../translations/translation-keys';
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     selectVisible: navbarSelectors.selectIsVisible(state),
     selectVisibleModifier: navbarSelectors.selectVisibleClass(state),
@@ -14,7 +14,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     toggleVisible: (selectVisible) => {
       dispatch(navbarOperations.toggleVisible(selectVisible));
@@ -23,6 +23,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(Navbar);

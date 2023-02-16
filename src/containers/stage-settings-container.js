@@ -5,7 +5,7 @@ import StageSettings from '../components/stage-settings';
 import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 import { STAGES_DATA } from '../translations/translation-keys';
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     selectHello: stagesSelectors.selectHello(state),
     selectPreset: stagesSelectors.selectPreset(state),
@@ -31,7 +31,7 @@ function mapStateToProps(state) {
 }
 
 // eslint-disable-next-line no-unused-vars
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     setAnimationStart: () => {
       dispatch(stagesOperations.setAnimationStart());
@@ -46,6 +46,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(StageSettings);

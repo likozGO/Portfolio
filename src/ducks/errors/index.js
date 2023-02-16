@@ -1,7 +1,2 @@
-import errorsOperations from './operations';
-import errorsSelectors from './selectors';
-
-export {
-  errorsOperations,
-  errorsSelectors,
-};
+export { default as errorsOperations } from './operations';
+export { default as errorsSelectors } from './selectors';

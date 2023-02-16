@@ -44,7 +44,7 @@ const Profile = ({
 };
 
 // eslint-disable-next-line no-unused-vars
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     greetingTranslation: BIOGRAPHY_DATA.GREETING,
     nameTranslation: BIOGRAPHY_DATA.NAME,
@@ -55,5 +55,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps,
+  mapStateToProperties,
 )(Profile);

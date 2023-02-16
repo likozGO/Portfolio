@@ -36,7 +36,7 @@ const ProjectsDescription = ({
   );
 };
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     currentProject: projectsSelectors.selectCurrentProject(state),
     projectLanguage: stagesSelectors.selectLanguage(state),
@@ -45,5 +45,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps,
+  mapStateToProperties,
 )(ProjectsDescription);

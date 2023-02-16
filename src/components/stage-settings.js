@@ -169,17 +169,17 @@ const StageSettings = ({
               <div className={`step step-${stepNumber}`} key={stepNumber}>
                 <div className="container">
                   {
-                    Object.keys(stages[key]).map((childPropKey) => (
+                    Object.keys(stages[key]).map((childPropertyKey) => (
                       <StageSettingsItem
                         selectPreset={selectPreset}
-                        key={childPropKey}
+                        key={childPropertyKey}
                         setAnimationStart={setAnimationStart}
                         setPreset={setPreset}
                         currentStep={selectStep}
-                        image={stages[key][childPropKey].image}
-                        title={stages[key][childPropKey].title}
-                        preset={stages[key][childPropKey].preset}
-                        changeLang={stages[key][childPropKey].changeLang}
+                        image={stages[key][childPropertyKey].image}
+                        title={stages[key][childPropertyKey].title}
+                        preset={stages[key][childPropertyKey].preset}
+                        changeLang={stages[key][childPropertyKey].changeLang}
                       />
                     ))
                   }

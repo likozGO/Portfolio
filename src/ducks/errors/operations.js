@@ -11,9 +11,9 @@ const setNoFoundFact = () => async (dispatch) => {
   try {
     const fact = await getRandomFact();
     dispatch(actions.setNoFoundFact(fact.data[0].fact));
-  } catch (e) {
+  } catch (error) {
     dispatch(actions.setNoFoundHasErrors(true));
-    console.error(e);
+    console.error(error);
   }
 
   dispatch(actions.setNoFoundIsLoading(false));

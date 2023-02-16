@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ParticlesBg from '../components/particles-bg';
 import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     selectAnimationStart: stagesSelectors.selectAnimationStart(state),
     selectPreset: stagesSelectors.selectPreset(state),
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     setAnimationStart: (status = '') => {
       dispatch(stagesOperations.setAnimationStart(status));
@@ -20,6 +20,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(ParticlesBg);

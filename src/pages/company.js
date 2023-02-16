@@ -35,16 +35,16 @@ const Company = ({
   const unHighlightProjects = () => (setActiveBullets(''));
 
   const highlightProjects = (tag) => {
-    const result = Object.entries(tags).map(([company, data]) => {
+    const result = Object.entries(tags).flatMap(([company, data]) => {
       const final = [];
-      data.forEach((dataItem) => {
+      for (const dataItem of data) {
         if (dataItem.text === tag.text) {
-          return final.push(company);
+          final.push(company); continue;
         }
-        return null;
-      });
+        null; continue;
+      }
       return final;
-    }).flat();
+    });
 
     setActiveBullets(result.join(' '));
   };
@@ -84,7 +84,7 @@ const Company = ({
   );
 };
 
-function mapStateToProps() {
+function mapStateToProperties() {
   return {
     aivixTitle: COMPANIES_DATA.AIVIX_TITLE,
     aivixSummary: COMPANIES_DATA.AIVIX_SUMMARY,
@@ -99,5 +99,5 @@ function mapStateToProps() {
 }
 
 export default connect(
-  mapStateToProps,
+  mapStateToProperties,
 )(Company);

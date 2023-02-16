@@ -1,7 +1,2 @@
-import navbarOperations from './operations';
-import navbarSelectors from './selectors';
-
-export {
-  navbarOperations,
-  navbarSelectors,
-};
+export { default as navbarOperations } from './operations';
+export { default as navbarSelectors } from './selectors';

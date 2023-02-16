@@ -1,7 +1,2 @@
-import projectsOperations from './operations';
-import projectsSelectors from './selectors';
-
-export {
-  projectsOperations,
-  projectsSelectors,
-};
+export { default as projectsOperations } from './operations';
+export { default as projectsSelectors } from './selectors';

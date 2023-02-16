@@ -19,7 +19,7 @@ const HandleAuth = () => {
 // Otherwise, redirect the user to /login page
 
 export default function RouterComponent({
-  component: Component, path, isPrivate, isRestricted, ...props
+  component: Component, path, isPrivate, isRestricted, ...properties
 }) {
   const location = useLocation();
   const pageFound = routes.find((page) => page.path === location.pathname);
@@ -35,7 +35,7 @@ export default function RouterComponent({
       <Route
         path={path}
         render={() => <Redirect to={HOME_PATH} />}
-        {...props}
+        {...properties}
       />
     );
   }
@@ -47,7 +47,7 @@ export default function RouterComponent({
       <Route
         path={path}
         render={() => <Redirect to={HOME_PATH} />}
-        {...props}
+        {...properties}
       />
     );
   }
@@ -59,7 +59,7 @@ export default function RouterComponent({
       <Route
         path={path}
         render={() => <Redirect to={SETTINGS_PATH} />}
-        {...props}
+        {...properties}
       />
     );
   }
@@ -67,7 +67,7 @@ export default function RouterComponent({
   return (
     <Route
       path={path}
-      {...props}
+      {...properties}
     >
       {({ match }) => (
         <CSSTransition

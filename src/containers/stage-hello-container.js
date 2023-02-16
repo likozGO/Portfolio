@@ -4,14 +4,14 @@ import StageHello from '../components/stage-hello';
 import { stagesOperations, stagesSelectors } from '../ducks/stages/index';
 import { STAGES_DATA } from '../translations/translation-keys';
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     helloFriendTranslation: STAGES_DATA.HELLO_FRIEND,
     selectHello: stagesSelectors.selectHello(state),
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     setHello: (isReady) => {
       dispatch(stagesOperations.setHello(isReady));
@@ -20,6 +20,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(StageHello);

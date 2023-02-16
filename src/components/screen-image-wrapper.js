@@ -5,11 +5,11 @@ import './screen-image-wrapper.scss';
 const ScreenImageWrapper = React.forwardRef(
   ({
     image, imageMobile, wrapperClassName = 'screen-image', imageClassName,
-  }, ref) => (
+  }, reference) => (
     <div className={`${wrapperClassName}`}>
       <div className={`${wrapperClassName}__screen`}>
         <img
-          ref={ref}
+          ref={reference}
           src={image}
           className={`${imageClassName} screen-image__image`}
           alt="Screen"

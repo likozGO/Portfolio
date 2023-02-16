@@ -1,5 +1,3 @@
 // const formatGeneralInitialFields = (data) => ({ data });
 
-export default {
-
-};
+export default {};

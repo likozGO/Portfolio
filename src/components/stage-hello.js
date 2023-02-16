@@ -6,7 +6,7 @@ import './stage-hello.scss';
 const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
   const { t } = useTranslation();
   const helloFriendI18n = t(helloFriendTranslation);
-  const hello = new Array(40).fill(helloFriendI18n);
+  const hello = Array.from({ length: 40 }).fill(helloFriendI18n);
   return (
     <div
       className={`stage-hello ${!selectHello ? 'hide' : 'visible'}`}

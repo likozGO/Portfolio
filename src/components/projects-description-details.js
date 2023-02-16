@@ -25,7 +25,7 @@ const ProjectsDescriptionDetails = ({
   projectLabels,
 }) => {
   const history = useHistory();
-  const imageRef = createRef();
+  const imageReference = createRef();
   const [imagePosition, setImagePosition] = useState({});
   const [showDescription, setShowDescription] = useState(false);
 
@@ -34,7 +34,7 @@ const ProjectsDescriptionDetails = ({
       history.replace(PROJECTS_PATH);
       return;
     }
-    const imageDimensions = imageRef.current.getBoundingClientRect();
+    const imageDimensions = imageReference.current.getBoundingClientRect();
 
     setImagePosition({
       width: imageDimensions.width || 'auto',
@@ -54,7 +54,7 @@ const ProjectsDescriptionDetails = ({
     >
       <div className="container">
         <ScreenImageWrapper
-          ref={imageRef}
+          ref={imageReference}
           imageClassName={
             `image ${showDescription ? 'show' : ''}`
           }

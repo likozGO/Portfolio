@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
 import {
-  FaBars, FaCreativeCommonsPdAlt,
+  FaBars,
+  FaCreativeCommonsPdAlt,
   FaTimes,
 } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
@@ -10,6 +11,7 @@ import { toast } from 'react-toastify';
 
 import { HOME_PATH } from '../constants/router-urls';
 import { CV, socialTypes, TELEGRAM } from '../translations/translation-biography-data';
+import { copyToClipboard, navigateToLink } from '../utilities';
 
 import Tooltip from './tooltip';
 
@@ -33,13 +35,6 @@ const Navbar = ({
     if (!selectVisibleModifier) toggleVisible(selectVisible);
   }, []);
 
-  const navigateToLink = (location) => {
-    window.open(location, '_blank');
-  };
-  const copyToClipboard = (e) => {
-    navigator.clipboard.writeText(e);
-  };
-
   const socialBuilder = (type, data) => {
     if (!socialTypes.includes(type)) return;
     if (type === TELEGRAM || type === CV) {
@@ -49,8 +44,6 @@ const Navbar = ({
     copyToClipboard(data);
     toast.info(`${toastCopyI18n}${data}`, { autoClose: 1000 });
   };
-
-  console.log(navbarI18n);
 
   return (
     <nav

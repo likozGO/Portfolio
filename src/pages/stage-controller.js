@@ -26,13 +26,13 @@ const StageController = ({ setHello, isHelloStage }) => {
   );
 };
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     isHelloStage: stagesSelectors.selectHello(state),
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     setHello: () => {
       dispatch(stagesOperations.setHello(true));
@@ -41,6 +41,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(StageController);

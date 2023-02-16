@@ -19,7 +19,7 @@ const ErrorNoFound = ({
   toGetTranslation, interestingTranslation, orTranslation,
   toHomeTranslation,
 }) => {
-  const [inProp, setInProp] = useState(false);
+  const [inProperty, setInProperty] = useState(false);
   const { t } = useTranslation();
   const errorImages = [
     images.JOHN_404_GIF, images.CARTMAN_404_GIF,
@@ -41,12 +41,12 @@ const ErrorNoFound = ({
   const isEnglishLanguage = selectLanguage === 'en';
 
   useEffect(() => {
-    setInProp(() => true);
+    setInProperty(() => true);
   }, []);
 
   return (
     <CSSTransition
-      in={inProp}
+      in={inProperty}
       timeout={3000}
       classNames="css-transition"
       unmountOnExit
@@ -106,7 +106,7 @@ const ErrorNoFound = ({
   );
 };
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     selectLanguage: stagesSelectors.selectLanguage(state),
     selectFact: errorsSelectors.selectNoFoundFact(state),
@@ -122,7 +122,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
     generateRandomFact: () => {
       dispatch(operations.setNoFoundFact());
@@ -131,6 +131,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(ErrorNoFound);

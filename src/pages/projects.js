@@ -18,15 +18,15 @@ const Projects = ({
   const history = useHistory();
   const { t } = useTranslation();
   const [isCatAnimated, setCatAnimated] = React.useState(false);
-  const timerRef = React.useRef(null);
+  const timerReference = React.useRef(null);
 
   const projectsI18n = t(...projects);
 
   const handleCatAnimation = (animationFlag) => {
-    if (timerRef.current) clearTimeout(timerRef.current);
+    if (timerReference.current) clearTimeout(timerReference.current);
 
     setCatAnimated(() => animationFlag);
-    timerRef.current = setTimeout(() => setCatAnimated(() => false), 500);
+    timerReference.current = setTimeout(() => setCatAnimated(() => false), 500);
   };
 
   const onItemSelected = (event, item) => {
@@ -69,22 +69,22 @@ const Projects = ({
   );
 };
 
-function mapStateToProps(state) {
+function mapStateToProperties(state) {
   return {
     currentProject: projectsSelectors.selectCurrentProject(state),
     projects: [PROJECTS_DATA.PROJECTS, { returnObjects: true }],
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProperties(dispatch) {
   return {
-    setProject: (projectProps) => {
-      dispatch(projectsOperations.setProject(projectProps));
+    setProject: (projectProperties) => {
+      dispatch(projectsOperations.setProject(projectProperties));
     },
   };
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  mapStateToProperties,
+  mapDispatchToProperties,
 )(Projects);
