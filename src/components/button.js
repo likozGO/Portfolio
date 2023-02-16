@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { BiSave } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 
-import { BUTTON_SIZES, BUTTON_STYLE, BUTTON_TYPES } from '../constants/button-types';
+import {
+  BUTTON_SIZES,
+  BUTTON_STYLE,
+  BUTTON_TYPES,
+} from '../constants/button-types';
 
 import './button.scss';
 
@@ -18,14 +22,8 @@ const Icon = ({ icon }) => {
 
 export default class Button extends Component {
   getButtonClasses() {
-    const {
-      icon, size, type,
-    } = this.props;
-    const buttonClasses = [
-      'button',
-      `button--${size}`,
-      `button--${type}`,
-    ];
+    const { icon, size, type } = this.props;
+    const buttonClasses = ['button', `button--${size}`, `button--${type}`];
 
     if (icon && icon !== BUTTON_TYPES.NONE) buttonClasses.push('button--icon');
 

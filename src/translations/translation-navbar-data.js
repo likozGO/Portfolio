@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  FaRegBuilding,
-} from 'react-icons/fa';
-import {
-  GrCode,
-  GrContactInfo,
-} from 'react-icons/gr';
-import {
-  RiSettings2Line,
-} from 'react-icons/ri';
+import { FaRegBuilding } from 'react-icons/fa';
+import { GrCode, GrContactInfo } from 'react-icons/gr';
+import { RiSettings2Line } from 'react-icons/ri';
 
 import {
-  COMPANY_PATH, HOME_PATH, PROJECTS_PATH,
+  COMPANY_PATH,
+  HOME_PATH,
+  PROJECTS_PATH,
   SETTINGS_PATH,
 } from '../constants/router-urls';
 

@@ -4,9 +4,7 @@ const ProfileMain = ({ about }) => {
   console.log('123');
   return (
     <div className="profile-about">
-      <p>
-        {about}
-      </p>
+      <p>{about}</p>
     </div>
   );
 };

@@ -24,12 +24,7 @@ const ParticlesSetting = {
           value: 0,
         },
         color: {
-          value: [
-            '#ffe800',
-            '#ffe236',
-            '#ffec7a',
-            '#947d00',
-          ],
+          value: ['#ffe800', '#ffe236', '#ffec7a', '#947d00'],
         },
         shape: {
           type: 'circle',

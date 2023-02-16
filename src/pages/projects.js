@@ -84,7 +84,4 @@ function mapDispatchToProperties(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProperties,
-  mapDispatchToProperties,
-)(Projects);
+export default connect(mapStateToProperties, mapDispatchToProperties)(Projects);

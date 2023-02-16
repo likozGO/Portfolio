@@ -34,8 +34,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint . --quiet"
+    "lint": "eslint . --quiet",
+    "prettier": "prettier --write .",
+    "prettify": "prettier --write . & eslint . --fix",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,6 +66,7 @@
     "eslint-plugin-react-redux": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unicorn": "^40.1.0",
-    "npm-check-updates": "^12.5.9"
+    "npm-check-updates": "^12.5.9",
+    "prettier": "2.8.4"
   }
 }

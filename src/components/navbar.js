@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
-import {
-  FaBars,
-  FaCreativeCommonsPdAlt,
-  FaTimes,
-} from 'react-icons/fa';
+import { FaBars, FaCreativeCommonsPdAlt, FaTimes } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import {
-  CV,
-  SOCIAL_TYPES,
-  TELEGRAM,
-} from '../constants/contacts';
+import { CV, SOCIAL_TYPES, TELEGRAM } from '../constants/contacts';
 import { HOME_PATH } from '../constants/router-urls';
 import { copyToClipboard, navigateToLink } from '../utilities';
 
@@ -51,7 +43,9 @@ const Navbar = ({
 
   return (
     <nav
-      className={`navbar ${!isAnimationReady ? 'loading' : ''} ${selectVisibleModifier}`}
+      className={`navbar ${
+        !isAnimationReady ? 'loading' : ''
+      } ${selectVisibleModifier}`}
       onAnimationEnd={() => setAnimationReady(true)}
     >
       <IconContext.Provider
@@ -66,9 +60,11 @@ const Navbar = ({
           >
             <FaCreativeCommonsPdAlt />
           </NavLink>
-          {selectVisible
-            ? <FaTimes onClick={() => toggleVisible(selectVisible)} />
-            : <FaBars onClick={() => toggleVisible(selectVisible)} />}
+          {selectVisible ? (
+            <FaTimes onClick={() => toggleVisible(selectVisible)} />
+          ) : (
+            <FaBars onClick={() => toggleVisible(selectVisible)} />
+          )}
         </>
       </IconContext.Provider>
       <div className="navbar-container">
@@ -88,9 +84,7 @@ const Navbar = ({
               activeClassName="active-link"
               exact={item.link === HOME_PATH}
             >
-              <IconContext.Provider
-                value={{ className: 'navbar-icon-item' }}
-              >
+              <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
                 {item.icon()}
               </IconContext.Provider>
               {item.text}
@@ -98,26 +92,29 @@ const Navbar = ({
           ))}
         </div>
         <ul className="navbar-social-links">
-          {
-              socialI18n.map((icon, ind) => (
-                // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
-                <li key={ind} onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}>
-                  {/* eslint-disable eqeqeq */}
-                  <Tooltip
-                    text={icon.text}
-                    delayHide={icon.key !== CV ? 150 : 0}
-                    clickable
-                    Elem={(
-                      <span href={icon.link}>
-                        <IconContext.Provider value={{ className: 'social-icon copied' }}>
-                          {icon.icon()}
-                        </IconContext.Provider>
-                      </span>
-                    )}
-                  />
-                </li>
-              ))
-            }
+          {socialI18n.map((icon, ind) => (
+            // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
+            <li
+              key={ind}
+              onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}
+            >
+              {/* eslint-disable eqeqeq */}
+              <Tooltip
+                text={icon.text}
+                delayHide={icon.key !== CV ? 150 : 0}
+                clickable
+                Elem={(
+                  <span href={icon.link}>
+                    <IconContext.Provider
+                      value={{ className: 'social-icon copied' }}
+                    >
+                      {icon.icon()}
+                    </IconContext.Provider>
+                  </span>
+                )}
+              />
+            </li>
+          ))}
         </ul>
       </div>
       <div className="navbar-underlay" />

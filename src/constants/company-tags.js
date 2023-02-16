@@ -7,14 +7,8 @@ import {
   FaJs,
   FaReact,
 } from 'react-icons/fa';
-import {
-  SiJquery,
-  SiMaterialui,
-  SiSocketdotio,
-} from 'react-icons/si';
-import {
-  VscChecklist,
-} from 'react-icons/vsc';
+import { SiJquery, SiMaterialui, SiSocketdotio } from 'react-icons/si';
+import { VscChecklist } from 'react-icons/vsc';
 
 export const categories = {
   crypto: {
@@ -76,13 +70,23 @@ export const categories = {
 
 export const tags = {
   aivix: [
-    categories.crypto, categories.javascript, categories.html_css,
-    categories.react_redux, categories.socket_io, categories.jquery,
+    categories.crypto,
+    categories.javascript,
+    categories.html_css,
+    categories.react_redux,
+    categories.socket_io,
+    categories.jquery,
   ],
   n_ix: [
-    categories.outstaff, categories.javascript, categories.html_css,
-    categories.react_redux, categories.socket_io, categories.material_ui,
-    categories.jest, categories.angular_v_1_6, categories.docker,
+    categories.outstaff,
+    categories.javascript,
+    categories.html_css,
+    categories.react_redux,
+    categories.socket_io,
+    categories.material_ui,
+    categories.jest,
+    categories.angular_v_1_6,
+    categories.docker,
   ],
 };
 

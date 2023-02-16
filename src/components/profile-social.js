@@ -1,8 +1,6 @@
 import React from 'react';
 
-const ProfileSocial = ({
-  greeting, name, position,
-}) => (
+const ProfileSocial = ({ greeting, name, position }) => (
   <>
     <div className="profile-title">
       <span>{greeting}</span>

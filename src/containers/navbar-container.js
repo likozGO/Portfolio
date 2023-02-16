@@ -22,7 +22,4 @@ function mapDispatchToProperties(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProperties,
-  mapDispatchToProperties,
-)(Navbar);
+export default connect(mapStateToProperties, mapDispatchToProperties)(Navbar);

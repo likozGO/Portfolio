@@ -49,32 +49,28 @@ const ProjectsDescriptionDetails = ({
   };
 
   return (
-    <div
-      className="description-details"
-    >
+    <div className="description-details">
       <div className="container">
         <ScreenImageWrapper
           ref={imageReference}
-          imageClassName={
-            `image ${showDescription ? 'show' : ''}`
-          }
+          imageClassName={`image ${showDescription ? 'show' : ''}`}
           image={selectedItemDetails?.image}
           imageMobile={selectedItemDetails?.imageMobile}
         />
-        {
-          (!isEmpty(imagePosition) && !isEmpty(itemPosition) && !showDescription) && (
+        {!isEmpty(imagePosition)
+          && !isEmpty(itemPosition)
+          && !showDescription && (
             <ProjectsTransitionLayer
               selectedItemDetails={selectedItemDetails}
               itemPosition={itemPosition}
               imageToPosition={imagePosition}
               onAnimationEnd={onAnimationEnd}
             />
-          )
-        }
+        )}
         <div
-          className={
-          `details-container ${showDescription ? 'show' : ''} ${selectedItemDetails?.imageMobile ? 'has-screen__mobile' : ''}`
-        }
+          className={`details-container ${showDescription ? 'show' : ''} ${
+            selectedItemDetails?.imageMobile ? 'has-screen__mobile' : ''
+          }`}
         >
           <h1 className="details-container__title">
             {selectedItemDetails?.title}
@@ -84,9 +80,7 @@ const ProjectsDescriptionDetails = ({
           </span>
         </div>
 
-        <div
-          className={`features ${showDescription ? 'show' : ''} `}
-        >
+        <div className={`features ${showDescription ? 'show' : ''} `}>
           <div className="features-container">
             <span className="features-container__date">
               <span className="features-container__description">
@@ -94,8 +88,12 @@ const ProjectsDescriptionDetails = ({
               </span>
               <div className="features-container__content">
                 <AiOutlineClockCircle />
-                {moment(selectedItemDetails?.isCreated, 'YYYYMMDD').locale(projectLanguage).fromNow()}
-                {` (${moment(selectedItemDetails?.isCreated, 'YYYYMMDD').locale(projectLanguage).calendar()})`}
+                {moment(selectedItemDetails?.isCreated, 'YYYYMMDD')
+                  .locale(projectLanguage)
+                  .fromNow()}
+                {` (${moment(selectedItemDetails?.isCreated, 'YYYYMMDD')
+                  .locale(projectLanguage)
+                  .calendar()})`}
               </div>
             </span>
             <div className="features-container__tags">
@@ -104,9 +102,7 @@ const ProjectsDescriptionDetails = ({
               </span>
               <div className="features-container__content">
                 {selectedItemDetails?.tag.map((tag) => (
-                  <button type="button">
-                    {tag}
-                  </button>
+                  <button type="button">{tag}</button>
                 ))}
               </div>
             </div>
@@ -136,28 +132,26 @@ const ProjectsDescriptionDetails = ({
                   <AiOutlineYoutube />
                 </a>
               ) : null}
-              {selectedItemDetails?.links?.github
-                ? (
-                  <a
-                    href={selectedItemDetails?.links?.github}
-                    className="features-container__links__github"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <AiFillGithub />
-                  </a>
-                ) : null}
-              {selectedItemDetails?.links?.figma
-                ? (
-                  <a
-                    href={selectedItemDetails?.links?.figma}
-                    className="features-container__links__figma"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaFigma />
-                  </a>
-                ) : null}
+              {selectedItemDetails?.links?.github ? (
+                <a
+                  href={selectedItemDetails?.links?.github}
+                  className="features-container__links__github"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AiFillGithub />
+                </a>
+              ) : null}
+              {selectedItemDetails?.links?.figma ? (
+                <a
+                  href={selectedItemDetails?.links?.figma}
+                  className="features-container__links__figma"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaFigma />
+                </a>
+              ) : null}
             </div>
           </div>
         </div>

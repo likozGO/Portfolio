@@ -1,6 +1,5 @@
 @import '../stylesheets/mixin';
 
-
 .profile-card {
   position: relative;
   height: 100vh;
@@ -90,7 +89,9 @@
 .profile-title {
   display: flex;
   flex-direction: column;
-  h1, h2, span  {
+  h1,
+  h2,
+  span {
     text-align: center;
     margin: 15px 0;
   }
@@ -130,8 +131,6 @@
   }
 }
 
-
-
 //Animation
 .profile-card {
   &.css-transition {
@@ -147,12 +146,12 @@
     &-enter-active {
       .image-personal {
         transform: translateX(0);
-        transition: transform .3s;
+        transition: transform 0.3s;
         //background: red;
       }
       .component-group {
         transform: translateY(0);
-        transition: transform .3s;
+        transition: transform 0.3s;
       }
     }
     &-exit {
@@ -168,16 +167,15 @@
       .image-personal {
         //background: red;
         transform: translateX(-100%);
-        transition: transform .3s;
+        transition: transform 0.3s;
       }
       .component-group {
         transform: translateY(-100%);
-        transition: transform .3s;
+        transition: transform 0.3s;
       }
     }
   }
 }
-
 
 .slide-in-top {
   animation: slide-in-top 2s forwards;
@@ -190,15 +188,22 @@
 }
 
 @keyframes slide-in {
-  100% { transform: translateX(0%); }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @keyframes slide-in-top {
-  100% { transform: translateY(0%); }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
-
 @keyframes slide-out {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

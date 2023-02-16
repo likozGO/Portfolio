@@ -1,72 +1,69 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-redux/recommended",
+    "airbnb",
+    "plugin:unicorn/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "plugin:react-redux/recommended",
-        "airbnb",
-        "plugin:unicorn/recommended"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "simple-import-sort"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "simple-import-sort"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 
-        "linebreak-style": 0,
-        "react/prop-types": 0,
+    "linebreak-style": 0,
+    "react/prop-types": 0,
 
-        "max-len": "warn",
-        "react/jsx-props-no-spreading": "warn",
+    "max-len": "warn",
 
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error",
-        "no-param-reassign": ["error", { "props": false }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-param-reassign": ["error", { "props": false }],
 
-        "no-plusplus": "off",
-        "unicorn/no-null": "off",
-        "react-redux/connect-prefer-named-arguments": "off",
-        "camelcase": "off"
-    },
-    "overrides": [
-        // override "simple-import-sort" config
-        {
-            "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-            "rules": {
-                "simple-import-sort/imports": [
-                    "error",
-                    {
-                        "groups": [
-                            // Packages `react` related packages come first.
-                            ["^react", "^@?\\w"],
-                            // Internal packages.
-                            ["^(@|components)(/.*|$)"],
-                            // Side effect imports.
-                            ["^\\u0000"],
-                            // Parent imports. Put `..` last.
-                            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-                            // Other relative imports. Put same-folder imports and `.` last.
-                            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-                            // Style imports.
-                            ["^.+\\.?(css)$"]
-                        ]
-                    }
-                ]
-            }
-        }
-    ]
+    "no-plusplus": "off",
+    "unicorn/no-null": "off",
+    "react-redux/connect-prefer-named-arguments": "off",
+    "camelcase": "off",
+    "react/jsx-props-no-spreading": "off"
+  },
+  "overrides": [
+    // override "simple-import-sort" config
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages come first.
+              ["^react", "^@?\\w"],
+              // Internal packages.
+              ["^(@|components)(/.*|$)"],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

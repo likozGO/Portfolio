@@ -1,4 +1,4 @@
-@import "../stylesheets/mixin";
+@import '../stylesheets/mixin';
 
 .projects .projects-listing-container {
   border-radius: 100px 100px 0 0;
@@ -73,7 +73,8 @@
           padding: 0 0 0 20px;
         }
 
-        h1, h3 {
+        h1,
+        h3 {
           font-size: 40px;
           line-height: 50px;
           @include color('projects_listing_color');
@@ -98,7 +99,7 @@
         }
 
         .arrow-enter {
-          transition: .4s ease;
+          transition: 0.4s ease;
           height: 30px;
           width: 30px;
           @include color('projects_listing_color');
@@ -106,7 +107,7 @@
       }
 
       .tags {
-        opacity: .3;
+        opacity: 0.3;
         padding-bottom: 10px;
 
         button {
@@ -159,12 +160,8 @@
   }
 }
 
-
 @keyframes scroll {
   100% {
     background-position: 100%, 0px -3000px;
   }
 }
-
-
-

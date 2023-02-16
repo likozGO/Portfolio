@@ -18,9 +18,7 @@ const CompanyItem = ({
       imageClassName="company-interactive"
     />
     <div className="company-details">
-      <h2 className="company-title">
-        {companyTitle}
-      </h2>
+      <h2 className="company-title">{companyTitle}</h2>
       <div className="company-tags">
         {companyTags.map((tag) => (
           // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
@@ -36,15 +34,19 @@ const CompanyItem = ({
           </button>
         ))}
       </div>
-      <span className="company-summary">
-        {companySummary}
-      </span>
+      <span className="company-summary">{companySummary}</span>
       <ul className="company-responsibilities">
-        {/* eslint-disable-next-line react/no-array-index-key */}
-        {companyResponsibilities.map((responsibility, index) => <li key={index}>{responsibility}</li>)}
+        {companyResponsibilities.map((responsibility) => (
+          <li>{responsibility}</li>
+        ))}
       </ul>
       <div>
-        <a href={companyLink} className="company-link" target="_blank" rel="noreferrer">
+        <a
+          href={companyLink}
+          className="company-link"
+          target="_blank"
+          rel="noreferrer"
+        >
           Link
         </a>
       </div>

@@ -1,6 +1,5 @@
-@import "../stylesheets/animation.css";
-@import "../stylesheets/mixin";
-
+@import '../stylesheets/animation.css';
+@import '../stylesheets/mixin';
 
 .company {
   animation: fadein 2s;
@@ -75,7 +74,8 @@
 
       button {
         margin: 2px 0.3em 2px 2px;
-        transition: opacity .3s ease-out, background .3s ease-out, color .3s ease-out;
+        transition: opacity 0.3s ease-out, background 0.3s ease-out,
+          color 0.3s ease-out;
         border-radius: 4px;
         font-weight: 700;
         font-size: 14px;
@@ -149,7 +149,7 @@
     height: 100%;
     --slider-height-percentage: 50%;
 
-    &__wrapper{
+    &__wrapper {
       overflow: scroll;
     }
     &__content {
@@ -173,8 +173,10 @@
       }
       --organic-arrow-height: 25px;
       --organic-arrow-width: 25px;
-      &__arrow-left:before, &__arrow-left:after,
-      &__arrow-right:before, &__arrow-right:after {
+      &__arrow-left:before,
+      &__arrow-left:after,
+      &__arrow-right:before,
+      &__arrow-right:after {
         @include background-color('company_awsld_controls_arrows_bg');
       }
     }
@@ -197,32 +199,27 @@
         border-radius: 10px;
         width: 35px;
         height: 35px;
-        -webkit-background-size: contain!important;
-        background-size: contain!important;
-        background-repeat: no-repeat!important;
-        background-position: center center!important;
+        -webkit-background-size: contain !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
         filter: grayscale(100%);
         &:last-child {
           margin-right: 0;
         }
 
-        &[data-index="0"] {
+        &[data-index='0'] {
           background-image: url('../assets/images/company-aivix-logo.png');
-
         }
-        &[data-index="1"] {
+        &[data-index='1'] {
           background-image: url('../assets/images/company-n_ix-logo.png');
         }
       }
     }
 
-
-
-    &.aivix .awssld__bullets button[data-index="0"],
-    &.n_ix .awssld__bullets button[data-index="1"] {
+    &.aivix .awssld__bullets button[data-index='0'],
+    &.n_ix .awssld__bullets button[data-index='1'] {
       animation: ContentScale 1s infinite linear;
     }
   }
-
 }
-

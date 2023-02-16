@@ -6,7 +6,8 @@ import {
   persistCombineReducers,
   persistReducer,
   PURGE,
-  REGISTER, REHYDRATE,
+  REGISTER,
+  REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 

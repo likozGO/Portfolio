@@ -1,4 +1,4 @@
-@import "themes.scss";
+@import 'themes.scss';
 
 @mixin link-color($link, $visit, $hover, $active) {
   a {
@@ -18,9 +18,7 @@
   }
 }
 
-
 @mixin respond($breakpoint) {
-
   @if $breakpoint==_1521_plus {
     @media only screen and (min-width: 1521px) {
       @content;
@@ -112,7 +110,6 @@
   }
 }
 
-
 /// Миксин Themify
 /// @access private
 /// @author Hugo Giraudel
@@ -130,7 +127,6 @@
     }
   }
 }
-
 
 /// Темизация с помощью миксина `themify`
 /// @access public

@@ -3,9 +3,12 @@ import React from 'react';
 import './screen-image-wrapper.scss';
 
 const ScreenImageWrapper = React.forwardRef(
-  ({
-    image, imageMobile, wrapperClassName = 'screen-image', imageClassName,
-  }, reference) => (
+  (
+    {
+      image, imageMobile, wrapperClassName = 'screen-image', imageClassName,
+    },
+    reference,
+  ) => (
     <div className={`${wrapperClassName}`}>
       <div className={`${wrapperClassName}__screen`}>
         <img

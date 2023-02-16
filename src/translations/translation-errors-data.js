@@ -2,7 +2,7 @@ const errorsData = {
   en: {
     noFound: {
       error: '404󠁧󠁢󠁥󠁮󠁧󠁿',
-      info: 'Oh no, it seems that you\'re lost!',
+      info: "Oh no, it seems that you're lost!",
       button_fact: 'Click here',
       to_get: 'for',
       interesting_information: 'interesting information',

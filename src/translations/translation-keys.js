@@ -57,7 +57,6 @@ export const STAGES_DATA = {
   STEPS__THIRD__TITLE__STARS: 'stagesData.steps.third.title.stars',
   STEPS__THIRD__TITLE__SNOW: 'stagesData.steps.third.title.snow',
   STEPS__THIRD__TITLE__BUBBLES: 'stagesData.steps.third.title.bubbles',
-
 };
 
 export const NAVBAR_DATA = {

@@ -17,7 +17,6 @@ export const sliceErrors = createSlice({
     setNoFoundFact: (state, action) => actions.setNoFoundFact(state, action),
     setNoFoundIsLoading: (state, action) => actions.setNoFoundIsLoading(state, action),
     setNoFoundHasErrors: (state, action) => actions.setNoFoundHasErrors(state, action),
-
   },
 });
 

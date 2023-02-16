@@ -33,7 +33,8 @@ const stagesData = {
         },
       },
       fourth: {
-        headline: 'Your settings are displayed here, make sure everything is OK or go back and change the settings',
+        headline:
+          'Your settings are displayed here, make sure everything is OK or go back and change the settings',
       },
     },
   },
@@ -71,7 +72,8 @@ const stagesData = {
         },
       },
       fourth: {
-        headline: 'Здесь отображены ваши настройки, убедитесь что всё в порядке или вернитесь назад и смените настройки',
+        headline:
+          'Здесь отображены ваши настройки, убедитесь что всё в порядке или вернитесь назад и смените настройки',
       },
     },
   },
@@ -109,7 +111,8 @@ const stagesData = {
         },
       },
       fourth: {
-        headline: 'Тут відображені ваші налаштування, переконайтеся, що все гаразд або поверніться назад і змініть налаштування',
+        headline:
+          'Тут відображені ваші налаштування, переконайтеся, що все гаразд або поверніться назад і змініть налаштування',
       },
     },
   },

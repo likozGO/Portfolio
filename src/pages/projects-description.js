@@ -20,9 +20,7 @@ const ProjectsDescription = ({
   const projectsDescriptionLabelsI18n = t(...projectsDescriptionLabels);
 
   return (
-    <section
-      className="projects-description"
-    >
+    <section className="projects-description">
       <ProjectsDescriptionDetails
         itemPosition={{
           containerPosition,
@@ -40,10 +38,11 @@ function mapStateToProperties(state) {
   return {
     currentProject: projectsSelectors.selectCurrentProject(state),
     projectLanguage: stagesSelectors.selectLanguage(state),
-    projectsDescriptionLabels: [PROJECTS_DATA.PROJECTS_DESCRIPTION_LABELS, { returnObjects: true }],
+    projectsDescriptionLabels: [
+      PROJECTS_DATA.PROJECTS_DESCRIPTION_LABELS,
+      { returnObjects: true },
+    ],
   };
 }
 
-export default connect(
-  mapStateToProperties,
-)(ProjectsDescription);
+export default connect(mapStateToProperties)(ProjectsDescription);

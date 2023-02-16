@@ -1,5 +1,5 @@
 @import '../stylesheets/mixin';
-@import "../stylesheets/global-variables";
+@import '../stylesheets/global-variables';
 
 .navbar {
   user-select: none;
@@ -31,7 +31,7 @@
     width: 0;
   }
   & > .navbar-logo {
-    transition: .2s ease;
+    transition: 0.2s ease;
     opacity: 1;
     visibility: visible;
     border-bottom: 3px solid;
@@ -45,11 +45,11 @@
       color: unset;
     }
     &:hover svg {
-      transform: scale(.7);
+      transform: scale(0.7);
     }
     svg {
       @include color('navbar-color');
-      transition: .2s ease;
+      transition: 0.2s ease;
       padding: 3px 3px 5px 3px;
       width: 63px;
       height: 63px;
@@ -72,7 +72,6 @@
     visibility: hidden;
   }
 
-
   .navbar-btn {
     cursor: pointer;
     z-index: 1;
@@ -91,20 +90,20 @@
     align-items: center;
     height: 100%;
 
-  @include respond(_768_min) {
-    min-height: 100vh;
-    width: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    min-width: 100%;
-    //z-index: 123123;
-    height: 100%;
-    border-left: 0;
-    border-right: 0;
-  }
+    @include respond(_768_min) {
+      min-height: 100vh;
+      width: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      min-width: 100%;
+      //z-index: 123123;
+      height: 100%;
+      border-left: 0;
+      border-right: 0;
+    }
 
     .navbar-logo {
       padding: 10px 0;
@@ -127,11 +126,11 @@
         color: unset;
       }
       &:hover svg {
-        transform: scale(.7);
+        transform: scale(0.7);
       }
       svg {
         @include color('navbar-color');
-        transition: .2s ease;
+        transition: 0.2s ease;
         height: 80px;
         width: 80px;
         path {
@@ -217,12 +216,13 @@
           @include color('profile-social-icon-hover');
         }
         .social-icon {
-          transition: color linear .15s;
+          transition: color linear 0.15s;
           @include color('profile-social-icon');
         }
-        a, span {
+        a,
+        span {
           &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: -9px;
             top: -9px;
@@ -244,7 +244,7 @@
     }
   }
   .navbar-underlay {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     top: 0;
     bottom: 0;
     left: 0;
@@ -258,25 +258,22 @@
     @include respond(_768_min) {
       z-index: -352;
       @include background-color('navbar-underlay-mobile');
-      transform: none!important;
+      transform: none !important;
     }
   }
-
 }
 
 .navbar + section {
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-
-
 
 .navbar.show-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fadeInNavbar .3s ease-in-out both;
+    animation: fadeInNavbar 0.3s ease-in-out both;
   }
   & + section {
-    transform: translateX($navbar-with-items-width) scale(.8);
+    transform: translateX($navbar-with-items-width) scale(0.8);
   }
   .navbar-underlay {
     opacity: 1;
@@ -288,7 +285,7 @@
 .navbar.hide-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fadeOutNavbar .3s ease-in-out both;
+    animation: fadeOutNavbar 0.3s ease-in-out both;
   }
   .navbar-container {
     @include respond(_768_min) {
@@ -318,7 +315,6 @@
     width: $navbar-without-items-width;
   }
 }
-
 
 @keyframes fadeOutNavbar {
   0% {

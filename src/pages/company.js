@@ -32,7 +32,7 @@ const Company = ({
   const n_ixResponsibilitiesI18n = t(...n_ixResponsibilities);
   const n_ixLinkI18n = t(n_ixLink);
 
-  const unHighlightProjects = () => (setActiveBullets(''));
+  const unHighlightProjects = () => setActiveBullets('');
 
   const highlightProjects = (tag) => {
     const result = Object.entries(tags).flatMap(([company, data]) => {
@@ -89,16 +89,20 @@ function mapStateToProperties() {
   return {
     aivixTitle: COMPANIES_DATA.AIVIX_TITLE,
     aivixSummary: COMPANIES_DATA.AIVIX_SUMMARY,
-    aivixResponsibilities: [COMPANIES_DATA.AIVIX_RESPONSIBILITIES, { returnObjects: true }],
+    aivixResponsibilities: [
+      COMPANIES_DATA.AIVIX_RESPONSIBILITIES,
+      { returnObjects: true },
+    ],
     aivixLink: COMPANIES_DATA.AIVIX_LINK,
 
     n_ixTitle: COMPANIES_DATA.N_IX_TITLE,
     n_ixSummary: COMPANIES_DATA.N_IX_SUMMARY,
-    n_ixResponsibilities: [COMPANIES_DATA.N_IX_RESPONSIBILITIES, { returnObjects: true }],
+    n_ixResponsibilities: [
+      COMPANIES_DATA.N_IX_RESPONSIBILITIES,
+      { returnObjects: true },
+    ],
     n_ixLink: COMPANIES_DATA.N_IX_LINK,
   };
 }
 
-export default connect(
-  mapStateToProperties,
-)(Company);
+export default connect(mapStateToProperties)(Company);

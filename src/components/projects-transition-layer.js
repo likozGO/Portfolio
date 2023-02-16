@@ -4,7 +4,10 @@ import { animated, useSpring } from 'react-spring';
 import './projects-transition-layer.scss';
 
 const ProjectsTransitionLayer = ({
-  itemPosition, imageToPosition, selectedItemDetails, onAnimationEnd,
+  itemPosition,
+  imageToPosition,
+  selectedItemDetails,
+  onAnimationEnd,
 }) => {
   const imageAnimation = useSpring({
     from: {

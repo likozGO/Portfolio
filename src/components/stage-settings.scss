@@ -1,4 +1,4 @@
-@import "../stylesheets/mixin";
+@import '../stylesheets/mixin';
 
 :root {
   --axis-x: 1px;
@@ -35,7 +35,7 @@
     }
   }
   .awssld {
-    &__wrapper{
+    &__wrapper {
       overflow: initial;
     }
     &__content {
@@ -57,11 +57,11 @@
       }
 
       button {
-        @include background-color('slider_bullet_color')
+        @include background-color('slider_bullet_color');
       }
 
       &--active {
-        @include background-color('slider_bullet_color_active')
+        @include background-color('slider_bullet_color_active');
       }
     }
   }
@@ -88,12 +88,12 @@
     &__layer {
       --text-color: var(--color-foreground);
       counter-increment: rainbow;
-      font-size: .7rem;
+      font-size: 0.7rem;
       color: var(--text-color);
 
       text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
-      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black),
-      4px 4px 0 rgba(0, 0, 0, 0.2);
+        -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black),
+        4px 4px 0 rgba(0, 0, 0, 0.2);
 
       animation: rainbow 1.5s ease-in-out infinite;
 

@@ -1,6 +1,6 @@
 .projects {
   position: relative;
-  background-image: url("../assets/images/projects-peeking.gif");
+  background-image: url('../assets/images/projects-peeking.gif');
   background-position: center -81px;
   background-repeat: no-repeat;
   background-size: 500px;
@@ -12,13 +12,22 @@
 }
 
 @keyframes catAppears {
-  0%   { background-position: center 500px; }
-  100% { background-position: center -81px; }
+  0% {
+    background-position: center 500px;
+  }
+  100% {
+    background-position: center -81px;
+  }
 }
 
 @keyframes catDisappearAndAppear {
-  0% { background-position: center -81px; }
-  50%   { background-position: center 500px; }
-  100% { background-position: center -81px; }
+  0% {
+    background-position: center -81px;
+  }
+  50% {
+    background-position: center 500px;
+  }
+  100% {
+    background-position: center -81px;
+  }
 }
-

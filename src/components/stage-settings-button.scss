@@ -1,4 +1,4 @@
-@import "../stylesheets/mixin";
+@import '../stylesheets/mixin';
 
 .settings-button {
   animation: intro 1.6s;
@@ -29,7 +29,7 @@
     border: 7px solid;
     border-color: inherit;
     box-sizing: border-box;
-    transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
     box-shadow: 0 30px 85px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
   }
 
@@ -51,7 +51,7 @@
     @include background-color('settings-button-lines');
     border-radius: 100%;
     position: absolute;
-    transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
   }
 
   & .dot:nth-child(1) {
@@ -109,7 +109,6 @@
     animation: swag4 0.3s;
     animation-fill-mode: forwards;
   }
-
 
   @keyframes intro {
     0% {
@@ -256,5 +255,3 @@
     }
   }
 }
-
-

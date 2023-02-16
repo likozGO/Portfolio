@@ -1,11 +1,12 @@
-@import "mixin";
-@import "../stylesheets/global-variables";
+@import 'mixin';
+@import '../stylesheets/global-variables';
 
 a {
   color: inherit;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
@@ -23,7 +24,6 @@ main > .hide-navbar + section {
     padding-top: 60px;
   }
 }
-
 
 .component-group {
   display: flex;
@@ -44,7 +44,7 @@ main > .hide-navbar + section {
     mask-image: radial-gradient(#000 60%, transparent 61%);
     mask-position: center center;
     mask-repeat: no-repeat;
-    animation: mask-move .8s linear 1 alternate;
+    animation: mask-move 0.8s linear 1 alternate;
     animation-fill-mode: both;
   }
 }
@@ -65,22 +65,22 @@ main > .hide-navbar + section {
   svg {
     @include fill('toast_icon');
   }
-  [aria-label="close"] {
+  [aria-label='close'] {
     @include color('toast_close');
   }
-  [aria-label="notification timer"] {
+  [aria-label='notification timer'] {
     @include background-color('toast_progress');
   }
 }
 
 .theme-picker {
   @include color('body_color');
-  transition: background-color .2s ease-in-out,
-  color .2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
 
@@ -119,17 +119,14 @@ main > .hide-navbar + section {
   }
 }
 
-
 ::selection {
   background: #7200a5f5;
   color: #fff;
 }
 
-
 .scroll-bar {
   display: flex;
 }
-
 
 #tsparticles {
   min-height: 100vh;
@@ -141,15 +138,13 @@ main > .hide-navbar + section {
   left: 0;
 }
 
-
-
 .css-transition {
   &-enter {
     opacity: 0;
   }
   &-enter-active {
     opacity: 1;
-    transition: opacity .3s linear;
+    transition: opacity 0.3s linear;
   }
   &-exit {
     opacity: 0;

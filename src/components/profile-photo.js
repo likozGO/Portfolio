@@ -11,7 +11,11 @@ const ProfilePhoto = ({ selectPreset }) => {
   return (
     <div className="profile-photo">
       <div className="image-wrapper">
-        <img alt="Profile" src={CURRENT_PHOTO[selectPreset.theme]} className="image-personal" />
+        <img
+          alt="Profile"
+          src={CURRENT_PHOTO[selectPreset.theme]}
+          className="image-personal"
+        />
       </div>
     </div>
   );

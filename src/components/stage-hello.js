@@ -13,11 +13,11 @@ const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
       onAnimationStart={() => !selectHello && setHello(true)}
       onAnimationEnd={() => selectHello && setHello(false)}
     >
-      <div
-        id="ui"
-      >
+      <div id="ui">
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {hello.map((a, index) => <span className="text" key={index}>{a}</span>)}
+        {hello.map((a) => (
+          <span className="text">{a}</span>
+        ))}
       </div>
     </div>
   );

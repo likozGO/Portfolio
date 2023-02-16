@@ -27,7 +27,10 @@ function App() {
   return (
     <Router>
       <div className={`theme-picker theme-${theme}`}>
-        <ToastContainer limit={3} toastClassName="toast" />
+        <ToastContainer
+          limit={3}
+          toastClassName="toast"
+        />
         <ParticlesBgContainer />
         <main>
           <NavbarContainer />

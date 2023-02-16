@@ -14,9 +14,16 @@ import { ERRORS_DATA } from '../translations/translation-keys';
 import './error-no-found.scss';
 
 const ErrorNoFound = ({
-  generateRandomFact, selectFact, selectIsLoading, selectLanguage,
-  buttonFactTranslation, errorTranslation, infoTranslation,
-  toGetTranslation, interestingTranslation, orTranslation,
+  generateRandomFact,
+  selectFact,
+  selectIsLoading,
+  selectLanguage,
+  buttonFactTranslation,
+  errorTranslation,
+  infoTranslation,
+  toGetTranslation,
+  interestingTranslation,
+  orTranslation,
   toHomeTranslation,
 }) => {
   const [inProperty, setInProperty] = useState(false);
@@ -55,9 +62,7 @@ const ErrorNoFound = ({
     >
       <div className="no-found">
         <section className="page-404">
-          <h1 className="error-code">
-            {errorI18n}
-          </h1>
+          <h1 className="error-code">{errorI18n}</h1>
           <img
             src={randomImage}
             alt="404"
@@ -65,41 +70,43 @@ const ErrorNoFound = ({
           <h3>
             <div className="info">
               {infoI18n}
-              {
-                isEnglishLanguage ? (
-                  <>
-                    <br />
-                    <button type="button" className="interesting-fact" onClick={generateRandomFact}>
-                      {buttonFactI18n}
-                    </button>
-                    {' '}
-                    {toGetI18n}
-                    {' '}
-                    <span className="notice">
-                      {interestingI18n}
-                    </span>
-                    {' '}
-                    {orI18n}
-                  </>
-                ) : null
-              }
+              {isEnglishLanguage ? (
+                <>
+                  <br />
+                  <button
+                    type="button"
+                    className="interesting-fact"
+                    onClick={generateRandomFact}
+                  >
+                    {buttonFactI18n}
+                  </button>
+                  {' '}
+                  {toGetI18n}
+                  {' '}
+                  <span className="notice">{interestingI18n}</span>
+                  {' '}
+                  {orI18n}
+                </>
+              ) : null}
             </div>
 
-            {selectIsLoading
-              ? (
-                <>
-                  <FaSpinner icon="spinner" className="spinner" />
-                  <br />
-                </>
-              )
-              : null}
+            {selectIsLoading ? (
+              <>
+                <FaSpinner
+                  icon="spinner"
+                  className="spinner"
+                />
+                <br />
+              </>
+            ) : null}
             {selectFact?.length && isEnglishLanguage ? (
-              <span className="random-fact notice">
-                {selectFact}
-              </span>
+              <span className="random-fact notice">{selectFact}</span>
             ) : null}
           </h3>
-          <Link to="/" className="button primary">
+          <Link
+            to="/"
+            className="button primary"
+          >
             {toHomeI18n}
           </Link>
         </section>

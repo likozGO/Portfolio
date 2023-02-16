@@ -26,7 +26,6 @@ function mapStateToProperties(state) {
     thirdStepTitleStarsI18n: STAGES_DATA.STEPS__THIRD__TITLE__STARS,
     thirdStepTitleSnowI18n: STAGES_DATA.STEPS__THIRD__TITLE__SNOW,
     thirdStepTitleBubblesI18n: STAGES_DATA.STEPS__THIRD__TITLE__BUBBLES,
-
   };
 }
 

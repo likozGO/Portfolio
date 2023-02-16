@@ -13,8 +13,7 @@ import './stage-settings.scss';
 // eslint-disable-next-line import/order
 import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 // eslint-disable-next-line import/order
-import AnimationStyles
-  from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
+import AnimationStyles from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 
 const StageSettings = ({
   selectPreset,
@@ -143,11 +142,16 @@ const StageSettings = ({
   ];
 
   return (
-    <section
-      className={`stage-settings ${selectHello && 'hide'}`}
-    >
-      <RainbowText word={stepsI18n} status={animController} />
-      <div className={`steps-container ${selectPreset.particles && 'bg-transparent'}`}>
+    <section className={`stage-settings ${selectHello && 'hide'}`}>
+      <RainbowText
+        word={stepsI18n}
+        status={animController}
+      />
+      <div
+        className={`steps-container ${
+          selectPreset.particles && 'bg-transparent'
+        }`}
+      >
         <AwesomeSlider
           animation="foldOutAnimation"
           fillParent
@@ -168,29 +172,29 @@ const StageSettings = ({
           {Object.keys(stages).map((key) => {
             const stepNumber = Number(key) + 1;
             return (
-              <div className={`step step-${stepNumber}`} key={stepNumber}>
+              <div
+                className={`step step-${stepNumber}`}
+                key={stepNumber}
+              >
                 <div className="container">
-                  {
-                    Object.keys(stages[key]).map((childPropertyKey) => (
-                      <StageSettingsItem
-                        selectPreset={selectPreset}
-                        key={childPropertyKey}
-                        setAnimationStart={setAnimationStart}
-                        setPreset={setPreset}
-                        currentStep={selectStep}
-                        image={stages[key][childPropertyKey].image}
-                        title={stages[key][childPropertyKey].title}
-                        preset={stages[key][childPropertyKey].preset}
-                        changeLang={stages[key][childPropertyKey].changeLang}
-                      />
-                    ))
-                  }
-                  {selectStep === 'fourth'
-                    ? (
-                      <div className="settings-button-wrapper">
-                        <StageSettingsButton />
-                      </div>
-                    ) : null}
+                  {Object.keys(stages[key]).map((childPropertyKey) => (
+                    <StageSettingsItem
+                      selectPreset={selectPreset}
+                      key={childPropertyKey}
+                      setAnimationStart={setAnimationStart}
+                      setPreset={setPreset}
+                      currentStep={selectStep}
+                      image={stages[key][childPropertyKey].image}
+                      title={stages[key][childPropertyKey].title}
+                      preset={stages[key][childPropertyKey].preset}
+                      changeLang={stages[key][childPropertyKey].changeLang}
+                    />
+                  ))}
+                  {selectStep === 'fourth' ? (
+                    <div className="settings-button-wrapper">
+                      <StageSettingsButton />
+                    </div>
+                  ) : null}
                 </div>
               </div>
             );

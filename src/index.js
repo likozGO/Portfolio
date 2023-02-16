@@ -20,7 +20,10 @@ const persist = persistStore(store);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persist}>
+      <PersistGate
+        loading={null}
+        persistor={persist}
+      >
         <App />
       </PersistGate>
     </Provider>

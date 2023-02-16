@@ -27,9 +27,7 @@ const Profile = ({
   return (
     <section className="profile-card">
       <div className="container">
-        <ProfilePhoto
-          selectPreset={selectPreset}
-        />
+        <ProfilePhoto selectPreset={selectPreset} />
         <div className="component-group">
           <ProfileSocial
             name={nameI18n}
@@ -54,6 +52,4 @@ function mapStateToProperties(state) {
   };
 }
 
-export default connect(
-  mapStateToProperties,
-)(Profile);
+export default connect(mapStateToProperties)(Profile);
