@@ -6,7 +6,7 @@ $check-length: 36px;
   z-index: 1;
 }
 
-@keyframes scaleAnimation {
+@keyframes scale-animation {
   0% {
     opacity: 0;
     transform: scale(1.5);
@@ -17,7 +17,7 @@ $check-length: 36px;
   }
 }
 
-@keyframes drawCircle {
+@keyframes draw-circle {
   0% {
     stroke-dashoffset: $circle-length;
   }
@@ -26,7 +26,7 @@ $check-length: 36px;
   }
 }
 
-@keyframes drawCheck {
+@keyframes draw-check {
   0% {
     stroke-dashoffset: $check-length;
   }
@@ -35,7 +35,7 @@ $check-length: 36px;
   }
 }
 
-@keyframes fadeOut {
+@keyframes fade-out {
   0% {
     opacity: 1;
   }
@@ -44,7 +44,7 @@ $check-length: 36px;
   }
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -69,19 +69,19 @@ $check-length: 36px;
 }
 
 #successAnimation.animated {
-  animation: 1s ease-out 0s 1 both scaleAnimation;
+  animation: 1s ease-out 0s 1 both scale-animation;
 
   #successAnimationCircle {
-    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle,
-      0.3s linear 0.9s 1 both fadeOut;
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both draw-circle,
+      0.3s linear 0.9s 1 both fade-out;
   }
 
   #successAnimationCheck {
-    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck,
-      0.3s linear 0.9s 1 both fadeOut;
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both draw-check,
+      0.3s linear 0.9s 1 both fade-out;
   }
 
   #successAnimationResult {
-    animation: 2s linear 0.9s both fadeIn;
+    animation: 2s linear 0.9s both fade-in;
   }
 }

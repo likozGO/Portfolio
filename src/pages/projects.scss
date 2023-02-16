@@ -5,13 +5,13 @@
   background-repeat: no-repeat;
   background-size: 500px;
   padding: 200px 0 0 0;
-  animation: catAppears 1.3s ease, fadein 2s;
+  animation: cat-appears 1.3s ease, fadein 2s;
   &.projects__cat__animation {
-    animation: catDisappearAndAppear 1.3s ease;
+    animation: cat-disappear-and-appear 1.3s ease;
   }
 }
 
-@keyframes catAppears {
+@keyframes cat-appears {
   0% {
     background-position: center 500px;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes catDisappearAndAppear {
+@keyframes cat-disappear-and-appear {
   0% {
     background-position: center -81px;
   }

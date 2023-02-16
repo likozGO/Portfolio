@@ -219,7 +219,7 @@
 
     &.aivix .awssld__bullets button[data-index='0'],
     &.n_ix .awssld__bullets button[data-index='1'] {
-      animation: ContentScale 1s infinite linear;
+      animation: content-scale 1s infinite linear;
     }
   }
 }

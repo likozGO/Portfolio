@@ -19,7 +19,7 @@
   }
 }
 
-@keyframes ContentFadeIn {
+@keyframes content-fade-in {
   0% {
     transform: translateY(-1rem);
     opacity: 0;
@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes ImageFadeIn {
+@keyframes image-fade-in {
   0% {
     transform: translate(-0.5rem, -0.5rem) scale(1.05);
     opacity: 0;
@@ -53,11 +53,11 @@
   }
   80%,
   100% {
-    mask-size: 0% 0%;
+    mask-size: 0 0;
   }
 }
 
-@keyframes ContentScale {
+@keyframes content-scale {
   0% {
     transform: scale(1);
     opacity: 1;

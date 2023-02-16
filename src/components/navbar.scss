@@ -270,7 +270,7 @@
 .navbar.show-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fadeInNavbar 0.3s ease-in-out both;
+    animation: fade-in-navbar 0.3s ease-in-out both;
   }
   & + section {
     transform: translateX($navbar-with-items-width) scale(0.8);
@@ -285,7 +285,7 @@
 .navbar.hide-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fadeOutNavbar 0.3s ease-in-out both;
+    animation: fade-out-navbar 0.3s ease-in-out both;
   }
   .navbar-container {
     @include respond(_768_min) {
@@ -301,7 +301,7 @@
   }
 }
 
-@keyframes fadeInNavbar {
+@keyframes fade-in-navbar {
   0% {
     opacity: 0;
     width: 0;
@@ -316,7 +316,7 @@
   }
 }
 
-@keyframes fadeOutNavbar {
+@keyframes fade-out-navbar {
   0% {
     opacity: 1;
     width: $navbar-without-items-width;

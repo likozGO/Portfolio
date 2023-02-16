@@ -54,7 +54,7 @@
 
     &__line {
       opacity: 0;
-      animation: LineFadeIn 0.8s 0.8s forwards ease-in;
+      animation: line-fade-in 0.8s 0.8s forwards ease-in;
     }
 
     &__bg {
@@ -64,7 +64,7 @@
     &__image {
       user-select: none;
       opacity: 0;
-      animation: ImageFadeIn 0.8s 1.4s forwards;
+      animation: image-fade-in 0.8s 1.4s forwards;
     }
 
     &__title {
@@ -82,7 +82,7 @@
       user-select: none;
       margin-top: -1rem;
       opacity: 0;
-      animation: ContentFadeIn 0.8s 1.6s forwards;
+      animation: content-fade-in 0.8s 1.6s forwards;
     }
 
     &__svg {
@@ -112,7 +112,7 @@
   }
 }
 
-@keyframes LineFadeIn {
+@keyframes line-fade-in {
   0% {
     opacity: 0;
     d: path(
