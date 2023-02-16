@@ -5,9 +5,9 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:react-redux/recommended",
         "airbnb",
-        "plugin:unicorn/recommended",
-        "plugin:react-hooks/recommended"
+        "plugin:unicorn/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
