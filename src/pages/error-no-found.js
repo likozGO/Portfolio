@@ -10,8 +10,19 @@ import { errorsSelectors } from '../ducks/errors';
 import operations from '../ducks/errors/operations';
 import { stagesSelectors } from '../ducks/stages';
 import { ERRORS_DATA } from '../translations/translation-keys';
+import { generateRandomArrayIndex } from '../utilities';
 
 import './error-no-found.scss';
+
+const errorImages = [
+  images.JOHN_404_GIF,
+  images.CARTMAN_404_GIF,
+  images.PETER_404_GIF,
+  images.PATRICK_404_GIF,
+  images.RALPH_404_GIF,
+];
+
+const randomImage = errorImages[generateRandomArrayIndex(errorImages)];
 
 const ErrorNoFound = ({
   generateRandomFact,
@@ -26,22 +37,14 @@ const ErrorNoFound = ({
   orTranslation,
   toHomeTranslation,
 }) => {
-  const [inProperty, setInProperty] = useState(false);
-  const { t } = useTranslation();
-  const errorImages = [
-    images.JOHN_404_GIF,
-    images.CARTMAN_404_GIF,
-    images.PETER_404_GIF,
-    images.PATRICK_404_GIF,
-    images.RALPH_404_GIF,
-  ];
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
 
-  const randomImage = errorImages[Math.trunc(Math.random() * errorImages.length)];
+  const { t } = useTranslation();
 
   const buttonFactI18n = t(buttonFactTranslation);
   const errorI18n = t(errorTranslation);
   const infoI18n = t(infoTranslation);
-
   const toGetI18n = t(toGetTranslation);
   const interestingI18n = t(interestingTranslation);
   const orI18n = t(orTranslation);
@@ -49,13 +52,9 @@ const ErrorNoFound = ({
 
   const isEnglishLanguage = selectLanguage === 'en';
 
-  useEffect(() => {
-    setInProperty(() => true);
-  }, []);
-
   return (
     <CSSTransition
-      in={inProperty}
+      in={isMounted}
       timeout={3000}
       classNames="css-transition"
       unmountOnExit
@@ -80,12 +79,9 @@ const ErrorNoFound = ({
                   >
                     {buttonFactI18n}
                   </button>
-                  {' '}
-                  {toGetI18n}
-                  {' '}
+                  {`${toGetI18n} `}
                   <span className="notice">{interestingI18n}</span>
-                  {' '}
-                  {orI18n}
+                  {` ${orI18n} `}
                 </>
               ) : null}
             </div>

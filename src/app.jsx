@@ -25,6 +25,7 @@ function App() {
   });
 
   console.log('test husky');
+  console.log(process.env);
 
   return (
     <Router>
