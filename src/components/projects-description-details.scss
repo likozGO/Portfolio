@@ -4,10 +4,39 @@
   .description-details {
     position: relative;
 
+    .button {
+      &.button--top,
+      &.button--left {
+        margin: 0;
+      }
+      &.button--top {
+        position: absolute;
+        top: 0;
+      }
+      &.button--bottom {
+        position: sticky;
+        bottom: 0;
+        opacity: 0;
+        @include respond(_768_min) {
+          border: 1px solid;
+          position: relative;
+          margin: 0;
+          width: 100%;
+        }
+        &.button--enter {
+          animation: from-left-to-right 0.75s 1 forwards;
+          opacity: 1;
+          transition: 0.2s opacity linear;
+        }
+        &.button--left {
+          opacity: 0;
+        }
+      }
+    }
     .container {
       padding-top: 50px;
       @include respond(_768_min) {
-        padding-top: 10px;
+        padding-top: 50px;
       }
 
       .screen-image {
@@ -257,5 +286,23 @@
 
   .show {
     opacity: 1 !important;
+  }
+}
+
+@keyframes from-left-to-right {
+  0% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150px);
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BiSave } from 'react-icons/bi';
+import { BiArrowBack, BiSave } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 
 import {
@@ -14,6 +14,8 @@ const Icon = ({ icon }) => {
   switch (icon) {
     case BUTTON_TYPES.SAVE:
       return <BiSave />;
+    case BUTTON_TYPES.BACK:
+      return <BiArrowBack />;
 
     default:
       return null;
@@ -22,8 +24,12 @@ const Icon = ({ icon }) => {
 
 export default class Button extends Component {
   getButtonClasses() {
-    const { icon, size, type } = this.props;
+    const {
+      icon, size, type, customClass,
+    } = this.props;
     const buttonClasses = ['button', `button--${size}`, `button--${type}`];
+
+    if (customClass?.length) buttonClasses.push(`${customClass}`);
 
     if (icon && icon !== BUTTON_TYPES.NONE) buttonClasses.push('button--icon');
 
@@ -32,11 +38,12 @@ export default class Button extends Component {
 
   render() {
     const {
-      disabled, onClickHandler, label, icon,
+      disabled, onClickHandler, label, icon, forwardRef,
     } = this.props;
     return (
       <button
         type="button"
+        ref={forwardRef}
         className={this.getButtonClasses()}
         onClick={(event) => onClickHandler(event.target)}
         disabled={disabled}

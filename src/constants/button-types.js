@@ -1,9 +1,11 @@
 export const NONE = 'none';
 export const SAVE = 'save';
+export const BACK = 'back';
 
 export const BUTTON_TYPES = {
   NONE,
   SAVE,
+  BACK,
 };
 
 export const BUTTON_STYLE = {

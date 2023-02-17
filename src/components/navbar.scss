@@ -199,6 +199,7 @@
     .navbar-social-links {
       border-top: 3px solid;
       margin: 0;
+
       padding: 10px 0 10px 0;
       display: flex;
       list-style: none;
@@ -287,6 +288,9 @@
   .navbar-container {
     animation: fade-out-navbar 0.3s ease-in-out both;
   }
+  .navbar-social-links {
+    visibility: hidden;
+  }
   .navbar-container {
     @include respond(_768_min) {
       visibility: hidden;
@@ -306,10 +310,6 @@
     opacity: 0;
     width: 0;
   }
-  50% {
-    opacity: 0;
-    width: $navbar-without-items-width;
-  }
   100% {
     opacity: 1;
     width: $navbar-without-items-width;
@@ -319,10 +319,6 @@
 @keyframes fade-out-navbar {
   0% {
     opacity: 1;
-    width: $navbar-without-items-width;
-  }
-  50% {
-    opacity: 0;
     width: $navbar-without-items-width;
   }
   100% {

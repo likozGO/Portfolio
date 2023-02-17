@@ -1,4 +1,6 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, {
+  createRef, useEffect, useRef, useState,
+} from 'react';
 import {
   AiFillGithub,
   AiOutlineClockCircle,
@@ -10,13 +12,27 @@ import { useHistory } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
 import moment from 'moment';
 
+import { BUTTON_TYPES } from '../constants/button-types';
 import { PROJECTS_PATH } from '../constants/router-urls';
+import { useIntersectionObserver } from '../hooks';
 
 import Button from './button';
 import ProjectsTransitionLayer from './projects-transition-layer';
 import ScreenImageWrapper from './screen-image-wrapper';
 
 import './projects-description-details.scss';
+
+const BackButton = ({ forwardReference, navigationBack, customClass }) => (
+  <Button
+    customClass={customClass}
+    label="Back"
+    size="small"
+    type="tertiary"
+    onClickHandler={navigationBack}
+    icon={BUTTON_TYPES.BACK}
+    forwardRef={forwardReference || null}
+  />
+);
 
 const ProjectsDescriptionDetails = ({
   itemPosition,
@@ -29,9 +45,15 @@ const ProjectsDescriptionDetails = ({
   const [imagePosition, setImagePosition] = useState({});
   const [showDescription, setShowDescription] = useState(false);
 
+  const backButtonReference = useRef(null);
+  const onScreen = useIntersectionObserver(backButtonReference, {
+    threshold: 0,
+  });
+  const navigateToProjects = () => history.replace(PROJECTS_PATH);
+
   useEffect(() => {
     if (isEmpty(selectedItemDetails)) {
-      history.replace(PROJECTS_PATH);
+      navigateToProjects();
       return;
     }
     const imageDimensions = imageReference.current.getBoundingClientRect();
@@ -47,9 +69,13 @@ const ProjectsDescriptionDetails = ({
   const onAnimationEnd = () => {
     setShowDescription(true);
   };
-
   return (
     <div className="description-details">
+      <BackButton
+        forwardReference={backButtonReference}
+        navigationBack={navigateToProjects}
+        customClass="button--top"
+      />
       <div className="container">
         <ScreenImageWrapper
           ref={imageReference}
@@ -161,6 +187,12 @@ const ProjectsDescriptionDetails = ({
           </div>
         </div>
       </div>
+      <BackButton
+        navigationBack={navigateToProjects}
+        customClass={`button--bottom ${
+          !onScreen?.isIntersecting ? 'button--enter' : 'button--left'
+        }`}
+      />
     </div>
   );
 };
