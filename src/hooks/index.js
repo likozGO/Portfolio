@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export { default as useDocumentTitle } from './use-document-title';
+export { default as useTimeout } from './use-timeout';

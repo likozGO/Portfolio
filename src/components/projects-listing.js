@@ -6,13 +6,14 @@ import ScreenImageWrapper from './screen-image-wrapper';
 import './projects-listing.scss';
 
 const ProjectsListing = ({ onItemSelected, projects }) => {
-  console.log(123);
+  console.log(projects);
   return (
     <div className="projects-listing-container">
       <div className="container">
         {projects.map((project, index) => (
-          <button
-            type="button"
+          <article
+            role="presentation"
+            key={index}
             onClick={(event) => onItemSelected(event, { ...project, index })}
             className="projects-listing-item"
           >
@@ -20,14 +21,22 @@ const ProjectsListing = ({ onItemSelected, projects }) => {
             <div className="item-description">
               <h1 className="title">{project.title}</h1>
               <div className="tags">
-                {project.tag.map((tag) => (
-                  <button type="button">{tag}</button>
-                ))}
+                {project.tag.map((tag, ind) => {
+                  const key = ind + tag;
+                  return (
+                    <button
+                      type="button"
+                      key={key}
+                    >
+                      {tag}
+                    </button>
+                  );
+                })}
               </div>
               <p className="details">{project.details}</p>
               <FiArrowRightCircle className="arrow-enter" />
             </div>
-          </button>
+          </article>
         ))}
       </div>
     </div>

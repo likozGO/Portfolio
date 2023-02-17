@@ -101,8 +101,13 @@ const ProjectsDescriptionDetails = ({
                 {projectLabels.tools}
               </span>
               <div className="features-container__content">
-                {selectedItemDetails?.tag.map((tag) => (
-                  <button type="button">{tag}</button>
+                {selectedItemDetails?.tag.map((tag, index) => (
+                  <button
+                    type="button"
+                    key={index}
+                  >
+                    {tag}
+                  </button>
                 ))}
               </div>
             </div>
