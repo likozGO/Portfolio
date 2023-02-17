@@ -21,7 +21,6 @@ const CompanyItem = ({
       <h2 className="company-title">{companyTitle}</h2>
       <div className="company-tags">
         {companyTags.map((tag) => (
-          // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
           <button
             type="button"
             key={tag.color}
@@ -36,8 +35,8 @@ const CompanyItem = ({
       </div>
       <span className="company-summary">{companySummary}</span>
       <ul className="company-responsibilities">
-        {companyResponsibilities.map((responsibility) => (
-          <li>{responsibility}</li>
+        {companyResponsibilities.map((responsibility, index) => (
+          <li key={index}>{responsibility}</li>
         ))}
       </ul>
       <div>
