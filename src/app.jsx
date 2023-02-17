@@ -9,6 +9,7 @@ import NavbarContainer from './containers/navbar-container';
 import ParticlesBgContainer from './containers/particles-bg-container';
 import { stagesSelectors } from './ducks/stages/index';
 import { APP_DATA } from './translations/translation-keys';
+import { useDocumentTitle } from './hooks';
 import routes from './routes';
 
 function App() {
@@ -16,16 +17,11 @@ function App() {
   const { t, i18n } = useTranslation();
   const titleI18n = t(APP_DATA.TITLE);
 
+  useDocumentTitle(titleI18n);
+
   useEffect(() => {
     i18n.changeLanguage(lang);
   }, []);
-
-  useEffect(() => {
-    document.title = titleI18n;
-  });
-
-  console.log('test husky');
-  console.log(process.env);
 
   return (
     <Router>

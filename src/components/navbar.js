@@ -81,6 +81,7 @@ const Navbar = ({
             <NavLink
               onClick={toggleVisible}
               to={item.link}
+              key={item.text}
               activeClassName="active-link"
               exact={item.link === HOME_PATH}
             >
@@ -92,10 +93,10 @@ const Navbar = ({
           ))}
         </div>
         <ul className="navbar-social-links">
-          {socialI18n.map((icon, ind) => (
+          {socialI18n.map((icon) => (
             // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
             <li
-              key={ind}
+              key={icon.key}
               onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}
             >
               {/* eslint-disable eqeqeq */}

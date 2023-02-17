@@ -11,11 +11,8 @@ import './stage-controller.scss';
 const StageController = ({ setHello, isHelloStage }) => {
   const history = useHistory();
 
-  // При первом рендере запускаем хелло
-  const isFirstVisit = isHelloStage !== false && !history.location.state?.fromHome;
-
   useEffect(() => {
-    if (isFirstVisit) setHello();
+    if (isHelloStage && !history.location.state?.fromHome) setHello();
   }, []);
 
   return (
@@ -28,7 +25,7 @@ const StageController = ({ setHello, isHelloStage }) => {
 
 function mapStateToProperties(state) {
   return {
-    isHelloStage: stagesSelectors.selectHello(state),
+    isHelloStage: stagesSelectors.selectHello(state) !== false,
   };
 }
 

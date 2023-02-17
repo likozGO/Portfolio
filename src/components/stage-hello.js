@@ -14,10 +14,17 @@ const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
       onAnimationEnd={() => selectHello && setHello(false)}
     >
       <div id="stage-hello-wrapper">
-        {/* eslint-disable-next-line react/no-array-index-key */}
-        {hello.map((text) => (
-          <span className="stage-hello-word">{text}</span>
-        ))}
+        {hello.map((text, index) => {
+          const indexValue = text + index;
+          return (
+            <span
+              className="stage-hello-word"
+              key={indexValue}
+            >
+              {text}
+            </span>
+          );
+        })}
       </div>
     </div>
   );

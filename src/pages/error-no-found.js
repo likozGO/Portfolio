@@ -25,7 +25,7 @@ const errorImages = [
 const randomImage = errorImages[generateRandomArrayIndex(errorImages)];
 
 const ErrorNoFound = ({
-  generateRandomFact,
+  setNoFoundFact,
   selectFact,
   selectIsLoading,
   selectLanguage,
@@ -75,7 +75,7 @@ const ErrorNoFound = ({
                   <button
                     type="button"
                     className="interesting-fact"
-                    onClick={generateRandomFact}
+                    onClick={setNoFoundFact}
                   >
                     {buttonFactI18n}
                   </button>
@@ -129,7 +129,7 @@ function mapStateToProperties(state) {
 
 function mapDispatchToProperties(dispatch) {
   return {
-    generateRandomFact: () => {
+    setNoFoundFact: () => {
       dispatch(operations.setNoFoundFact());
     },
   };

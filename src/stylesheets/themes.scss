@@ -17,7 +17,7 @@ $themes: (
       0 0 1rem rgba(0, 0, 0, 0.2),
     ),
     'profile-social-icon': rgba(255, 255, 255, 1),
-    'profile-social-icon-hover': rgba(114, 0, 165, 0.8),
+    'profile-social-icon-hover': rgba(255, 255, 255, 0.4),
     'social-icon-highlight': rgba(114, 0, 165, 0.15),
     'profile-about': rgba(114, 0, 165, 0.7),
     'profile-about-border': #fff,
@@ -125,7 +125,7 @@ $themes: (
     'no_found_notice_bg': #000,
     'no_found_notice_text': #e5e5e5,
     'no_found_info_text': #000,
-    'no_found_spinner_fill': #fff,
+    'no_found_spinner_fill': #000,
 
     'company_color': #000,
     'company_interactive_shadow': 4px 4px 20px -6px rgb(0, 0, 25%),
