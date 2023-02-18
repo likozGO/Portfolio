@@ -11,7 +11,7 @@ import {
 import { stagesSelectors } from '../ducks/stages';
 import routes from '../routes';
 
-const HandleAuth = () => {
+const handleAuth = () => {
   // if we will need protected routes in future
   const checkKey = true;
   return checkKey;
@@ -35,7 +35,7 @@ export default function RouterComponent({
     return <Redirect to={NO_FOUND_PATH} />;
   }
 
-  if (!HandleAuth() && isPrivate) {
+  if (!handleAuth() && isPrivate) {
     // Path private, example: if you don't have rights, cant go in
     return (
       <Route
@@ -46,7 +46,7 @@ export default function RouterComponent({
     );
   }
 
-  if (HandleAuth() && isRestricted) {
+  if (handleAuth() && isRestricted) {
     // Path restricted, example: page login restricted, its public but
     // if you log in you cant go to this page
     return (

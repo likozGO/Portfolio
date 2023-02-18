@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ScreenImageWrapper from './screen-image-wrapper';
 
 import './projects-listing.scss';
 
-const ProjectsListing = ({ onItemSelected, projects }) => {
-  console.log(projects);
+function ProjectsListing({ onItemSelected, projects }) {
   return (
     <div className="projects-listing-container">
       <div className="container">
@@ -41,6 +40,6 @@ const ProjectsListing = ({ onItemSelected, projects }) => {
       </div>
     </div>
   );
-};
+}
 
-export default ProjectsListing;
+export default memo(ProjectsListing);

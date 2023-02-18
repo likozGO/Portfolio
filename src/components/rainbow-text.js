@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const RainbowText = ({ word, status }) => (
-  <ul className={`c-rainbow ${status && 'hide'}`}>
-    <li className="c-rainbow__layer c-rainbow__layer--white">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--orange">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--red">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--violet">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--blue">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--green">{word}</li>
-    <li className="c-rainbow__layer c-rainbow__layer--yellow">{word}</li>
-  </ul>
-);
+const COLORS = ['white', 'orange', 'red', 'violet', 'blue', 'green', 'yellow'];
 
-export default RainbowText;
+function RainbowText({ word, status }) {
+  return (
+    <ul className={`c-rainbow ${status ? 'hide' : ''}`}>
+      {COLORS.map((color) => (
+        <li
+          key={color}
+          className={`c-rainbow__layer c-rainbow__layer--${color}`}
+        >
+          {word}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default memo(RainbowText);
