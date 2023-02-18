@@ -232,7 +232,7 @@
             border-radius: 50%;
             @include background-color('social-icon-highlight');
             opacity: 0;
-            transition: opacity 0.15s linear;
+            transition: opacity 2s linear;
             user-select: none;
           }
           &:hover:before {
@@ -265,13 +265,13 @@
 }
 
 .navbar + section {
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease;
 }
 
 .navbar.show-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fade-in-navbar 0.3s ease-in-out both;
+    animation: fade-in-navbar 0.2s ease-in-out both;
   }
   & + section {
     transform: translateX($navbar-with-items-width) scale(0.8);
@@ -286,7 +286,7 @@
 .navbar.hide-navbar {
   .navbar-icons,
   .navbar-container {
-    animation: fade-out-navbar 0.3s ease-in-out both;
+    animation: fade-out-navbar 0.2s ease-in-out both;
   }
   .navbar-social-links {
     visibility: hidden;

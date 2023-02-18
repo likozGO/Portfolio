@@ -60,50 +60,52 @@ const ErrorNoFound = ({
     >
       <div className="no-found">
         <section className="page-404">
-          <h1 className="error-code">{error}</h1>
-          <img
-            src={randomImage}
-            alt="404"
-          />
-          <h3>
-            <div className="info">
-              {info}
-              {isEnglishLanguage ? (
+          <div className="container">
+            <h1 className="error-code">{error}</h1>
+            <img
+              src={randomImage}
+              alt="404"
+            />
+            <h3>
+              <div className="info">
+                {info}
+                {isEnglishLanguage ? (
+                  <>
+                    <br />
+                    <button
+                      type="button"
+                      className="interesting-fact"
+                      onClick={setNoFoundFact}
+                    >
+                      {button_fact}
+                    </button>
+                    {`${to_get} `}
+                    <span className="notice">{interesting_information}</span>
+                    {` ${or} `}
+                  </>
+                ) : null}
+              </div>
+
+              {selectIsLoading ? (
                 <>
+                  <FaSpinner
+                    icon="spinner"
+                    className="spinner"
+                  />
                   <br />
-                  <button
-                    type="button"
-                    className="interesting-fact"
-                    onClick={setNoFoundFact}
-                  >
-                    {button_fact}
-                  </button>
-                  {`${to_get} `}
-                  <span className="notice">{interesting_information}</span>
-                  {` ${or} `}
                 </>
               ) : null}
-            </div>
-
-            {selectIsLoading ? (
-              <>
-                <FaSpinner
-                  icon="spinner"
-                  className="spinner"
-                />
-                <br />
-              </>
-            ) : null}
-            {hasFacts ? (
-              <span className="random-fact notice">{selectFact}</span>
-            ) : null}
-          </h3>
-          <Link
-            to="/"
-            className="button primary"
-          >
-            {comebackToHome}
-          </Link>
+              {hasFacts ? (
+                <span className="random-fact notice">{selectFact}</span>
+              ) : null}
+            </h3>
+            <Link
+              to="/"
+              className="button primary"
+            >
+              {comebackToHome}
+            </Link>
+          </div>
         </section>
       </div>
     </CSSTransition>
