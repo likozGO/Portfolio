@@ -7,7 +7,7 @@ client.defaults.headers = {
   'Content-Type': 'application/json',
   Accept: 'application/json',
 };
-client.defaults.timeout = 2000;
+client.defaults.timeout = 20_000;
 
 function deleteRequest(url = '', headers = {}, body = {}, signal = {}) {
   const config = {

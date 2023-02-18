@@ -12,7 +12,7 @@ import { PROJECTS_DATA } from '../translations/translation-keys';
 import './projects.scss';
 
 const Projects = ({
-  projects,
+  projectsTranslations,
 
   setProject,
 }) => {
@@ -20,7 +20,7 @@ const Projects = ({
   const { t } = useTranslation();
   const [isCatAnimated, setCatAnimated] = useState(false);
 
-  const projectsI18n = t(...projects);
+  const projectsI18n = t(...projectsTranslations);
 
   useTimeout(() => {
     setCatAnimated((previous) => !previous);
@@ -68,7 +68,7 @@ const Projects = ({
 function mapStateToProperties(state) {
   return {
     currentProject: projectsSelectors.selectCurrentProject(state),
-    projects: [PROJECTS_DATA.PROJECTS, { returnObjects: true }],
+    projectsTranslations: [PROJECTS_DATA.PROJECTS, { returnObjects: true }],
   };
 }
 

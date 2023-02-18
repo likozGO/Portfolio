@@ -22,22 +22,12 @@ const StageSettings = ({
   setAnimationStart,
   setPreset,
   setStep,
-  firstStepTitleRuI18n,
-  firstStepTitleEnI18n,
-  firstStepTitleUaI18n,
-  secondStepTitleDefaultI18n,
-  secondStepTitleWhiteI18n,
-  secondStepTitleDarkI18n,
-  secondStepTextDefaultI18n,
-  secondStepTextWhiteI18n,
-  secondStepTextDarkI18n,
-  thirdStepTitleDisabledI18n,
-  thirdStepTitleStarsI18n,
-  thirdStepTitleSnowI18n,
-  thirdStepTitleBubblesI18n,
+  stagesStepsTranslations,
 }) => {
   const [animController, setAnimController] = React.useState(false);
   const { t, i18n } = useTranslation();
+  const stepsHeadlineI18n = t(`stagesData.steps.${selectStep}.headline`);
+  const { first, second, third } = t(...stagesStepsTranslations);
 
   const STEPS_WORDS = {
     0: 'first',
@@ -55,25 +45,23 @@ const StageSettings = ({
 
   const ANIMATION_TYPE = 'foldOutAnimation';
 
-  const stepsI18n = t(`stagesData.steps.${selectStep}.headline`);
-
   const stages = [
     [
       {
         image: images.EN_FLAG,
-        title: t(firstStepTitleEnI18n),
+        title: first.title.en,
         preset: ['lang', 'en'],
         changeLang: () => i18n.changeLanguage('en'),
       },
       {
         image: images.RU_FLAG,
-        title: t(firstStepTitleRuI18n),
+        title: first.title.ru,
         preset: ['lang', 'ru'],
         changeLang: () => i18n.changeLanguage('ru'),
       },
       {
         image: images.UA_FLAG,
-        title: t(firstStepTitleUaI18n),
+        title: first.title.ua,
         preset: ['lang', 'ua'],
         changeLang: () => i18n.changeLanguage('ua'),
       },
@@ -81,22 +69,22 @@ const StageSettings = ({
     [
       {
         image: images.DEFAULT_PALETTE,
-        title: t(secondStepTitleDefaultI18n),
-        text: t(secondStepTextDefaultI18n),
+        title: second.title.default,
+        text: second.text.default,
         disableAnimation: true,
         preset: ['theme', 'default'],
       },
       {
         image: images.DARK_PALETTE,
-        title: t(secondStepTitleDarkI18n),
-        text: t(secondStepTextDarkI18n),
+        title: second.title.dark,
+        text: second.text.dark,
         disableAnimation: true,
         preset: ['theme', 'dark'],
       },
       {
         image: images.WHITE_PALETTE,
-        title: t(secondStepTitleWhiteI18n),
-        text: t(secondStepTextWhiteI18n),
+        title: second.title.white,
+        text: second.text.white,
         disableAnimation: true,
         preset: ['theme', 'white'],
       },
@@ -104,22 +92,22 @@ const StageSettings = ({
     [
       {
         image: images.NO_PARTICLES,
-        title: t(thirdStepTitleDisabledI18n),
+        title: third.title.disabled,
         preset: ['particles', 'disabled'],
       },
       {
         image: images.STARS_PARTICLES,
-        title: t(thirdStepTitleStarsI18n),
+        title: third.title.stars,
         preset: ['particles', 'stars'],
       },
       {
         image: images.SNOW_PARTICLES,
-        title: t(thirdStepTitleSnowI18n),
+        title: third.title.snow,
         preset: ['particles', 'snow'],
       },
       {
         image: images.BUBBLES_PARTICLES,
-        title: t(thirdStepTitleBubblesI18n),
+        title: third.title.bubbles,
         preset: ['particles', 'bubbles'],
       },
     ],
@@ -146,7 +134,7 @@ const StageSettings = ({
   return (
     <section className={`stage-settings ${selectHello && 'hide'}`}>
       <RainbowText
-        word={stepsI18n}
+        word={stepsHeadlineI18n}
         status={animController}
       />
       <div

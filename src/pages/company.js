@@ -10,43 +10,26 @@ import { COMPANIES_DATA } from '../translations/translation-keys';
 
 import './company.scss';
 
-const Company = ({
-  aivixTitle,
-  aivixSummary,
-  aivixResponsibilities,
-  aivixLink,
-  n_ixTitle,
-  n_ixSummary,
-  n_ixResponsibilities,
-  n_ixLink,
-}) => {
-  const { t } = useTranslation();
-  const [activeBullets, setActiveBullets] = useState('');
-  const aivixTitleI18n = t(aivixTitle);
-  const aivixSummaryI18n = t(aivixSummary);
-  const aivixResponsibilitiesI18n = t(...aivixResponsibilities);
-  const aivixLinkI18n = t(aivixLink);
+const detectSimilarTags = (tag) => Object.entries(tags).flatMap(([company, data]) => {
+  const final = [];
+  // eslint-disable-next-line unicorn/no-array-for-each
+  data.forEach((dataItem) => {
+    if (dataItem.text !== tag.text) return null;
+    return final.push(company);
+  });
+  return final;
+});
 
-  const n_ixTitleI18n = t(n_ixTitle);
-  const n_ixSummaryI18n = t(n_ixSummary);
-  const n_ixResponsibilitiesI18n = t(...n_ixResponsibilities);
-  const n_ixLinkI18n = t(n_ixLink);
+const Company = ({ companyTranslations }) => {
+  const { t } = useTranslation();
+  const { aivix, n_ix } = t(...companyTranslations);
+
+  const [activeBullets, setActiveBullets] = useState('');
 
   const unHighlightProjects = () => setActiveBullets('');
 
   const highlightProjects = (tag) => {
-    const result = Object.entries(tags).flatMap(([company, data]) => {
-      const final = [];
-      // eslint-disable-next-line unicorn/no-array-for-each
-      data.forEach((dataItem) => {
-        if (dataItem.text === tag.text) {
-          return final.push(company);
-        }
-        return null;
-      });
-      return final;
-    });
-
+    const result = detectSimilarTags(tag);
     setActiveBullets(result.join(' '));
   };
 
@@ -59,11 +42,11 @@ const Company = ({
         <>
           <CompanyItem
             companyImage={images.COMPANY_AIVIX_EN}
-            companyTitle={aivixTitleI18n}
+            companyTitle={aivix.title}
             companyTags={tags.aivix}
-            companySummary={aivixSummaryI18n}
-            companyResponsibilities={aivixResponsibilitiesI18n}
-            companyLink={aivixLinkI18n}
+            companySummary={aivix.summary}
+            companyResponsibilities={aivix.responsibilities}
+            companyLink={aivix.companyLink}
             highlightProjects={highlightProjects}
             unHighlightProjects={unHighlightProjects}
           />
@@ -71,11 +54,11 @@ const Company = ({
         <>
           <CompanyItem
             companyImage={images.COMPANY_N_IX_EN}
-            companyTitle={n_ixTitleI18n}
+            companyTitle={n_ix.title}
             companyTags={tags.n_ix}
-            companySummary={n_ixSummaryI18n}
-            companyResponsibilities={n_ixResponsibilitiesI18n}
-            companyLink={n_ixLinkI18n}
+            companySummary={n_ix.summary}
+            companyResponsibilities={n_ix.responsibilities}
+            companyLink={n_ix.companyLink}
             highlightProjects={highlightProjects}
             unHighlightProjects={unHighlightProjects}
           />
@@ -87,21 +70,7 @@ const Company = ({
 
 function mapStateToProperties() {
   return {
-    aivixTitle: COMPANIES_DATA.AIVIX_TITLE,
-    aivixSummary: COMPANIES_DATA.AIVIX_SUMMARY,
-    aivixResponsibilities: [
-      COMPANIES_DATA.AIVIX_RESPONSIBILITIES,
-      { returnObjects: true },
-    ],
-    aivixLink: COMPANIES_DATA.AIVIX_LINK,
-
-    n_ixTitle: COMPANIES_DATA.N_IX_TITLE,
-    n_ixSummary: COMPANIES_DATA.N_IX_SUMMARY,
-    n_ixResponsibilities: [
-      COMPANIES_DATA.N_IX_RESPONSIBILITIES,
-      { returnObjects: true },
-    ],
-    n_ixLink: COMPANIES_DATA.N_IX_LINK,
+    companyTranslations: [COMPANIES_DATA.COMPANY, { returnObjects: true }],
   };
 }
 

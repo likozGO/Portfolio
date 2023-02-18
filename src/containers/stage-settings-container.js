@@ -10,22 +10,11 @@ function mapStateToProperties(state) {
     selectHello: stagesSelectors.selectHello(state),
     selectPreset: stagesSelectors.selectPreset(state),
     selectStep: stagesSelectors.selectStep(state),
-    firstStepTitleRuI18n: STAGES_DATA.STEPS__FIRST__TITLE__RU,
-    firstStepTitleEnI18n: STAGES_DATA.STEPS__FIRST__TITLE__EN,
-    firstStepTitleUaI18n: STAGES_DATA.STEPS__FIRST__TITLE__UA,
 
-    secondStepTitleDefaultI18n: STAGES_DATA.STEPS__SECOND__TITLE__DEFAULT,
-    secondStepTitleWhiteI18n: STAGES_DATA.STEPS__SECOND__TITLE__WHITE,
-    secondStepTitleDarkI18n: STAGES_DATA.STEPS__SECOND__TITLE__DARK,
-
-    secondStepTextDefaultI18n: STAGES_DATA.STEPS__SECOND__TEXT__DEFAULT,
-    secondStepTextWhiteI18n: STAGES_DATA.STEPS__SECOND__TEXT__WHITE,
-    secondStepTextDarkI18n: STAGES_DATA.STEPS__SECOND__TEXT__DARK,
-
-    thirdStepTitleDisabledI18n: STAGES_DATA.STEPS__THIRD__TITLE__DISABLED,
-    thirdStepTitleStarsI18n: STAGES_DATA.STEPS__THIRD__TITLE__STARS,
-    thirdStepTitleSnowI18n: STAGES_DATA.STEPS__THIRD__TITLE__SNOW,
-    thirdStepTitleBubblesI18n: STAGES_DATA.STEPS__THIRD__TITLE__BUBBLES,
+    stagesStepsTranslations: [
+      STAGES_DATA.STAGES_STEPS,
+      { returnObjects: true },
+    ],
   };
 }
 
