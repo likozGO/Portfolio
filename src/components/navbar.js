@@ -94,17 +94,16 @@ function Navbar({
         </div>
         <ul className="navbar-social-links">
           {socialI18n.map((icon) => (
-            // eslint-disable-next-line react/no-array-index-key,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
             <li
               key={icon.key}
               onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}
             >
-              {/* eslint-disable eqeqeq */}
               <Tooltip
                 text={icon.text}
                 delayHide={icon.key !== CV ? 150 : 0}
                 clickable
-                Elem={(
+                renderElement={() => (
                   <span href={icon.link}>
                     <IconContext.Provider
                       value={{ className: 'social-icon copied' }}

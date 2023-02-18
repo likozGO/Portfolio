@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import './tooltip.scss';
 
 function Tooltip({
-  Elem: Element_ = 'default text',
+  renderElement,
   text = 'default tooltip',
   clickable,
   place,
@@ -24,7 +24,7 @@ function Tooltip({
         data-for={text}
         data-tip={text}
       >
-        {Element_}
+        {renderElement() || 'default text'}
       </p>
     </>
   );

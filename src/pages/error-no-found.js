@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import images from '../constants/images';
+import { HOME_PATH } from '../constants/router-urls';
 import { errorsSelectors } from '../ducks/errors';
 import operations from '../ducks/errors/operations';
 import { stagesSelectors } from '../ducks/stages';
@@ -100,7 +101,7 @@ function ErrorNoFound({
               ) : null}
             </h3>
             <Link
-              to="/"
+              to={HOME_PATH}
               className="button primary"
             >
               {comebackToHome}
