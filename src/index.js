@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -18,7 +18,9 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 const persist = persistStore(store);
 
-ReactDOM.render(
+const container = document.querySelector('#root');
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate
@@ -29,5 +31,4 @@ ReactDOM.render(
       </PersistGate>
     </Provider>
   </React.StrictMode>,
-  document.querySelector('#root'),
 );

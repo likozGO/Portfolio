@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
 import ParticlesSetting from '../constants/particles-settings';
-
-async function particlesInit(main) {
-  await loadFull(main);
-}
 
 function ParticlesBg({
   selectAnimationStart,
@@ -14,6 +10,10 @@ function ParticlesBg({
   setAnimationStart,
   isEnabled,
 }) {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
   if (isEnabled) {
     return (
       <Particles
