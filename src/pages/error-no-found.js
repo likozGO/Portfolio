@@ -58,8 +58,8 @@ const ErrorNoFound = ({
       classNames="css-transition"
       unmountOnExit
     >
-      <div className="no-found">
-        <section className="page-404">
+      <section className="no-found">
+        <div className="page-404">
           <div className="container">
             <h1 className="error-code">{error}</h1>
             <img
@@ -106,8 +106,8 @@ const ErrorNoFound = ({
               {comebackToHome}
             </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </CSSTransition>
   );
 };
