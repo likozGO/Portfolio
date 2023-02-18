@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import Container from '../components/container';
 import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
@@ -18,7 +19,7 @@ function Profile({ biographyTranslations, selectPreset }) {
 
   return (
     <section className="profile-card">
-      <div className="container">
+      <Container>
         <ProfilePhoto selectPreset={selectPreset} />
         <div className="component-group">
           <ProfileSocial
@@ -28,7 +29,7 @@ function Profile({ biographyTranslations, selectPreset }) {
           />
           <ProfileMain about={about} />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

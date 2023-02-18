@@ -17,6 +17,7 @@ import { PROJECTS_PATH } from '../constants/router-urls';
 import { useIntersectionObserver } from '../hooks';
 
 import Button from './button';
+import Container from './container';
 import ProjectsTransitionLayer from './projects-transition-layer';
 import ScreenImageWrapper from './screen-image-wrapper';
 
@@ -81,7 +82,7 @@ function ProjectsDescriptionDetails({
         customClass="button--top"
         label={projectLabels.back}
       />
-      <div className="container">
+      <Container>
         <ScreenImageWrapper
           ref={imageReference}
           imageClassName={`image ${showDescription ? 'show' : ''}`}
@@ -191,7 +192,7 @@ function ProjectsDescriptionDetails({
             </div>
           </div>
         </div>
-      </div>
+      </Container>
       <BackButton
         navigationBack={navigateToProjects}
         label={projectLabels.back}

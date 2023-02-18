@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import Button from '../components/button';
+import Container from '../components/container';
 import CrashImage from '../components/crash-image';
 import { TELEGRAM_LINK } from '../constants/contacts';
 import { ERRORS_DATA } from '../translations/translation-keys';
@@ -21,7 +22,7 @@ function ErrorApplicationCrash({ errorTranslations }) {
   const { error, fix_errors, contact_developer } = t(...errorTranslations);
   return (
     <section className="application-crash">
-      <div className="container">
+      <Container>
         <h1 className="error-code">{error}</h1>
         <CrashImage />
         <Button
@@ -34,7 +35,7 @@ function ErrorApplicationCrash({ errorTranslations }) {
           onClickHandler={redirectToTelegram}
           label={contact_developer}
         />
-      </div>
+      </Container>
     </section>
   );
 }

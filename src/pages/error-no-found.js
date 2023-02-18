@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
+import Container from '../components/container';
 import images from '../constants/images';
 import { HOME_PATH } from '../constants/router-urls';
 import { errorsSelectors } from '../ducks/errors';
@@ -61,7 +62,7 @@ function ErrorNoFound({
     >
       <section className="no-found">
         <div className="page-404">
-          <div className="container">
+          <Container>
             <h1 className="error-code">{error}</h1>
             <img
               src={randomImage}
@@ -106,7 +107,7 @@ function ErrorNoFound({
             >
               {comebackToHome}
             </Link>
-          </div>
+          </Container>
         </div>
       </section>
     </CSSTransition>

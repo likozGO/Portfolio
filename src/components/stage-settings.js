@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import images from '../constants/images';
 import { IMAGE_COMPARE } from '../constants/settings-image-mapping';
 
+import Container from './container';
 import RainbowText from './rainbow-text';
 import StageSettingsButton from './stage-settings-button';
 import StageSettingsItem from './stage-settings-item';
@@ -132,16 +133,12 @@ function StageSettings({
   ];
 
   return (
-    <section className={`stage-settings ${selectHello && 'hide'}`}>
+    <section className={`stage-settings ${selectHello ? 'hide' : ''}`}>
       <RainbowText
         word={stepsHeadlineI18n}
         status={animController}
       />
-      <div
-        className={`steps-container ${
-          selectPreset.particles && 'bg-transparent'
-        }`}
-      >
+      <Container classNames={selectPreset.particles ? 'bg-transparent' : ''}>
         <AwesomeSlider
           animation={ANIMATION_TYPE}
           fillParent
@@ -166,7 +163,7 @@ function StageSettings({
                 className={`step step-${stepNumber}`}
                 key={stepNumber}
               >
-                <div className="container">
+                <Container>
                   {Object.keys(stages[key]).map((childPropertyKey) => (
                     <StageSettingsItem
                       selectPreset={selectPreset}
@@ -185,12 +182,12 @@ function StageSettings({
                       <StageSettingsButton />
                     </div>
                   ) : null}
-                </div>
+                </Container>
               </div>
             );
           })}
         </AwesomeSlider>
-      </div>
+      </Container>
     </section>
   );
 }

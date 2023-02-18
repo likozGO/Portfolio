@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import Container from './container';
 import ScreenImageWrapper from './screen-image-wrapper';
 
 function CompanyItem({
@@ -13,7 +14,7 @@ function CompanyItem({
   unHighlightProjects,
 }) {
   return (
-    <div className="company-container">
+    <Container>
       <ScreenImageWrapper
         image={companyImage}
         imageClassName="company-interactive"
@@ -51,7 +52,7 @@ function CompanyItem({
           </a>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

@@ -1,14 +1,15 @@
 import React, { memo } from 'react';
 import { FiArrowRightCircle } from 'react-icons/fi';
 
+import Container from './container';
 import ScreenImageWrapper from './screen-image-wrapper';
 
 import './projects-listing.scss';
 
 function ProjectsListing({ onItemSelected, projects }) {
   return (
-    <div className="projects-listing-container">
-      <div className="container">
+    <div className="projects-listing">
+      <Container>
         {projects.map((project, index) => (
           <article
             role="presentation"
@@ -37,7 +38,7 @@ function ProjectsListing({ onItemSelected, projects }) {
             </div>
           </article>
         ))}
-      </div>
+      </Container>
     </div>
   );
 }
