@@ -10,7 +10,7 @@ import { BIOGRAPHY_DATA } from '../translations/translation-keys';
 
 import './profile.scss';
 
-const Profile = ({ biographyTranslations, selectPreset }) => {
+function Profile({ biographyTranslations, selectPreset }) {
   const { t } = useTranslation();
   const {
     greeting, name, position, about,
@@ -31,7 +31,7 @@ const Profile = ({ biographyTranslations, selectPreset }) => {
       </div>
     </section>
   );
-};
+}
 
 // eslint-disable-next-line no-unused-vars
 function mapStateToProperties(state) {

@@ -11,11 +11,11 @@ import { PROJECTS_DATA } from '../translations/translation-keys';
 
 import './projects.scss';
 
-const Projects = ({
+function Projects({
   projectsTranslations,
 
   setProject,
-}) => {
+}) {
   const history = useHistory();
   const { t } = useTranslation();
   const [isCatAnimated, setCatAnimated] = useState(false);
@@ -63,7 +63,7 @@ const Projects = ({
       />
     </section>
   );
-};
+}
 
 function mapStateToProperties(state) {
   return {

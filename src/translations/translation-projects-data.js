@@ -49,6 +49,7 @@ const projectsData = {
       tools: 'Tools that i used:',
       role: 'My role:',
       visitProjectButton: 'Project demo',
+      back: 'Back',
     },
   },
   ru: {
@@ -99,6 +100,7 @@ const projectsData = {
       tools: 'Инструменты которые я использовал:',
       role: 'Моя роль:',
       visitProjectButton: 'Перейти в проект',
+      back: 'Назад',
     },
   },
   ua: {
@@ -149,6 +151,7 @@ const projectsData = {
       tools: 'Інструменти, які я використовував:',
       role: 'Моя роль:',
       visitProjectButton: 'Перейти до проекту',
+      back: 'Повернутись',
     },
   },
 };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BiArrowBack, BiSave } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 
@@ -10,7 +10,17 @@ import {
 
 import './button.scss';
 
-const Icon = ({ icon }) => {
+function getButtonClasses(icon, size, type, customClass) {
+  const buttonClasses = ['button', `button--${size}`, `button--${type}`];
+
+  if (customClass?.length) buttonClasses.push(`${customClass}`);
+
+  if (icon && icon !== BUTTON_TYPES.NONE) buttonClasses.push('button--icon');
+
+  return buttonClasses.join(' ');
+}
+
+function Icon({ icon }) {
   switch (icon) {
     case BUTTON_TYPES.SAVE:
       return <BiSave />;
@@ -20,39 +30,31 @@ const Icon = ({ icon }) => {
     default:
       return null;
   }
-};
+}
 
-export default class Button extends Component {
-  getButtonClasses() {
-    const {
-      icon, size, type, customClass,
-    } = this.props;
-    const buttonClasses = ['button', `button--${size}`, `button--${type}`];
-
-    if (customClass?.length) buttonClasses.push(`${customClass}`);
-
-    if (icon && icon !== BUTTON_TYPES.NONE) buttonClasses.push('button--icon');
-
-    return buttonClasses.join(' ');
-  }
-
-  render() {
-    const {
-      disabled, onClickHandler, label, icon, forwardRef,
-    } = this.props;
-    return (
-      <button
-        type="button"
-        ref={forwardRef}
-        className={this.getButtonClasses()}
-        onClick={(event) => onClickHandler(event.target)}
-        disabled={disabled}
-      >
-        {icon && <Icon icon={icon} />}
-        {label}
-      </button>
-    );
-  }
+function Button({
+  disabled,
+  onClickHandler,
+  label,
+  icon,
+  forwardRef,
+  size,
+  type,
+  customClass,
+}) {
+  const generateClassName = getButtonClasses(icon, size, type, customClass);
+  return (
+    <button
+      type="button"
+      ref={forwardRef}
+      className={generateClassName}
+      onClick={(event) => onClickHandler(event.target)}
+      disabled={disabled}
+    >
+      {icon && <Icon icon={icon} />}
+      {label}
+    </button>
+  );
 }
 
 Icon.propTypes = {
@@ -78,3 +80,5 @@ Button.defaultProps = {
   size: BUTTON_SIZES.MEDIUM,
   icon: BUTTON_TYPES.NONE,
 };
+
+export default Button;

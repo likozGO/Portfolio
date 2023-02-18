@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import './stage-hello.scss';
 
-const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
+function StageHello({ selectHello, setHello, helloFriendTranslation }) {
   const { t } = useTranslation();
   const helloFriendI18n = t(helloFriendTranslation);
   const hello = Array.from({ length: 40 }).fill(helloFriendI18n);
@@ -28,6 +28,6 @@ const StageHello = ({ selectHello, setHello, helloFriendTranslation }) => {
       </div>
     </div>
   );
-};
+}
 
 export default StageHello;

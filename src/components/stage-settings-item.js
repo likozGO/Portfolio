@@ -4,7 +4,7 @@ import IconSuccess from './icon-success';
 
 import './stage-settings-item.scss';
 
-const StageSettingsItem = ({
+function StageSettingsItem({
   image,
   title,
   text,
@@ -15,7 +15,7 @@ const StageSettingsItem = ({
   selectPreset,
   setAnimationStart,
   setPreset,
-}) => {
+}) {
   const selectedTheme = preset && selectPreset.theme === preset[1];
   const selectedLang = preset && selectPreset.lang === preset[1];
   const selectedParticles = preset && selectPreset.particles === preset[1];
@@ -82,6 +82,6 @@ const StageSettingsItem = ({
       </div>
     </div>
   );
-};
+}
 
 export default StageSettingsItem;

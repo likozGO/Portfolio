@@ -22,24 +22,28 @@ import ScreenImageWrapper from './screen-image-wrapper';
 
 import './projects-description-details.scss';
 
-const BackButton = ({ forwardReference, navigationBack, customClass }) => (
-  <Button
-    customClass={customClass}
-    label="Back"
-    size="small"
-    type="tertiary"
-    onClickHandler={navigationBack}
-    icon={BUTTON_TYPES.BACK}
-    forwardRef={forwardReference || null}
-  />
-);
+function BackButton({
+  forwardReference, navigationBack, customClass, label,
+}) {
+  return (
+    <Button
+      customClass={customClass}
+      label={label}
+      size="small"
+      type="tertiary"
+      onClickHandler={navigationBack}
+      icon={BUTTON_TYPES.BACK}
+      forwardRef={forwardReference || null}
+    />
+  );
+}
 
-const ProjectsDescriptionDetails = ({
+function ProjectsDescriptionDetails({
   itemPosition,
   selectedItemDetails,
   projectLanguage = 'en',
   projectLabels,
-}) => {
+}) {
   const history = useHistory();
   const imageReference = createRef();
   const [imagePosition, setImagePosition] = useState({});
@@ -75,6 +79,7 @@ const ProjectsDescriptionDetails = ({
         forwardReference={backButtonReference}
         navigationBack={navigateToProjects}
         customClass="button--top"
+        label={projectLabels.back}
       />
       <div className="container">
         <ScreenImageWrapper
@@ -189,12 +194,13 @@ const ProjectsDescriptionDetails = ({
       </div>
       <BackButton
         navigationBack={navigateToProjects}
+        label={projectLabels.back}
         customClass={`button--bottom ${
           !onScreen?.isIntersecting ? 'button--enter' : 'button--left'
         }`}
       />
     </div>
   );
-};
+}
 
 export default ProjectsDescriptionDetails;

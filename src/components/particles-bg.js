@@ -4,16 +4,16 @@ import { loadFull } from 'tsparticles';
 
 import ParticlesSetting from '../constants/particles-settings';
 
-const particlesInit = async (main) => {
+async function particlesInit(main) {
   await loadFull(main);
-};
+}
 
-const ParticlesBg = ({
+function ParticlesBg({
   selectAnimationStart,
   selectPreset,
   setAnimationStart,
   isEnabled,
-}) => {
+}) {
   if (isEnabled) {
     return (
       <Particles
@@ -36,6 +36,6 @@ const ParticlesBg = ({
       <div className="bg" />
     </>
   );
-};
+}
 
 export default ParticlesBg;

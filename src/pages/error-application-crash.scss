@@ -1,0 +1,46 @@
+@import '../stylesheets/mixin';
+
+.application-crash {
+  min-height: 100%;
+  @media (prefers-color-scheme: dark) {
+    background: #000;
+    color: #fff;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: #fff;
+    color: #000;
+  }
+  .container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .crash-image {
+      max-height: 360px;
+      width: 100%;
+    }
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 auto;
+      display: inline-flex;
+      font-size: 5em;
+      font-weight: 900;
+      text-shadow: 3px 6px;
+      @include respond(_768_min) {
+        font-size: 3em;
+      }
+    }
+    .button {
+      color: inherit;
+      margin: 1em auto;
+      position: relative;
+      top: 0;
+      &:hover {
+        top: -3px;
+      }
+    }
+  }
+}

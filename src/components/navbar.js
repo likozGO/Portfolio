@@ -13,7 +13,7 @@ import Tooltip from './tooltip';
 
 import './navbar.scss';
 
-const socialBuilder = (type, data, toastText) => {
+function socialBuilder(type, data, toastText) {
   if (!SOCIAL_TYPES.includes(type)) return;
   if (type === TELEGRAM || type === CV) {
     navigateToLink(data);
@@ -21,16 +21,16 @@ const socialBuilder = (type, data, toastText) => {
   }
   copyToClipboard(data);
   toast.info(`${toastText}${data}`, { autoClose: 1000 });
-};
+}
 
-const Navbar = ({
+function Navbar({
   toggleVisible,
   navbarTranslation,
   selectVisible,
   selectVisibleModifier,
   toastCopy,
   socialTranslation,
-}) => {
+}) {
   const [isAnimationReady, setAnimationReady] = useState(false);
   const { t } = useTranslation();
   const navbarI18n = t(...navbarTranslation);
@@ -121,6 +121,6 @@ const Navbar = ({
       <div className="navbar-underlay" />
     </nav>
   );
-};
+}
 
 export default Navbar;

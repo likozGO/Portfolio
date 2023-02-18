@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import ScreenImageWrapper from './screen-image-wrapper';
 
-const CompanyItem = ({
+function CompanyItem({
   companyImage,
   companyTitle,
   companyTags,
@@ -11,46 +11,48 @@ const CompanyItem = ({
   companyLink,
   highlightProjects,
   unHighlightProjects,
-}) => (
-  <div className="company-container">
-    <ScreenImageWrapper
-      image={companyImage}
-      imageClassName="company-interactive"
-    />
-    <div className="company-details">
-      <h2 className="company-title">{companyTitle}</h2>
-      <div className="company-tags">
-        {companyTags.map((tag) => (
-          <button
-            type="button"
-            key={tag.color}
-            onMouseEnter={() => highlightProjects(tag)}
-            onMouseLeave={() => unHighlightProjects(tag)}
-            style={{ backgroundColor: tag.color }}
+}) {
+  return (
+    <div className="company-container">
+      <ScreenImageWrapper
+        image={companyImage}
+        imageClassName="company-interactive"
+      />
+      <div className="company-details">
+        <h2 className="company-title">{companyTitle}</h2>
+        <div className="company-tags">
+          {companyTags.map((tag) => (
+            <button
+              type="button"
+              key={tag.color}
+              onMouseEnter={() => highlightProjects(tag)}
+              onMouseLeave={() => unHighlightProjects(tag)}
+              style={{ backgroundColor: tag.color }}
+            >
+              {tag?.icon ? tag.icon() : null}
+              <span>{tag.text}</span>
+            </button>
+          ))}
+        </div>
+        <span className="company-summary">{companySummary}</span>
+        <ul className="company-responsibilities">
+          {companyResponsibilities.map((responsibility, index) => (
+            <li key={index}>{responsibility}</li>
+          ))}
+        </ul>
+        <div>
+          <a
+            href={companyLink}
+            className="company-link"
+            target="_blank"
+            rel="noreferrer"
           >
-            {tag?.icon ? tag.icon() : null}
-            <span>{tag.text}</span>
-          </button>
-        ))}
-      </div>
-      <span className="company-summary">{companySummary}</span>
-      <ul className="company-responsibilities">
-        {companyResponsibilities.map((responsibility, index) => (
-          <li key={index}>{responsibility}</li>
-        ))}
-      </ul>
-      <div>
-        <a
-          href={companyLink}
-          className="company-link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Link
-        </a>
+            Link
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
-export default CompanyItem;
+export default memo(CompanyItem);

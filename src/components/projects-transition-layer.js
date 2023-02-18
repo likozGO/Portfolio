@@ -3,12 +3,12 @@ import { animated, useSpring } from 'react-spring';
 
 import './projects-transition-layer.scss';
 
-const ProjectsTransitionLayer = ({
+function ProjectsTransitionLayer({
   itemPosition,
   imageToPosition,
   selectedItemDetails,
   onAnimationEnd,
-}) => {
+}) {
   const imageAnimation = useSpring({
     from: {
       height: itemPosition.imagePosition.height,
@@ -58,6 +58,6 @@ const ProjectsTransitionLayer = ({
       />
     </>
   );
-};
+}
 
 export default ProjectsTransitionLayer;

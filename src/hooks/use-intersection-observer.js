@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useIntersectionObserver = (reference, options) => {
+function useIntersectionObserver(reference, options) {
   const [intersectionObserverEntry, setIntersectionObserverEntry] = useState(null);
 
   useEffect(() => {
@@ -21,6 +21,6 @@ const useIntersectionObserver = (reference, options) => {
   }, [reference.current, options.threshold, options.root, options.rootMargin]);
 
   return intersectionObserverEntry;
-};
+}
 
 export default useIntersectionObserver;

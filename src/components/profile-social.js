@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const ProfileSocial = ({ greeting, name, position }) => (
-  <>
-    <div className="profile-title">
-      <span>{greeting}</span>
-      <h1>{name}</h1>
-      <h2>{position}</h2>
-    </div>
-  </>
-);
+function ProfileSocial({ greeting, name, position }) {
+  return (
+    <>
+      <div className="profile-title">
+        <span>{greeting}</span>
+        <h1>{name}</h1>
+        <h2>{position}</h2>
+      </div>
+    </>
+  );
+}
 
-export default ProfileSocial;
+export default memo(ProfileSocial);

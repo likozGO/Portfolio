@@ -10,17 +10,19 @@ import { COMPANIES_DATA } from '../translations/translation-keys';
 
 import './company.scss';
 
-const detectSimilarTags = (tag) => Object.entries(tags).flatMap(([company, data]) => {
-  const final = [];
-  // eslint-disable-next-line unicorn/no-array-for-each
-  data.forEach((dataItem) => {
-    if (dataItem.text !== tag.text) return null;
-    return final.push(company);
+function detectSimilarTags(tag) {
+  return Object.entries(tags).flatMap(([company, data]) => {
+    const final = [];
+    // eslint-disable-next-line unicorn/no-array-for-each
+    data.forEach((dataItem) => {
+      if (dataItem.text !== tag.text) return null;
+      return final.push(company);
+    });
+    return final;
   });
-  return final;
-});
+}
 
-const Company = ({ companyTranslations }) => {
+function Company({ companyTranslations }) {
   const { t } = useTranslation();
   const { aivix, n_ix } = t(...companyTranslations);
 
@@ -66,7 +68,7 @@ const Company = ({ companyTranslations }) => {
       </AwesomeSlider>
     </section>
   );
-};
+}
 
 function mapStateToProperties() {
   return {

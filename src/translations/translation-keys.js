@@ -13,6 +13,7 @@ export const COMPANIES_DATA = {
 
 export const ERRORS_DATA = {
   NO_FOUND: 'errorsData.noFound',
+  APPLICATION_CRASH: 'errorsData.applicationCrash',
 };
 
 export const BIOGRAPHY_DATA = {

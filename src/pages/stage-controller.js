@@ -8,7 +8,7 @@ import { stagesOperations, stagesSelectors } from '../ducks/stages';
 
 import './stage-controller.scss';
 
-const StageController = ({ setHello, isHelloStage }) => {
+function StageController({ setHello, isHelloStage }) {
   const history = useHistory();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const StageController = ({ setHello, isHelloStage }) => {
       <StageSettingsContainer />
     </section>
   );
-};
+}
 
 function mapStateToProperties(state) {
   return {

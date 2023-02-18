@@ -24,13 +24,13 @@ const errorImages = [
 
 const randomImage = errorImages[generateRandomArrayIndex(errorImages)];
 
-const ErrorNoFound = ({
+function ErrorNoFound({
   setNoFoundFact,
   selectFact,
   selectIsLoading,
   selectLanguage,
   errorTranslations,
-}) => {
+}) {
   const isEnglishLanguage = selectLanguage === 'en';
   const [isMounted, setIsMounted] = useState(false);
   const hasFacts = selectFact?.length && isEnglishLanguage;
@@ -110,7 +110,7 @@ const ErrorNoFound = ({
       </section>
     </CSSTransition>
   );
-};
+}
 
 function mapStateToProperties(state) {
   return {

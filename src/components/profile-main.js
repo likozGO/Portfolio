@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const ProfileMain = ({ about }) => {
-  console.log('123');
+function ProfileMain({ about }) {
   return (
     <div className="profile-about">
       <p>{about}</p>
     </div>
   );
-};
+}
 
-export default ProfileMain;
+export default memo(ProfileMain);

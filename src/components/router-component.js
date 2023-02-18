@@ -11,11 +11,11 @@ import {
 import { stagesSelectors } from '../ducks/stages';
 import routes from '../routes';
 
-const handleAuth = () => {
+function handleAuth() {
   // if we will need protected routes in future
   const checkKey = true;
   return checkKey;
-};
+}
 
 // Show the component only when the user is logged in
 // Otherwise, redirect the user to /login page

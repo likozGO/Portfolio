@@ -15,7 +15,7 @@ import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 // eslint-disable-next-line import/order
 import AnimationStyles from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 
-const StageSettings = ({
+function StageSettings({
   selectPreset,
   selectHello,
   selectStep,
@@ -23,7 +23,7 @@ const StageSettings = ({
   setPreset,
   setStep,
   stagesStepsTranslations,
-}) => {
+}) {
   const [animController, setAnimController] = React.useState(false);
   const { t, i18n } = useTranslation();
   const stepsHeadlineI18n = t(`stagesData.steps.${selectStep}.headline`);
@@ -193,6 +193,6 @@ const StageSettings = ({
       </div>
     </section>
   );
-};
+}
 
 export default StageSettings;

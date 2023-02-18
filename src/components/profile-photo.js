@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import images from '../constants/images';
 
-const ProfilePhoto = ({ selectPreset }) => {
+function ProfilePhoto({ selectPreset }) {
   const CURRENT_PHOTO = {
     default: images.PERSONAL_PHOTO_BLACK,
     dark: images.PERSONAL_PHOTO_PURPLE,
@@ -19,6 +19,6 @@ const ProfilePhoto = ({ selectPreset }) => {
       </div>
     </div>
   );
-};
+}
 
-export default ProfilePhoto;
+export default memo(ProfilePhoto);

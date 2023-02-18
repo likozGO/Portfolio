@@ -9,11 +9,11 @@ import { PROJECTS_DATA } from '../translations/translation-keys';
 
 import './projects-description.scss';
 
-const ProjectsDescription = ({
+function ProjectsDescription({
   currentProject,
   projectLanguage,
   projectsDescriptionLabels,
-}) => {
+}) {
   const { containerPosition, imagePosition, selectedItemDetails } = currentProject;
   const { t } = useTranslation();
 
@@ -32,7 +32,7 @@ const ProjectsDescription = ({
       />
     </section>
   );
-};
+}
 
 function mapStateToProperties(state) {
   return {

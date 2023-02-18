@@ -9,6 +9,11 @@ const errorsData = {
       or: 'or...',
       comebackToHome: 'Go back to the home page',
     },
+    applicationCrash: {
+      error: 'Something went wrong',
+      fix_errors: 'Fix errors',
+      contact_developer: 'Contact the developer',
+    },
   },
   ru: {
     noFound: {
@@ -20,6 +25,11 @@ const errorsData = {
       or: 'или...',
       comebackToHome: 'Вернуться на главную страницу',
     },
+    applicationCrash: {
+      error: 'Что-то пошло не так',
+      fix_errors: 'Исправить ошибки',
+      contact_developer: 'Связаться с разработчиком',
+    },
   },
   ua: {
     noFound: {
@@ -30,6 +40,11 @@ const errorsData = {
       interesting_information: 'цікавої інформації',
       or: 'або...',
       comebackToHome: 'Повернутися на головну сторінку',
+    },
+    applicationCrash: {
+      error: 'Щось пішло не по плану',
+      fix_errors: 'Виправити помилки',
+      contact_developer: "Зв'язатися з розробником\n",
     },
   },
 };

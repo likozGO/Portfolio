@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import ErrorBoundary from './components/error-boundary';
 import RouterComponent from './components/router-component';
 import NavbarContainer from './containers/navbar-container';
 import ParticlesBgContainer from './containers/particles-bg-container';
@@ -24,28 +25,30 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className={`theme-picker theme-${theme}`}>
-        <ToastContainer
-          limit={3}
-          toastClassName="toast"
-        />
-        <ParticlesBgContainer />
-        <main>
-          <NavbarContainer />
-          {routes.map((route) => (
-            <RouterComponent
-              key={route.path}
-              path={route.path}
-              component={route.component}
-              isPrivate={route.isPrivate}
-              isRestricted={route.isRestricted}
-              exact={route.exact}
-            />
-          ))}
-        </main>
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <div className={`theme-picker theme-${theme}`}>
+          <ToastContainer
+            limit={3}
+            toastClassName="toast"
+          />
+          <ParticlesBgContainer />
+          <main>
+            <NavbarContainer />
+            {routes.map((route) => (
+              <RouterComponent
+                key={route.path}
+                path={route.path}
+                component={route.component}
+                isPrivate={route.isPrivate}
+                isRestricted={route.isRestricted}
+                exact={route.exact}
+              />
+            ))}
+          </main>
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 
