@@ -22,13 +22,16 @@ function getButtonClasses(icon, size, type, customClass) {
 
 function Icon({ icon }) {
   switch (icon) {
-    case BUTTON_TYPES.SAVE:
+    case BUTTON_TYPES.SAVE: {
       return <BiSave />;
-    case BUTTON_TYPES.BACK:
+    }
+    case BUTTON_TYPES.BACK: {
       return <BiArrowBack />;
+    }
 
-    default:
+    default: {
       return null;
+    }
   }
 }
 

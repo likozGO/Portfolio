@@ -9,7 +9,7 @@ import { CV, SOCIAL_TYPES, TELEGRAM } from '../constants/contacts';
 import { HOME_PATH } from '../constants/router-urls';
 import { copyToClipboard, navigateToLink } from '../utilities';
 
-import Tooltip from './tooltip';
+import TooltipWrapper from './tooltip-wrapper';
 
 import './navbar.scss';
 
@@ -22,6 +22,9 @@ function socialBuilder(type, data, toastText) {
   copyToClipboard(data);
   toast.info(`${toastText}${data}`, { autoClose: 1000 });
 }
+const navbarClasses = { className: 'btn navbar-btn' };
+const socialClasses = { className: 'social-icon copied' };
+const navbarIconItemClasses = { className: 'navbar-icon-item' };
 
 function Navbar({
   toggleVisible,
@@ -44,12 +47,12 @@ function Navbar({
   return (
     <nav
       className={`navbar ${
-        !isAnimationReady ? 'loading' : ''
+        isAnimationReady ? '' : 'loading'
       } ${selectVisibleModifier}`}
       onAnimationEnd={() => setAnimationReady(true)}
     >
       <IconContext.Provider
-        value={{ className: 'btn navbar-btn' }}
+        value={navbarClasses}
         type="button"
       >
         <>
@@ -85,7 +88,7 @@ function Navbar({
               activeClassName="active-link"
               exact={item.link === HOME_PATH}
             >
-              <IconContext.Provider value={{ className: 'navbar-icon-item' }}>
+              <IconContext.Provider value={navbarIconItemClasses}>
                 {item.icon()}
               </IconContext.Provider>
               {item.text}
@@ -99,15 +102,13 @@ function Navbar({
               key={icon.key}
               onClick={() => socialBuilder(icon.key, icon.link, toastCopyI18n)}
             >
-              <Tooltip
+              <TooltipWrapper
                 text={icon.text}
-                delayHide={icon.key !== CV ? 150 : 0}
+                delayHide={icon.key === CV ? 0 : 150}
                 clickable
                 renderElement={() => (
                   <span href={icon.link}>
-                    <IconContext.Provider
-                      value={{ className: 'social-icon copied' }}
-                    >
+                    <IconContext.Provider value={socialClasses}>
                       {icon.icon()}
                     </IconContext.Provider>
                   </span>

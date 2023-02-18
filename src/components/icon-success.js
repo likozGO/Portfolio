@@ -21,7 +21,7 @@ function IconSuccess({ active, template = 'STYLE_TOP_RIGHT' }) {
   return (
     <svg
       id="success-animation"
-      className={`animated ${!active ? 'hide' : ''}`}
+      className={`animated ${active ? '' : 'hide'}`}
       xmlns="http://www.w3.org/2000/svg"
       width="70"
       height="70"

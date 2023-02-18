@@ -196,7 +196,7 @@ function ProjectsDescriptionDetails({
         navigationBack={navigateToProjects}
         label={projectLabels.back}
         customClass={`button--bottom ${
-          !onScreen?.isIntersecting ? 'button--enter' : 'button--left'
+          onScreen?.isIntersecting ? 'button--left' : 'button--enter'
         }`}
       />
     </div>

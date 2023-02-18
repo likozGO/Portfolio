@@ -41,6 +41,7 @@ function Company({ companyTranslations }) {
         animation="cubeAnimation"
         className={activeBullets}
       >
+        {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
         <>
           <CompanyItem
             companyImage={images.COMPANY_AIVIX_EN}
@@ -53,6 +54,7 @@ function Company({ companyTranslations }) {
             unHighlightProjects={unHighlightProjects}
           />
         </>
+        {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
         <>
           <CompanyItem
             companyImage={images.COMPANY_N_IX_EN}

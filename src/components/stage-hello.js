@@ -9,7 +9,7 @@ function StageHello({ selectHello, setHello, helloFriendTranslation }) {
   const hello = Array.from({ length: 40 }).fill(helloFriendI18n);
   return (
     <div
-      className={`stage-hello ${!selectHello ? 'hide' : 'visible'}`}
+      className={`stage-hello ${selectHello ? 'visible' : 'hide'}`}
       onAnimationStart={() => !selectHello && setHello(true)}
       onAnimationEnd={() => selectHello && setHello(false)}
     >

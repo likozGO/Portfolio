@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
 
-import './tooltip.scss';
+import './tooltip-wrapper.scss';
 
-function Tooltip({
+function TooltipWrapper({
   renderElement,
   text = 'default tooltip',
   clickable,
@@ -12,7 +12,7 @@ function Tooltip({
 }) {
   return (
     <>
-      <ReactTooltip
+      <Tooltip
         id={text}
         clickable={clickable}
         place={place}
@@ -20,9 +20,9 @@ function Tooltip({
         effect="solid"
       />
       <p
-        className="tooltip"
-        data-for={text}
-        data-tip={text}
+        className="tooltip-wrapper"
+        data-tooltip-id={text}
+        data-tooltip-content={text}
       >
         {renderElement() || 'default text'}
       </p>
@@ -30,4 +30,4 @@ function Tooltip({
   );
 }
 
-export default memo(Tooltip);
+export default memo(TooltipWrapper);

@@ -14,6 +14,7 @@ import 'normalize.css';
 import './stylesheets/index.scss';
 import './stylesheets/fonts.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const persist = persistStore(store);
 
