@@ -1,7 +1,8 @@
-const setExample = (state, action) => {
-  state.example = action.payload;
+// TODO
+const actionExample = (state, action) => {
+  state.isVisible = action.payload;
 };
 
 export default {
-  setExample,
+  actionExample,
 };

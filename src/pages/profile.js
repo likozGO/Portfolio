@@ -22,7 +22,7 @@ function Profile({ biographyTranslations, selectPreset }) {
     <Section classNames="profile-card">
       <Container>
         <ProfilePhoto selectPreset={selectPreset} />
-        <div className="component-group">
+        <div className="profile-group">
           <ProfileSocial
             name={name}
             position={position}

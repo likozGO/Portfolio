@@ -47,19 +47,19 @@ function StageSettingsItem({
       <IconSuccess active={stepExpr ? 'active' : false} />
       <div
         className="card__image-container"
-        style={{ display: !image && 'none' }}
+        style={{ display: image ? 'block' : 'none' }}
       >
         <img
           className="card__image"
           src={image}
-          alt=""
+          alt="Card representation"
         />
       </div>
 
       <svg
         className="card__svg"
         viewBox="0 0 800 500"
-        style={{ display: disableAnimation && 'none' }}
+        style={{ display: disableAnimation ? 'none' : 'block' }}
       >
         <path
           className="card__bg"
@@ -78,7 +78,7 @@ function StageSettingsItem({
 
       <div className="card__content">
         <h1 className="card__title">{title}</h1>
-        <p style={{ display: !text && 'none' }}>{text}</p>
+        <p style={{ display: text ? 'inline' : 'none' }}>{text}</p>
       </div>
     </div>
   );
