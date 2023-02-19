@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import CompanyItem from '../components/company-item';
+import Section from '../components/section';
 import { tags } from '../constants/company-tags';
 import images from '../constants/images';
 import { COMPANIES_DATA } from '../translations/translation-keys';
@@ -36,7 +37,7 @@ function Company({ companyTranslations }) {
   };
 
   return (
-    <section className="company">
+    <Section classNames="company">
       <AwesomeSlider
         animation="cubeAnimation"
         className={activeBullets}
@@ -68,7 +69,7 @@ function Company({ companyTranslations }) {
           />
         </>
       </AwesomeSlider>
-    </section>
+    </Section>
   );
 }
 

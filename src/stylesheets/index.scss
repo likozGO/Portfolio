@@ -17,14 +17,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-main > .hide-navbar + section {
-  margin-left: $navbar-closed-width;
-  @include respond(_768_min) {
-    margin-left: 0;
-    padding-top: 60px;
-  }
-}
-
 .component-group {
   display: flex;
   flex-direction: column;

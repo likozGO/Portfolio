@@ -92,18 +92,6 @@
     }
   }
 
-  .settings-button-wrapper {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    visibility: hidden;
-  }
-  &.step-4 .settings-button-wrapper {
-    visibility: visible;
-  }
   .container {
     display: flex;
     width: 100%;

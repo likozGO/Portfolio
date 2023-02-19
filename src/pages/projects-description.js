@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import ProjectsDescriptionDetails from '../components/projects-description-details';
+import Section from '../components/section';
 import { projectsSelectors } from '../ducks/projects';
 import { stagesSelectors } from '../ducks/stages';
 import { PROJECTS_DATA } from '../translations/translation-keys';
@@ -20,7 +21,7 @@ function ProjectsDescription({
   const projectsDescriptionLabelsI18n = t(...projectsDescriptionLabels);
 
   return (
-    <section className="projects-description">
+    <Section classNames="projects-description">
       <ProjectsDescriptionDetails
         itemPosition={{
           containerPosition,
@@ -30,7 +31,7 @@ function ProjectsDescription({
         projectLanguage={projectLanguage}
         projectLabels={projectsDescriptionLabelsI18n}
       />
-    </section>
+    </Section>
   );
 }
 

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import ProjectsListing from '../components/projects-listing';
+import Section from '../components/section';
 import { PROJECTS_DESCRIPTION_PATH } from '../constants/router-urls';
 import { projectsOperations, projectsSelectors } from '../ducks/projects';
 import { useTimeout } from '../hooks';
@@ -52,16 +53,18 @@ function Projects({
     history.push(PROJECTS_DESCRIPTION_PATH);
   };
 
+  const sectionClassName = `projects ${
+    isCatAnimated ? 'projects__cat__animation' : ''
+  }`;
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-    <section
-      className={`projects ${isCatAnimated ? 'projects__cat__animation' : ''}`}
-    >
+    <Section classNames={sectionClassName}>
       <ProjectsListing
         onItemSelected={onItemSelected}
         projects={projectsI18n}
       />
-    </section>
+    </Section>
   );
 }
 

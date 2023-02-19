@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
-function Container({ children, classNames }) {
-  console.log(classNames);
+function Container({ children, classNames = '' }) {
   return <div className={`container ${classNames}`}>{children}</div>;
 }
 

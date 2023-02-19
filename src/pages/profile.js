@@ -6,6 +6,7 @@ import Container from '../components/container';
 import ProfileMain from '../components/profile-main';
 import ProfilePhoto from '../components/profile-photo';
 import ProfileSocial from '../components/profile-social';
+import Section from '../components/section';
 import { stagesSelectors } from '../ducks/stages';
 import { BIOGRAPHY_DATA } from '../translations/translation-keys';
 
@@ -18,7 +19,7 @@ function Profile({ biographyTranslations, selectPreset }) {
   } = t(...biographyTranslations);
 
   return (
-    <section className="profile-card">
+    <Section classNames="profile-card">
       <Container>
         <ProfilePhoto selectPreset={selectPreset} />
         <div className="component-group">
@@ -30,7 +31,7 @@ function Profile({ biographyTranslations, selectPreset }) {
           <ProfileMain about={about} />
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

@@ -1,0 +1,13 @@
+@import '../stylesheets/global-variables';
+@import '../stylesheets/mixin';
+
+main > .hide-navbar + section {
+  margin-left: $navbar-closed-width;
+  @include respond(_768_min) {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+}
+
+section {
+}

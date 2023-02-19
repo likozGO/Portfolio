@@ -5,11 +5,11 @@ import { HOME_PATH } from '../constants/router-urls';
 
 import './stage-settings-button.scss';
 
-function StageSettingsButton() {
+function StageSettingsButton({ isVisible }) {
   return (
     <Link
       to={HOME_PATH}
-      className="settings-button"
+      className={`settings-button ${isVisible ? '' : 'hide'}`}
     >
       <div className="dots-container">
         <div className="dot" />

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import Container from '../components/container';
+import Section from '../components/section';
 import images from '../constants/images';
 import { HOME_PATH } from '../constants/router-urls';
 import { errorsSelectors } from '../ducks/errors';
@@ -60,7 +61,7 @@ function ErrorNoFound({
       classNames="css-transition"
       unmountOnExit
     >
-      <section className="no-found">
+      <Section classNames="no-found">
         <div className="page-404">
           <Container>
             <h1 className="error-code">{error}</h1>
@@ -109,7 +110,7 @@ function ErrorNoFound({
             </Link>
           </Container>
         </div>
-      </section>
+      </Section>
     </CSSTransition>
   );
 }

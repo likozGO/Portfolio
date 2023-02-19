@@ -7,6 +7,7 @@ import { IMAGE_COMPARE } from '../constants/settings-image-mapping';
 
 import Container from './container';
 import RainbowText from './rainbow-text';
+import Section from './section';
 import StageSettingsButton from './stage-settings-button';
 import StageSettingsItem from './stage-settings-item';
 
@@ -132,8 +133,10 @@ function StageSettings({
     ],
   ];
 
+  const sectionClassName = `stage-settings ${selectHello ? 'hide' : ''}`;
+
   return (
-    <section className={`stage-settings ${selectHello ? 'hide' : ''}`}>
+    <Section classNames={sectionClassName}>
       <RainbowText
         word={stepsHeadlineI18n}
         status={animController}
@@ -177,18 +180,16 @@ function StageSettings({
                       changeLang={stages[key][childPropertyKey].changeLang}
                     />
                   ))}
-                  {selectStep === 'fourth' ? (
-                    <div className="settings-button-wrapper">
-                      <StageSettingsButton />
-                    </div>
-                  ) : null}
                 </Container>
               </div>
             );
           })}
         </AwesomeSlider>
+        <StageSettingsButton
+          isVisible={selectStep === 'fourth' && !animController}
+        />
       </Container>
-    </section>
+    </Section>
   );
 }
 

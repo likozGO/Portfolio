@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import Section from '../components/section';
 import StageHelloContainer from '../containers/stage-hello-container';
 import StageSettingsContainer from '../containers/stage-settings-container';
 import { stagesOperations, stagesSelectors } from '../ducks/stages';
@@ -16,10 +17,10 @@ function StageController({ setHello, isHelloStage }) {
   }, []);
 
   return (
-    <section className="stage-controller">
+    <Section classNames="stage-controller">
       <StageHelloContainer />
       <StageSettingsContainer />
-    </section>
+    </Section>
   );
 }
 

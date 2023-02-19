@@ -1,8 +1,11 @@
 @import '../stylesheets/mixin';
 
 .settings-button {
+  position: fixed;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
   animation: intro 1.6s;
-  position: relative;
   text-decoration: none;
   @include color('settings-button-collor');
   letter-spacing: 1px;

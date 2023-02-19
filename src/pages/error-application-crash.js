@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Button from '../components/button';
 import Container from '../components/container';
 import CrashImage from '../components/crash-image';
+import Section from '../components/section';
 import { TELEGRAM_LINK } from '../constants/contacts';
 import { ERRORS_DATA } from '../translations/translation-keys';
 
@@ -21,7 +22,7 @@ function ErrorApplicationCrash({ errorTranslations }) {
   const { t } = useTranslation();
   const { error, fix_errors, contact_developer } = t(...errorTranslations);
   return (
-    <section className="application-crash">
+    <Section classNames="application-crash">
       <Container>
         <h1 className="error-code">{error}</h1>
         <CrashImage />
@@ -36,7 +37,7 @@ function ErrorApplicationCrash({ errorTranslations }) {
           label={contact_developer}
         />
       </Container>
-    </section>
+    </Section>
   );
 }
 
