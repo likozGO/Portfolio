@@ -57,6 +57,7 @@ function Navbar({
       >
         <>
           <NavLink
+            aria-label="Navbar logo"
             onClick={toggleVisible}
             to={HOME_PATH}
             className="navbar-logo"
@@ -72,6 +73,7 @@ function Navbar({
       </IconContext.Provider>
       <div className="navbar-container">
         <NavLink
+          aria-label="Navbar logo"
           onClick={toggleVisible}
           to={HOME_PATH}
           className="navbar-logo"
@@ -82,6 +84,7 @@ function Navbar({
           {/* eslint-disable react/no-array-index-key */}
           {navbarI18n.map((item) => (
             <NavLink
+              aria-label={item.text}
               onClick={toggleVisible}
               to={item.link}
               key={item.text}
